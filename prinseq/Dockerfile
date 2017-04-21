@@ -8,4 +8,4 @@ RUN set -e \
       && chmod +x /usr/local/src/prinseq/*.pl \
       && ls /usr/local/src/prinseq/*.pl | xargs -i ln -s {} /usr/local/bin
 
-ENTRYPOINT ["/usr/local/bin/perl", "prinseq-lite.pl"]
+ENTRYPOINT ["/usr/local/bin/perl", "/usr/local/src/prinseq/prinseq-lite.pl"]
