@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  bowtie2:
+    image: bowtie2
+    container_name: bowtie2
+  bwa:
+    image: bwa
+    container_name: bwa
+  cutadapt:
+    image: cutadapt
+    container_name: cutadapt
+  fastqc:
+    image: fastqc
+    container_name: fastqc
+  gatk:
+    image: gatk
+    container_name: gatk
+  picard:
+    image: picard
+    container_name: picard
+  prinseq:
+    image: prinseq
+    container_name: prinseq
+  rsem:
+    image: rsem
+    container_name: rsem
+  samtools:
+    image: samtools
+    container_name: samtools
+  tophat:
+    image: tophat
+    container_name: tophat
+  trimmomatic:
+    image: trimmomatic
+    container_name: trimmomatic
