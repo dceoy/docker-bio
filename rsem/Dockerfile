@@ -4,7 +4,12 @@ ADD https://sourceforge.net/projects/bowtie-bio/files/latest/download?source=fil
 ADD https://github.com/deweylab/RSEM/archive/master.tar.gz /tmp/rsem.tar.gz
 
 RUN set -e \
-      && unzip /tmp/bowtie2.zip /usr/local/src \
+      && apt-get -y update \
+      && apt-get -y install unzip \
+      && apt-get clean
+
+RUN set -e \
+      && unzip /tmp/bowtie2.zip -d /usr/local/src \
       && cd /usr/local/src/bowtie2-* \
       && make \
       && make install

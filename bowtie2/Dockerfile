@@ -4,11 +4,11 @@ ADD https://sourceforge.net/projects/bowtie-bio/files/latest/download?source=fil
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y install g++ \
+      && apt-get -y install unzip \
       && apt-get clean
 
 RUN set -e \
-      && unzip /tmp/bowtie2.zip /usr/local/src \
+      && unzip /tmp/bowtie2.zip -d /usr/local/src \
       && cd /usr/local/src/bowtie2-* \
       && make \
       && make install
