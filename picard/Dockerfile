@@ -1,4 +1,4 @@
-FROM java:jre
+FROM java:jdk
 
 ADD https://github.com/broadinstitute/picard/archive/master.tar.gz /tmp/picard.tar.gz
 

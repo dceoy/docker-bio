@@ -1,10 +1,9 @@
-FROM java:jre
+FROM java:jdk
 
 ADD https://github.com/broadinstitute/gatk/archive/master.tar.gz /tmp/gatk.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
       && apt-get -y install git python r-base \
       && apt-get clean
 
