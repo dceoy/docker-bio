@@ -15,7 +15,7 @@ RUN set -e \
 RUN set -e \
       && tar xvf /tmp/samtools.tar.gz -C /usr/local/src \
       && cd /usr/local/src/samtools-master \
-      && autoconf -Wno-syntax \
+      && autoconf \
       && ./configure \
       && make \
       && make install

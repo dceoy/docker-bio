@@ -1,16 +1,16 @@
 FROM gcc
 
-ADD https://sourceforge.net/projects/bowtie-bio/files/latest/download?source=files /tmp/bowtie2.zip
+ADD https://github.com/BenLangmead/bowtie2/archive/master.tar.gz /tmp/bowtie2.tar.gz
 ADD https://github.com/deweylab/RSEM/archive/master.tar.gz /tmp/rsem.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y install unzip \
+      && apt-get -y install libtbb-dev \
       && apt-get clean
 
 RUN set -e \
-      && unzip /tmp/bowtie2.zip -d /usr/local/src \
-      && cd /usr/local/src/bowtie2-* \
+      && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src \
+      && cd /usr/local/src/bowtie2-master \
       && make \
       && make install
 
