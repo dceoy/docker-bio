@@ -28,6 +28,9 @@ services:
   samtools:
     image: samtools
     container_name: samtools
+  star:
+    image: star
+    container_name: star
   tophat:
     image: tophat
     container_name: tophat
