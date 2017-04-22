@@ -2,38 +2,41 @@ version: '3'
 
 services:
   bowtie2:
-    image: bowtie2
+    image: dceoy/bowtie2
     container_name: bowtie2
   bwa:
-    image: bwa
+    image: dceoy/bwa
     container_name: bwa
   cutadapt:
-    image: cutadapt
+    image: dceoy/cutadapt
     container_name: cutadapt
   fastqc:
-    image: fastqc
+    image: dceoy/fastqc
     container_name: fastqc
   gatk:
-    image: gatk
+    image: dceoy/gatk
     container_name: gatk
   picard:
-    image: picard
+    image: dceoy/picard
     container_name: picard
   prinseq:
-    image: prinseq
+    image: dceoy/prinseq
     container_name: prinseq
   rsem:
-    image: rsem
+    image: dceoy/rsem
     container_name: rsem
   samtools:
-    image: samtools
+    image: dceoy/samtools
     container_name: samtools
   star:
-    image: star
+    image: dceoy/star
     container_name: star
   tophat:
-    image: tophat
+    image: dceoy/tophat
     container_name: tophat
   trimmomatic:
-    image: trimmomatic
+    image: dceoy/trimmomatic
     container_name: trimmomatic
+  jbrowse:
+    image: jbrowse/gmod-jbrowse
+    container_name: jbrowse
