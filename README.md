@@ -29,47 +29,47 @@ References
 ----------
 
   - bcftools
-    - [samtools.github.io](https://samtools.github.io/bcftools/)
+    - [samtools.github.io - Bcftools](https://samtools.github.io/bcftools/)
     - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
   - bcl2fastq
-    - [Illumina](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)
+    - [Illumina - bcl2fastq Conversion Software](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)
   - bowtie2
-    - [bowtie-bio.sourceforge.net](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
+    - [bowtie-bio.sourceforge.net - Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
     - [GitHub - BenLangmead/bowtie2](https://github.com/BenLangmead/bowtie2)
   - bwa
-    - [bio-bwa.sourceforge.net](http://bio-bwa.sourceforge.net/)
+    - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
     - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
   - cutadapt
-    - [cutadapt.readthedocs.io](http://cutadapt.readthedocs.io/en/stable/guide.html)
+    - [cutadapt.readthedocs.io - cutadapt](http://cutadapt.readthedocs.io/)
     - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)
   - fastq-dump
     - [NCBI - SRA Toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/)
   - fastqc
-    - [Babraham Bioinformatics](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+    - [Babraham Bioinformatics - FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
   - gatk
-    - [Broad Institute](https://software.broadinstitute.org/gatk/)
+    - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
     - [GitHub - broadgsa/gatk](https://github.com/broadgsa/gatk)
     - [GitHub - broadgsa/gatk-protected](https://github.com/broadgsa/gatk-protected)
     - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
   - jbrowse
-    - [jbrowse.org](http://jbrowse.org/)
+    - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
   - picard
-    - [broadinstitute.github.io](https://broadinstitute.github.io/picard/)
+    - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)
   - prinseq
-    - [prinseq.sourceforge.net](http://prinseq.sourceforge.net/)
+    - [prinseq.sourceforge.net - PRINSEQ](http://prinseq.sourceforge.net/)
   - rsem
-    - [deweylab.github.io](https://deweylab.github.io/RSEM/)
+    - [deweylab.github.io - RSEM (RNA-Seq by Expectation-Maximization)](https://deweylab.github.io/RSEM/)
     - [GitHub - deweylab/RSEM](https://github.com/deweylab/RSEM)
   - samtools
-    - [samtools.sourceforge.net](http://samtools.sourceforge.net/)
+    - [samtools.sourceforge.net - SAMtools](http://samtools.sourceforge.net/)
     - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
   - star
     - [GitHub - alexdobin/STAR](https://github.com/alexdobin/STAR)
   - tophat
-    - [Johns Hopkins University](https://ccb.jhu.edu/software/tophat/)
+    - [Johns Hopkins University - TopHat](https://ccb.jhu.edu/software/tophat/)
     - [GitHub - infphilo/tophat](https://github.com/infphilo/tophat)
   - trimmomatic
-    - [usadellab.org](http://www.usadellab.org/cms/?page=trimmomatic)
+    - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
     - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)
