@@ -13,6 +13,7 @@ Repositories in Docker Hub
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
+  - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
@@ -41,6 +42,8 @@ References
   - cutadapt
     - [cutadapt.readthedocs.io](http://cutadapt.readthedocs.io/en/stable/guide.html)
     - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)
+  - fastq-dump
+    - [NCBI - SRA Toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/)
   - fastqc
     - [Babraham Bioinformatics](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
   - gatk
