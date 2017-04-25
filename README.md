@@ -8,6 +8,7 @@ Docker images
 
 Repositories in Docker Hub
 
+  - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
@@ -26,6 +27,9 @@ Repositories in Docker Hub
 References
 ----------
 
+  - bcftools
+    - [samtools.github.io](https://samtools.github.io/bcftools/)
+    - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
   - bcl2fastq
     - [Illumina](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)
   - bowtie2
