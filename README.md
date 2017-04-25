@@ -8,6 +8,7 @@ Docker images
 
 Repositories in Docker Hub
 
+  - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)

@@ -1,6 +1,9 @@
 version: '3'
 
 services:
+  bcl2fastq:
+    image: dceoy/bcl2fastq
+    container_name: bcl2fastq
   bowtie2:
     image: dceoy/bowtie2
     container_name: bowtie2
