@@ -13,6 +13,7 @@ Repositories in Docker Hub
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
+  - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
@@ -44,6 +45,9 @@ References
   - bwa
     - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
     - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
+  - cufflinks
+    - [Trapnell Lab - Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)
+    - [GitHub - cole-trapnell-lab/cufflinks](https://github.com/cole-trapnell-lab/cufflinks)
   - cutadapt
     - [cutadapt.readthedocs.io - cutadapt](http://cutadapt.readthedocs.io/)
     - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)

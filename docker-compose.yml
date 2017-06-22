@@ -13,6 +13,9 @@ services:
   bwa:
     image: dceoy/bwa
     container_name: bwa
+  cufflinks:
+    image: dceoy/cufflinks
+    container_name: cufflinks
   cutadapt:
     image: dceoy/cutadapt
     container_name: cutadapt
