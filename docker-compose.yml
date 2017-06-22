@@ -19,6 +19,12 @@ services:
   gatk:
     image: dceoy/gatk
     container_name: gatk
+  jbrowse:
+    image: jbrowse/gmod-jbrowse
+    container_name: jbrowse
+  last:
+    image: dceoy/last
+    container_name: last
   picard:
     image: dceoy/picard
     container_name: picard
@@ -40,6 +46,3 @@ services:
   trimmomatic:
     image: dceoy/trimmomatic
     container_name: trimmomatic
-  jbrowse:
-    image: jbrowse/gmod-jbrowse
-    container_name: jbrowse

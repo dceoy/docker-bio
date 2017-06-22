@@ -17,6 +17,7 @@ Repositories in Docker Hub
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
+  - [last](https://hub.docker.com/r/dceoy/last/)
   - [picard](https://hub.docker.com/r/dceoy/picard/)
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
@@ -54,6 +55,8 @@ References
   - jbrowse
     - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
+  - last
+    - [last.cbrc.jp - LAST: genome-scale sequence comparison](http://last.cbrc.jp/)
   - picard
     - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)
