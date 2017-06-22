@@ -10,6 +10,7 @@ Repositories in Docker Hub
 
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
+  - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
@@ -34,6 +35,9 @@ References
     - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
   - bcl2fastq
     - [Illumina - bcl2fastq Conversion Software](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)
+  - bedtools
+    - [bedtools.readthedocs.io - bedtools2](http://bedtools.readthedocs.io/en/latest/index.html)
+    - [GitHub - arq5x/bedtools2](https://github.com/arq5x/bedtools2)
   - bowtie2
     - [bowtie-bio.sourceforge.net - Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
     - [GitHub - BenLangmead/bowtie2](https://github.com/BenLangmead/bowtie2)
@@ -56,7 +60,7 @@ References
     - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
   - last
-    - [last.cbrc.jp - LAST: genome-scale sequence comparison](http://last.cbrc.jp/)
+    - [last.cbrc.jp - LAST](http://last.cbrc.jp/)
   - picard
     - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)

@@ -4,6 +4,9 @@ services:
   bcl2fastq:
     image: dceoy/bcl2fastq
     container_name: bcl2fastq
+  bedtools:
+    image: dceoy/bedtools
+    container_name: bedtools
   bowtie2:
     image: dceoy/bowtie2
     container_name: bowtie2
