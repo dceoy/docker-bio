@@ -4,6 +4,9 @@ services:
   bcl2fastq:
     image: dceoy/bcl2fastq
     container_name: bcl2fastq
+  bcftools:
+    image: dceoy/bcftools
+    container_name: bcftools
   bedtools:
     image: dceoy/bedtools
     container_name: bedtools
@@ -31,6 +34,9 @@ services:
   last:
     image: dceoy/last
     container_name: last
+  macs2:
+    image: dceoy/macs2
+    container_name: macs2
   picard:
     image: dceoy/picard
     container_name: picard

@@ -20,6 +20,7 @@ Repositories in Docker Hub
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
+  - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [picard](https://hub.docker.com/r/dceoy/picard/)
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
@@ -65,6 +66,8 @@ References
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
   - last
     - [last.cbrc.jp - LAST](http://last.cbrc.jp/)
+  - macs2
+    - [GitHub - taoliu/MACS](https://github.com/taoliu/MACS)
   - picard
     - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)
