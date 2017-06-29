@@ -1,57 +1,77 @@
 version: '3'
 
 services:
+  annovar:
+    build:
+      context: annovar
+    image: dceoy/annovar:latest
   bcl2fastq:
-    image: dceoy/bcl2fastq
-    container_name: bcl2fastq
+    build:
+      context: bcl2fastq
+    image: dceoy/bcl2fastq:latest
   bedtools:
-    image: dceoy/bedtools
-    container_name: bedtools
+    build:
+      context: bedtools
+    image: dceoy/bedtools:latest
   bowtie2:
-    image: dceoy/bowtie2
-    container_name: bowtie2
+    build:
+      context: bowtie2
+    image: dceoy/bowtie2:latest
   bwa:
-    image: dceoy/bwa
-    container_name: bwa
+    build:
+      context: bwa
+    image: dceoy/bwa:latest
   cufflinks:
-    image: dceoy/cufflinks
-    container_name: cufflinks
+    build:
+      context: cufflinks
+    image: dceoy/cufflinks:latest
   cutadapt:
-    image: dceoy/cutadapt
-    container_name: cutadapt
+    build:
+      context: cutadapt
+    image: dceoy/cutadapt:latest
   fastqc:
-    image: dceoy/fastqc
-    container_name: fastqc
+    build:
+      context: fastqc
+    image: dceoy/fastqc:latest
   gatk:
-    image: dceoy/gatk
-    container_name: gatk
+    build:
+      context: gatk
+    image: dceoy/gatk:latest
   jbrowse:
     image: jbrowse/gmod-jbrowse
-    container_name: jbrowse
   last:
-    image: dceoy/last
-    container_name: last
+    build:
+      context: last
+    image: dceoy/last:latest
   macs2:
-    image: dceoy/macs2
-    container_name: macs2
+    build:
+      context: macs2
+    image: dceoy/macs2:latest
   picard:
-    image: dceoy/picard
-    container_name: picard
+    build:
+      context: picard
+    image: dceoy/picard:latest
   prinseq:
-    image: dceoy/prinseq
-    container_name: prinseq
+    build:
+      context: prinseq
+    image: dceoy/prinseq:latest
   rsem:
-    image: dceoy/rsem
-    container_name: rsem
+    build:
+      context: rsem
+    image: dceoy/rsem:latest
   samtools:
-    image: dceoy/samtools
-    container_name: samtools
+    build:
+      context: samtools
+    image: dceoy/samtools:latest
   star:
-    image: dceoy/star
-    container_name: star
+    build:
+      context: star
+    image: dceoy/star:latest
   tophat:
-    image: dceoy/tophat
-    container_name: tophat
+    build:
+      context: tophat
+    image: dceoy/tophat:latest
   trimmomatic:
-    image: dceoy/trimmomatic
-    container_name: trimmomatic
+    build:
+      context: trimmomatic
+    image: dceoy/trimmomatic:latest

@@ -29,9 +29,15 @@ Repositories in Docker Hub
   - [tophat](https://hub.docker.com/r/dceoy/tophat/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
 
+Needed to build by users
+
+  - annovar
+
 References
 ----------
 
+  - annovar
+    - [annovar.openbioinformatics.org - ANNOVAR](http://annovar.openbioinformatics.org/)
   - bcftools
     - [samtools.github.io - Bcftools](https://samtools.github.io/bcftools/)
     - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
