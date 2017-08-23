@@ -6,6 +6,7 @@ RUN set -e \
       && tar xvf /tmp/bwa.tar.gz -C /usr/local/src \
       && cd /usr/local/src/bwa-master \
       && make \
-      && ln -s /usr/local/src/bwa-master/bwa /usr/local/bin/
+      && ln -s /usr/local/src/bwa-master/bwa /usr/local/bin \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["bwa"]

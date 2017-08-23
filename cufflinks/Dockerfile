@@ -4,6 +4,7 @@ ADD http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.
 
 RUN set -e \
       && tar xvf /tmp/cufflinks.tar.gz -C /usr/local/src \
-      && find /usr/local/src/cufflinks* -type f -executable | xargs -i ln -s {} /usr/local/bin/
+      && find /usr/local/src/cufflinks* -type f -executable | xargs -i ln -s {} /usr/local/bin \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["cufflinks"]

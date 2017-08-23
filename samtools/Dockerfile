@@ -18,6 +18,7 @@ RUN set -e \
       && autoconf \
       && ./configure \
       && make \
-      && make install
+      && make install \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["samtools"]

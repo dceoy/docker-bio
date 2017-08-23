@@ -10,6 +10,7 @@ RUN set -e \
 RUN set -e \
       && tar xvf /tmp/trimmomatic.tar.gz -C /usr/local/src \
       && cd /usr/local/src/trimmomatic-master \
-      && make
+      && make \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["java", "-jar", "/usr/local/src/trimmomatic-master/classes/trimmomatic.jar"]

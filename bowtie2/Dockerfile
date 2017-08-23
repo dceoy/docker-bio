@@ -10,6 +10,7 @@ RUN set -e \
 RUN set -e \
       && unzip -d /usr/local/src /tmp/bowtie2.zip \
       && mv /usr/local/src/bowtie2-* /usr/local/src/bowtie2 \
-      && find /usr/local/src/bowtie2 -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/bowtie2 -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["bowtie2"]

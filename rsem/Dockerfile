@@ -24,6 +24,7 @@ RUN set -e \
       && tar xvf /tmp/rsem.tar.gz -C /usr/local/src \
       && cd /usr/local/src/RSEM-master \
       && make \
-      && make install
+      && make install \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["rsem-calculate-expression"]

@@ -10,6 +10,7 @@ RUN set -e \
 RUN set -e \
       && unzip -d /usr/local/src /tmp/fastqc.zip \
       && chmod +x /usr/local/src/FastQC/fastqc \
-      && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc
+      && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["fastqc"]

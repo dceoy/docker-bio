@@ -5,6 +5,7 @@ ADD https://support.illumina.com/content/dam/illumina-support/documents/download
 RUN set -e \
       && yum -y upgrade \
       && yum -y install /tmp/bcl2fastq2.rpm \
-      && yum clean all
+      && yum clean all \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["bcl2fastq"]

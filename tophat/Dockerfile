@@ -17,6 +17,7 @@ RUN set -e \
 RUN set -e \
       && tar xvf /tmp/tophat.tar.gz -C /usr/local/src \
       && mv /usr/local/src/tophat-* /usr/local/src/tophat \
-      && find /usr/local/src/tophat -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/tophat -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin \
+      && rm -rf /tmp/*
 
 ENTRYPOINT ["tophat"]
