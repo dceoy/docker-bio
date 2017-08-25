@@ -1,11 +1,12 @@
-FROM gcc
+FROM ubuntu
 
 ADD https://github.com/BenLangmead/bowtie2/archive/master.tar.gz /tmp/bowtie2.tar.gz
 ADD http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz /tmp/tophat.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y install libtbb-dev libboost-thread-dev \
+      && apt-get -y upgrade \
+      && apt-get -y install g++ gcc libboost-thread-dev libtbb-dev libz-dev make \
       && apt-get clean
 
 RUN set -e \
