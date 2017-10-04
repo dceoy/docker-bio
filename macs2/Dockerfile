@@ -6,7 +6,7 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && pip install -U pip numpy \
-      && pip install -U macs2
+      && pip install -U --no-cache-dir pip numpy \
+      && pip install -U --no-cache-dir macs2
 
 ENTRYPOINT ["macs2"]
