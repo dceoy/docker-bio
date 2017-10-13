@@ -21,6 +21,7 @@ RUN set -e \
 RUN set -e \
       && tar xvf /tmp/samtools.tar.gz -C /usr/local/src \
       && cd /usr/local/src/samtools-master \
+      && autoheader \
       && autoconf \
       && ./configure \
       && make \
