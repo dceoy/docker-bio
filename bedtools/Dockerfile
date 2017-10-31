@@ -10,7 +10,8 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/bedtools2.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/bedtools2-master \
+      && mv /usr/local/src/bedtools2-master /usr/local/src/bedtools2 \
+      && cd /usr/local/src/bedtools2 \
       && make \
       && make install \
       && rm -rf /tmp/*

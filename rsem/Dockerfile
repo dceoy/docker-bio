@@ -12,19 +12,22 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/bowtie2-master \
+      && mv /usr/local/src/bowtie2-master /usr/local/src/bowtie2 \
+      && cd /usr/local/src/bowtie2 \
       && make \
       && make install
 
 RUN set -e \
       && tar xvf /tmp/star.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/STAR-master/source \
+      && mv /usr/local/src/STAR-master /usr/local/src/STAR \
+      && cd /usr/local/src/STAR/source \
       && make STAR \
-      && ln -s /usr/local/src/STAR-master/source/STAR /usr/local/bin/STAR
+      && ln -s /usr/local/src/STAR/source/STAR /usr/local/bin/STAR
 
 RUN set -e \
       && tar xvf /tmp/rsem.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/RSEM-master \
+      && mv /usr/local/src/RSEM-master /usr/local/src/RSEM \
+      && cd /usr/local/src/RSEM \
       && make \
       && make install \
       && rm -rf /tmp/*

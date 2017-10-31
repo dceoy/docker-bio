@@ -9,8 +9,9 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/gatk.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/gatk-protected-master \
+      && mv /usr/local/src/gatk-protected-master /usr/local/src/gatk-protected \
+      && cd /usr/local/src/gatk-protected \
       && mvn package \
       && rm -rf /tmp/*
 
-ENTRYPOINT ["java", "-jar", "/usr/local/src/gatk-protected-master/target/GenomeAnalysisTK.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/src/gatk-protected/target/GenomeAnalysisTK.jar"]

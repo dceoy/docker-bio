@@ -10,7 +10,8 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/bowtie2-master \
+      && mv /usr/local/src/bowtie2-master /usr/local/src/bowtie2 \
+      && cd /usr/local/src/bowtie2 \
       && make \
       && make install \
       && rm -rf /tmp/*

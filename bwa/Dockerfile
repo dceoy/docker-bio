@@ -10,9 +10,10 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/bwa.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/bwa-master \
+      && mv /usr/local/src/bwa-master /usr/local/src/bwa \
+      && cd /usr/local/src/bwa \
       && make \
-      && ln -s /usr/local/src/bwa-master/bwa /usr/local/bin \
+      && ln -s /usr/local/src/bwa/bwa /usr/local/bin \
       && rm -rf /tmp/*
 
 ENTRYPOINT ["bwa"]

@@ -10,9 +10,10 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/star.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/STAR-master/source \
+      && mv /usr/local/src/STAR-master /usr/local/src/STAR \
+      && cd /usr/local/src/STAR/source \
       && make STAR \
-      && ln -s /usr/local/src/STAR-master/source/STAR /usr/local/bin/STAR \
+      && ln -s /usr/local/src/STAR/source/STAR /usr/local/bin/STAR \
       && rm -rf /tmp/*
 
 ENTRYPOINT ["STAR"]

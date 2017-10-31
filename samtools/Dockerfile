@@ -11,7 +11,8 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/htslib.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/htslib-master \
+      && mv /usr/local/src/htslib-master /usr/local/src/htslib \
+      && cd /usr/local/src/htslib \
       && autoheader \
       && autoconf \
       && ./configure \
@@ -20,7 +21,8 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/samtools.tar.gz -C /usr/local/src \
-      && cd /usr/local/src/samtools-master \
+      && mv /usr/local/src/samtools-master /usr/local/src/samtools \
+      && cd /usr/local/src/samtools \
       && autoheader \
       && autoconf \
       && ./configure \
