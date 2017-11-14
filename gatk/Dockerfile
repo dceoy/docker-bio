@@ -9,8 +9,8 @@ RUN set -e \
 
 RUN set -e \
       && tar xvf /tmp/gatk.tar.gz -C /usr/local/src \
-      && mv /usr/local/src/gatk-protected-master /usr/local/src/gatk-protected \
-      && cd /usr/local/src/gatk-protected \
+      && mv /usr/local/src/gatk-protected-master /usr/local/src/gatk \
+      && cd /usr/local/src/gatk \
       && mvn package \
       && rm -rf /tmp/*
 

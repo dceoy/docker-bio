@@ -5,8 +5,8 @@ ADD http://jp.support.illumina.com/content/dam/illumina-support/documents/downlo
 RUN set -e \
       && yum -y upgrade \
       && yum -y install unzip \
-      && unzip /tmp/bcl2fastq.zip \
-      && yum -y install bcl2fastq2-*.rpm \
+      && unzip /tmp/bcl2fastq.zip -d /tmp \
+      && yum -y install /tmp/bcl2fastq2-*.rpm \
       && yum clean all \
       && rm -rf /tmp/*
 
