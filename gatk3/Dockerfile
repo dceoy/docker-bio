@@ -1,10 +1,14 @@
-FROM maven
+FROM ubuntu
 
 ADD https://github.com/broadgsa/gatk-protected/archive/master.tar.gz /tmp/gatk.tar.gz
 
 RUN set -e \
       && apt-get -y update \
+      && apt-get -y install maven software-properties-common \
+      && add-apt-repository ppa:webupd8team/java \
+      && apt-get -y update \
       && apt-get -y upgrade \
+      && yes yes | apt-get -y install oracle-java8-installer \
       && apt-get clean
 
 RUN set -e \
@@ -14,4 +18,4 @@ RUN set -e \
       && mvn package \
       && rm -rf /tmp/*
 
-ENTRYPOINT ["java", "-jar", "/usr/local/src/gatk-protected/target/GenomeAnalysisTK.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/src/gatk/target/GenomeAnalysisTK.jar"]

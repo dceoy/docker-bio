@@ -37,10 +37,14 @@ services:
     build:
       context: fastqc
     image: dceoy/fastqc:latest
-  gatk:
+  gatk3:
     build:
-      context: gatk
+      context: gatk3
     image: dceoy/gatk:latest
+  gatk4:
+    build:
+      context: gatk4
+    image: dceoy/gatk:4
   jbrowse:
     image: jbrowse/gmod-jbrowse
   last:

@@ -1,11 +1,11 @@
-FROM java
+FROM ubuntu
 
 ADD https://github.com/timflutre/trimmomatic/archive/master.tar.gz /tmp/trimmomatic.tar.gz
 
 RUN set -e \
       && apt-get -y update \
       && apt-get -y upgrade \
-      && apt-get -y install make \
+      && apt-get -y install default-jdk make \
       && apt-get clean
 
 RUN set -e \
