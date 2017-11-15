@@ -16,8 +16,6 @@ RUN set -e \
       && git clone --depth 1 https://github.com/broadinstitute/gatk.git /usr/local/src/gatk \
       && cd /usr/local/src/gatk \
       && ./gradlew localJar \
-      && ln -s /usr/local/src/gatk/build/libs/gatk-package-VERSION-local.jar \
-               /usr/local/src/gatk/build/libs/gatk.jar \
       && Rscript /tmp/install_R_packages.R \
       && rm -rf /tmp/*
 
