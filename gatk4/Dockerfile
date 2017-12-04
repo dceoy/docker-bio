@@ -10,6 +10,7 @@ RUN set -e \
       && apt-get -y upgrade \
       && yes yes | apt-get -y install oracle-java8-installer \
       && apt-get -y install git python r-base \
+      && apt-get -y autoremove \
       && apt-get clean
 
 RUN set -e \

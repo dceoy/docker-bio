@@ -5,6 +5,7 @@ ADD http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.
 RUN set -e \
       && apt-get -y update \
       && apt-get -y upgrade \
+      && apt-get -y autoremove \
       && apt-get clean
 
 RUN set -e \

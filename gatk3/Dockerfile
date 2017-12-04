@@ -9,6 +9,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y upgrade \
       && yes yes | apt-get -y install oracle-java8-installer \
+      && apt-get -y autoremove \
       && apt-get clean
 
 RUN set -e \
