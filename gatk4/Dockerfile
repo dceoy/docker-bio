@@ -4,12 +4,8 @@ ADD https://raw.githubusercontent.com/broadinstitute/gatk-protected/master/scrip
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y install software-properties-common \
-      && add-apt-repository ppa:webupd8team/java \
-      && apt-get -y update \
       && apt-get -y upgrade \
-      && yes yes | apt-get -y install oracle-java8-installer \
-      && apt-get -y install git python r-base \
+      && apt-get -y install default-jdk git python r-base \
       && apt-get -y autoremove \
       && apt-get clean
 
