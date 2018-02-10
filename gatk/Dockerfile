@@ -1,11 +1,9 @@
 FROM ubuntu
 
-ADD https://raw.githubusercontent.com/broadinstitute/gatk-protected/master/scripts/install_R_packages.R /tmp/install_R_packages.R
-
 RUN set -e \
       && apt-get -y update \
       && apt-get -y upgrade \
-      && apt-get -y install default-jdk git python r-base \
+      && apt-get -y install default-jdk git python python3 r-base \
       && apt-get -y autoremove \
       && apt-get clean
 
@@ -13,7 +11,6 @@ RUN set -e \
       && git clone --depth 1 https://github.com/broadinstitute/gatk.git /usr/local/src/gatk \
       && cd /usr/local/src/gatk \
       && ./gradlew localJar \
-      && Rscript /tmp/install_R_packages.R \
-      && rm -rf /tmp/*
+      && Rscript /usr/local/src/gatk/scripts/docker/gatkbase/install_R_packages.R
 
 ENTRYPOINT ["java", "-jar", "/usr/local/src/gatk/build/libs/gatk.jar"]

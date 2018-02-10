@@ -64,8 +64,6 @@ References
     - [Babraham Bioinformatics - FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
   - gatk
     - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
-    - [GitHub - broadgsa/gatk](https://github.com/broadgsa/gatk)
-    - [GitHub - broadgsa/gatk-protected](https://github.com/broadgsa/gatk-protected)
     - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
   - jbrowse
     - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)

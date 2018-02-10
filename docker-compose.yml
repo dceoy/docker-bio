@@ -39,7 +39,7 @@ services:
     image: dceoy/fastqc:latest
   gatk:
     build:
-      context: gatk4
+      context: gatk
     image: dceoy/gatk:latest
   jbrowse:
     image: jbrowse/gmod-jbrowse
