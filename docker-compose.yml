@@ -71,10 +71,10 @@ services:
     build:
       context: star
     image: dceoy/star:latest
-  tophat:
+  hisat2:
     build:
-      context: tophat
-    image: dceoy/tophat:latest
+      context: hisat2
+    image: dceoy/hisat2:latest
   trimmomatic:
     build:
       context: trimmomatic

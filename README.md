@@ -26,7 +26,7 @@ Repositories in Docker Hub
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [star](https://hub.docker.com/r/dceoy/star/)
-  - [tophat](https://hub.docker.com/r/dceoy/tophat/)
+  - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
 
 Needed to build by users
@@ -86,9 +86,9 @@ References
     - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
   - star
     - [GitHub - alexdobin/STAR](https://github.com/alexdobin/STAR)
-  - tophat
-    - [Johns Hopkins University - TopHat](https://ccb.jhu.edu/software/tophat/)
-    - [GitHub - infphilo/tophat](https://github.com/infphilo/tophat)
+  - hisat2
+    - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
+    - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)
   - trimmomatic
     - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
     - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)
