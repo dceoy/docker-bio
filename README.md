@@ -28,6 +28,7 @@ Repositories in Docker Hub
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
+  - [varscan](https://hub.docker.com/r/dceoy/varscan/)
 
 Needed to build by users
 
@@ -92,3 +93,7 @@ References
   - trimmomatic
     - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
     - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)
+  - varscan
+    - [massgenomics.org - VarScan](http://massgenomics.org/varscan)
+    - [dkoboldt.github.io - VarScan](http://dkoboldt.github.io/varscan/)
+    - [GitHub - dkoboldt/varscan](https://github.com/dkoboldt/varscan)

@@ -79,3 +79,7 @@ services:
     build:
       context: trimmomatic
     image: dceoy/trimmomatic:latest
+  varscan:
+    build:
+      context: varscan
+    image: dceoy/varscan:latest
