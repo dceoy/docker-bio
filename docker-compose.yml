@@ -71,6 +71,10 @@ services:
     build:
       context: samtools
     image: dceoy/samtools:latest
+  snpeff:
+    build:
+      context: snpeff
+    image: dceoy/snpeff:latest
   star:
     build:
       context: star

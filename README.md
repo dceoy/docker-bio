@@ -26,6 +26,7 @@ Repositories in Docker Hub
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
+  - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
@@ -89,6 +90,8 @@ References
   - samtools
     - [samtools.sourceforge.net - SAMtools](http://samtools.sourceforge.net/)
     - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
+  - snpeff
+    - [snpeff.sourceforge.net - SnpEff](http://snpeff.sourceforge.net/index.html)
   - star
     - [GitHub - alexdobin/STAR](https://github.com/alexdobin/STAR)
   - strelka
