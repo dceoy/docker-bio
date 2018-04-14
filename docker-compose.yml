@@ -41,6 +41,10 @@ services:
     build:
       context: gatk
     image: dceoy/gatk:latest
+  hisat2:
+    build:
+      context: hisat2
+    image: dceoy/hisat2:latest
   jbrowse:
     image: jbrowse/gmod-jbrowse
   last:
@@ -71,10 +75,10 @@ services:
     build:
       context: star
     image: dceoy/star:latest
-  hisat2:
+  strelka:
     build:
-      context: hisat2
-    image: dceoy/hisat2:latest
+      context: strelka
+    image: dceoy/strelka:latest
   trimmomatic:
     build:
       context: trimmomatic

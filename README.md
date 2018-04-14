@@ -18,6 +18,7 @@ Repositories in Docker Hub
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
+  - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
@@ -26,7 +27,7 @@ Repositories in Docker Hub
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [star](https://hub.docker.com/r/dceoy/star/)
-  - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
+  - [strelka](https://hub.docker.com/r/dceoy/strelka/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
 
@@ -66,6 +67,9 @@ References
   - gatk
     - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
     - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
+  - hisat2
+    - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
+    - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)
   - jbrowse
     - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
@@ -87,9 +91,8 @@ References
     - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
   - star
     - [GitHub - alexdobin/STAR](https://github.com/alexdobin/STAR)
-  - hisat2
-    - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
-    - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)
+  - strelka
+    - [GitHub - Illumina/strelka](https://github.com/Illumina/strelka)
   - trimmomatic
     - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
     - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)
