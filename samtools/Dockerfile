@@ -11,7 +11,7 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/htslib-master /usr/local/src/htslib \
       && cd /usr/local/src/htslib \
       && autoheader \
@@ -21,14 +21,13 @@ RUN set -e \
       && make install
 
 RUN set -e \
-      && tar xvf /tmp/samtools.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/samtools.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-master /usr/local/src/samtools \
       && cd /usr/local/src/samtools \
       && autoheader \
       && autoconf \
       && ./configure \
       && make \
-      && make install \
-      && rm -rf /tmp/*
+      && make install
 
 ENTRYPOINT ["samtools"]

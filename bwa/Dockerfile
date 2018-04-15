@@ -10,11 +10,10 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/bwa.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/bwa.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bwa-master /usr/local/src/bwa \
       && cd /usr/local/src/bwa \
       && make \
-      && ln -s /usr/local/src/bwa/bwa /usr/local/bin \
-      && rm -rf /tmp/*
+      && ln -s /usr/local/src/bwa/bwa /usr/local/bin
 
 ENTRYPOINT ["bwa"]

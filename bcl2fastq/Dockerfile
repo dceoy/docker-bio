@@ -8,6 +8,6 @@ RUN set -e \
       && unzip /tmp/bcl2fastq.zip -d /tmp \
       && yum -y install /tmp/bcl2fastq2-*.rpm \
       && yum clean all \
-      && rm -rf /tmp/*
+      && rm -f /tmp/bcl2fastq*
 
 ENTRYPOINT ["bcl2fastq"]

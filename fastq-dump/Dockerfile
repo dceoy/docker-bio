@@ -9,9 +9,8 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/sratoolkit.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/sratoolkit.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/sratoolkit.* /usr/local/src/sratoolkit \
-      && find /usr/local/src/sratoolkit/bin -type l -maxdepth 1 | xargs -i ln -s {} /usr/local/bin \
-      && rm -rf /tmp/*
+      && find /usr/local/src/sratoolkit/bin -type l -maxdepth 1 | xargs -i ln -s {} /usr/local/bin
 
 ENTRYPOINT ["fastq-dump"]

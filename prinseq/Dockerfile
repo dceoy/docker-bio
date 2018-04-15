@@ -9,10 +9,9 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/prinseq.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/prinseq.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/prinseq-* /usr/local/src/prinseq \
       && chmod +x /usr/local/src/prinseq/*.pl \
-      && find /usr/local/src/prinseq -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin \
-      && rm -rf /tmp/*
+      && find /usr/local/src/prinseq -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/perl", "/usr/local/src/prinseq/prinseq-lite.pl"]

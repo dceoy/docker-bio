@@ -7,7 +7,6 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && pip install -U --no-cache-dir pip \
-      && pip install -U --no-cache-dir cutadapt
+      && pip install -U --no-cache-dir pip cutadapt
 
 ENTRYPOINT ["cutadapt"]

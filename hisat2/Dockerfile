@@ -12,6 +12,6 @@ RUN set -e \
       && unzip -d /usr/local/src /tmp/hisat2.zip \
       && mv /usr/local/src/hisat2-* /usr/local/src/hisat2 \
       && find /usr/local/src/hisat2 -type f -maxdepth 1 -executable | xargs -i ln -s {} /usr/local/bin \
-      && rm -rf /tmp/*
+      && rm -f /tmp/hisat2.zip
 
 ENTRYPOINT ["hisat2"]

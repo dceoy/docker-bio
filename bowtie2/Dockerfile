@@ -10,11 +10,10 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bowtie2-master /usr/local/src/bowtie2 \
       && cd /usr/local/src/bowtie2 \
       && make \
-      && make install \
-      && rm -rf /tmp/*
+      && make install
 
 ENTRYPOINT ["bowtie2"]

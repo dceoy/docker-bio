@@ -11,13 +11,12 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/htslib-master /usr/local/src/htslib \
-      && tar xvf /tmp/bcftools.tar.gz -C /usr/local/src \
+      && tar xvf /tmp/bcftools.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bcftools-master /usr/local/src/bcftools \
       && cd /usr/local/src/bcftools \
       && make \
-      && make install \
-      && rm -rf /tmp/*
+      && make install
 
 ENTRYPOINT ["bcftools"]
