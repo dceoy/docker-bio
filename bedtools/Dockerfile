@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD https://github.com/arq5x/bedtools2/archive/master.tar.gz /tmp/bedtools2.tar.gz
 

@@ -1,4 +1,4 @@
-FROM perl
+FROM perl:latest
 
 COPY annovar.latest.tar.gz /tmp/annovar.latest.tar.gz
 

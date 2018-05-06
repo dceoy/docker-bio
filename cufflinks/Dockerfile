@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz /tmp/cufflinks.tar.gz
 

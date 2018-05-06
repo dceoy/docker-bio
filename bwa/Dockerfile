@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD https://github.com/lh3/bwa/archive/master.tar.gz /tmp/bwa.tar.gz
 

@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD https://github.com/samtools/htslib/archive/master.tar.gz /tmp/htslib.tar.gz
 ADD https://github.com/samtools/bcftools/archive/master.tar.gz /tmp/bcftools.tar.gz

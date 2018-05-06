@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip /tmp/fastqc.zip
 

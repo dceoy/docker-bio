@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ADD https://github.com/alexdobin/STAR/archive/master.tar.gz /tmp/star.tar.gz
 

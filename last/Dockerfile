@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 RUN set -e \
       && apt-get -y update \
