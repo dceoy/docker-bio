@@ -55,6 +55,10 @@ services:
     build:
       context: macs2
     image: dceoy/macs2:latest
+  oncotator:
+    build:
+      context: oncotator
+    image: dceoy/oncotator:latest
   picard:
     build:
       context: picard

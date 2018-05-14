@@ -22,6 +22,7 @@ Repositories in Docker Hub
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
+  - [oncotator](https://hub.docker.com/r/dceoy/oncotator)
   - [picard](https://hub.docker.com/r/dceoy/picard/)
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
@@ -79,6 +80,9 @@ References
   - macs2
     - [X. Shirley Liu Lab - MACS](http://liulab.dfci.harvard.edu/MACS/)
     - [GitHub - taoliu/MACS](https://github.com/taoliu/MACS)
+  - oncotator
+    - [Broad Institute - Oncotator](http://portals.broadinstitute.org/oncotator/)
+    - [GitHub - broadinstitute/oncotator](https://github.com/broadinstitute/oncotator)
   - picard
     - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)
