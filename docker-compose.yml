@@ -6,8 +6,6 @@ services:
       context: annovar
     image: dceoy/annovar:latest
   bcl2fastq:
-    build:
-      context: bcl2fastq
     image: dceoy/bcl2fastq:latest
   bcftools:
     build:

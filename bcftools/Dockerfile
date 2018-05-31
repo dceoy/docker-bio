@@ -5,7 +5,7 @@ ADD https://github.com/samtools/bcftools/archive/master.tar.gz /tmp/bcftools.tar
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install autoconf gcc libbz2-dev liblzma-dev libz-dev make \
       && apt-get -y autoremove \
       && apt-get clean

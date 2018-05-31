@@ -4,7 +4,7 @@ ADD https://github.com/arq5x/bedtools2/archive/master.tar.gz /tmp/bedtools2.tar.
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install g++ gcc libz-dev make python \
       && apt-get -y autoremove \
       && apt-get clean

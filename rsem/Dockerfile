@@ -6,7 +6,7 @@ ADD https://github.com/deweylab/RSEM/archive/master.tar.gz /tmp/rsem.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install g++ gcc libtbb-dev libz-dev make \
       && apt-get -y autoremove \
       && apt-get clean

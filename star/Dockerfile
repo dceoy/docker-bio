@@ -4,7 +4,7 @@ ADD https://github.com/alexdobin/STAR/archive/master.tar.gz /tmp/star.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install g++ gcc libz-dev make \
       && apt-get -y autoremove \
       && apt-get clean

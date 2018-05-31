@@ -4,7 +4,7 @@ ADD https://github.com/lh3/bwa/archive/master.tar.gz /tmp/bwa.tar.gz
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install gcc libz-dev make \
       && apt-get -y autoremove \
       && apt-get clean

@@ -4,7 +4,7 @@ ADD http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip 
 
 RUN set -e \
       && apt-get -y update \
-      && apt-get -y upgrade \
+      && apt-get -y dist-upgrade \
       && apt-get -y install default-jre unzip perl \
       && apt-get -y autoremove \
       && apt-get clean
