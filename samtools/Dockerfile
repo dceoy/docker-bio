@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD https://github.com/samtools/htslib/archive/master.tar.gz /tmp/htslib.tar.gz
 ADD https://github.com/samtools/samtools/archive/master.tar.gz /tmp/samtools.tar.gz
 

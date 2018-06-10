@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip /tmp/fastqc.zip
 
 RUN set -e \

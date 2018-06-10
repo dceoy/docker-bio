@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \

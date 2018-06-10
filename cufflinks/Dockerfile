@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz /tmp/cufflinks.tar.gz
 
 RUN set -e \

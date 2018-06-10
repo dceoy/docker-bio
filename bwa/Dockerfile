@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD https://github.com/lh3/bwa/archive/master.tar.gz /tmp/bwa.tar.gz
 
 RUN set -e \

@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD https://github.com/alexdobin/STAR/archive/master.tar.gz /tmp/star.tar.gz
 
 RUN set -e \
