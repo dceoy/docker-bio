@@ -10,7 +10,7 @@ RUN set -e \
       && apt-get clean
 
 RUN set -e \
-      && wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip -O /tmp/snpeff.zip \
+      && wget -L http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip -O /tmp/snpeff.zip \
       && unzip /tmp/snpeff.zip -d /usr/local/src \
       && rm -f /tmp/snpeff.zip
 
