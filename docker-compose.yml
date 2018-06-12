@@ -31,6 +31,10 @@ services:
     build:
       context: cutadapt
     image: dceoy/cutadapt:latest
+  fastq-dump:
+    build:
+      context: fastq-dump
+    image: dceoy/fastq-dump:latest
   fastqc:
     build:
       context: fastqc
