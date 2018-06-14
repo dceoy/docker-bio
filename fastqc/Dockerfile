@@ -5,9 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
-      && apt-get -y install curl default-jre perl unzip wget \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+                            ca-certificates curl default-jre perl unzip wget \
       && apt-get -y autoremove \
-      && apt-get clean
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
       && curl -sS https://github.com/s-andrews/FastQC/releases/latest \

@@ -5,9 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
-      && apt-get -y install curl git wget \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+                            ca-certificates curl git wget \
       && apt-get -y autoremove \
-      && apt-get clean
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
       && git clone --bare --depth 1 https://github.com/ncbi/sra-tools.git /tmp/sra-tools.git \

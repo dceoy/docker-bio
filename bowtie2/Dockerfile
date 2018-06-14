@@ -2,20 +2,23 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD https://github.com/BenLangmead/bowtie2/archive/master.tar.gz /tmp/bowtie2.tar.gz
-
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
-      && apt-get -y install g++ gcc libtbb-dev libz-dev make \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+                            ca-certificates curl g++ gcc libtbb-dev libz-dev make perl wget \
       && apt-get -y autoremove \
-      && apt-get clean
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
+      && curl -sS https://github.com/BenLangmead/bowtie2/releases/latest \
+        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+        | xargs -i wget -L {} -O /tmp/bowtie2.tar.gz \
       && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/bowtie2-master /usr/local/src/bowtie2 \
+      && mv /usr/local/src/bowtie2-* /usr/local/src/bowtie2 \
       && cd /usr/local/src/bowtie2 \
       && make \
       && make install
 
-ENTRYPOINT ["bowtie2"]
+ENTRYPOINT ["/usr/local/bin/bowtie2"]

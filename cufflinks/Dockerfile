@@ -8,10 +8,11 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y autoremove \
-      && apt-get clean
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
       && tar xvf /tmp/cufflinks.tar.gz -C /usr/local/src --remove-files \
       && find /usr/local/src/cufflinks* -type f -executable | xargs -i ln -s {} /usr/local/bin
 
-ENTRYPOINT ["cufflinks"]
+ENTRYPOINT ["/usr/local/bin/cufflinks"]

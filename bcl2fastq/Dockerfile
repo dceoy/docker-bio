@@ -11,4 +11,4 @@ RUN set -e \
       && yum clean all \
       && rm -f /tmp/bcl2fastq*
 
-ENTRYPOINT ["bcl2fastq"]
+ENTRYPOINT ["/usr/local/bin/bcl2fastq"]
