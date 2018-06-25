@@ -15,6 +15,7 @@ Repositories in Docker Hub
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
+  - [elprep](https://hub.docker.com/r/dceoy/elprep/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
@@ -62,6 +63,8 @@ References
   - cutadapt
     - [cutadapt.readthedocs.io - cutadapt](http://cutadapt.readthedocs.io/)
     - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)
+  - elprep
+    - [GitHub - ExaScience/elprep](https://github.com/ExaScience/elprep)
   - fastq-dump
     - [NCBI - SRA Toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/)
   - fastqc
