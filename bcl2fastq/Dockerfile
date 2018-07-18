@@ -9,6 +9,6 @@ RUN set -e \
       && yum -y install /tmp/bcl2fastq2-*.rpm \
       && yum -y autoremove \
       && yum clean all \
-      && rm -f /tmp/bcl2fastq*
+      && rm -rf /var/cache/yum /tmp/bcl2fastq*
 
 ENTRYPOINT ["/usr/local/bin/bcl2fastq"]
