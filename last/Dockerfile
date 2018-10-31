@@ -6,7 +6,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-                            g++ gcc make mercurial zlib1g-dev parallel \
+        g++ gcc make mercurial zlib1g-dev parallel \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

@@ -6,7 +6,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-                            ca-certificates curl default-jre perl unzip wget \
+        ca-certificates curl default-jre perl unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -14,7 +14,9 @@ RUN set -e \
 RUN set -e \
       && curl -sS https://github.com/s-andrews/FastQC/releases/latest \
         | sed -e 's/^.*"https:\/\/github.com\/[^\/]\+\/[^\/]\+\/releases\/tag\/\([^"]\+\)".*$/\1/' \
-        | xargs -i wget -L http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip -O /tmp/fastqc.zip \
+        | xargs -i curl -SL \
+          http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip \
+          -o /tmp/fastqc.zip \
       && unzip -d /usr/local/src /tmp/fastqc.zip \
       && chmod +x /usr/local/src/FastQC/fastqc \
       && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc \
