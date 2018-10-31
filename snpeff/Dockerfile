@@ -14,7 +14,7 @@ RUN set -e \
 RUN set -e \
       && curl -SL http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
         -o /tmp/snpeff.zip \
-      && unzip /tmp/snpeff.zip -d /usr/local/src \
+      && unzip -d /usr/local/src /tmp/snpeff.zip \
       && rm -f /tmp/snpeff.zip
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/snpEff/snpEff.jar"]

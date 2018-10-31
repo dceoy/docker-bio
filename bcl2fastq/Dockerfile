@@ -5,7 +5,7 @@ ADD https://support.illumina.com/content/dam/illumina-support/documents/download
 RUN set -e \
       && yum -y upgrade \
       && yum -y install unzip \
-      && unzip /tmp/bcl2fastq.zip -d /tmp \
+      && unzip -d /tmp /tmp/bcl2fastq.zip \
       && yum -y install /tmp/bcl2fastq2-*.rpm \
       && yum -y autoremove \
       && yum clean all \

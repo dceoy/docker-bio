@@ -20,6 +20,7 @@ Repositories in Docker Hub
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
+  - [igv](https://hub.docker.com/r/dceoy/igv/)
   - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
@@ -75,6 +76,9 @@ References
   - hisat2
     - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
     - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)
+  - igv:
+    - [Broad Institute - Integrative Genomics Viewer](http://software.broadinstitute.org/software/igv/home)
+    - [GitHub - igvteam/igv](https://github.com/igvteam/igv)
   - jbrowse
     - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
     - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
