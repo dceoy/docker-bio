@@ -59,7 +59,9 @@ services:
       context: igv
     image: dceoy/igv:latest
   jbrowse:
-    image: jbrowse/gmod-jbrowse
+    build:
+      context: jbrowse
+    image: dceoy/jbrowse:latest
   last:
     build:
       context: last

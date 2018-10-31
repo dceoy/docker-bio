@@ -1,7 +1,7 @@
 docker-bio
 ==========
 
-Dockerfile for Bioinformatics
+Dockerfile repository for Bioinformatics
 
 Docker images
 -------------
@@ -21,7 +21,7 @@ Repositories in Docker Hub
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - [igv](https://hub.docker.com/r/dceoy/igv/)
-  - [jbrowse](https://hub.docker.com/r/jbrowse/gmod-jbrowse/)
+  - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [oncotator](https://hub.docker.com/r/dceoy/oncotator)
