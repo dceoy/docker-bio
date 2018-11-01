@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -13,8 +15,8 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -sS https://github.com/samtools/htslib/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest --tar samtools/htslib \
         | xargs -i curl -SL {} -o /tmp/htslib.tar.gz \
       && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/htslib-* /usr/local/src/htslib \
@@ -26,8 +28,7 @@ RUN set -e \
       && make install
 
 RUN set -e \
-      && curl -sS https://github.com/samtools/samtools/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && print-github-tags --release --latest --tar samtools/samtools \
         | xargs -i curl -SL {} -o /tmp/samtools.tar.gz \
       && tar xvf /tmp/samtools.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-* /usr/local/src/samtools \

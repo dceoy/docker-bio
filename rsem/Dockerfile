@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -12,8 +14,8 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -sS https://github.com/BenLangmead/bowtie2/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest --tar BenLangmead/bowtie2 \
         | xargs -i curl -SL {} -o /tmp/bowtie2.tar.gz \
       && tar xvf /tmp/bowtie2.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bowtie2-* /usr/local/src/bowtie2 \
@@ -22,8 +24,7 @@ RUN set -e \
       && make install
 
 RUN set -e \
-      && curl -sS https://github.com/alexdobin/STAR/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && print-github-tags --release --latest --tar alexdobin/STAR \
         | xargs -i curl -SL {} -o /tmp/star.tar.gz \
       && tar xvf /tmp/star.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/STAR-* /usr/local/src/STAR \
@@ -32,8 +33,7 @@ RUN set -e \
       && ln -s /usr/local/src/STAR/source/STAR /usr/local/bin/STAR
 
 RUN set -e \
-      && curl -sS https://github.com/deweylab/RSEM/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && print-github-tags --release --latest --tar deweylab/RSEM \
         | xargs -i curl -SL {} -o /tmp/rsem.tar.gz \
       && tar xvf /tmp/rsem.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/RSEM-* /usr/local/src/RSEM \

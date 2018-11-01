@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -16,9 +18,11 @@ RUN set -e \
       && ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN set -e \
-      && curl -sS https://github.com/GMOD/jbrowse/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/releases\/\)tag\/\([^"]\+\)-release".*$/\1download\/\2-release\/JBrowse-\2\.zip/' \
-        | xargs -i curl -SL {} -o /tmp/jbrowse.zip \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && v=$(print-github-tags --release --latest GMOD/jbrowse | cut -f 1 -d '-') \
+      && curl -SL \
+        https://github.com/GMOD/jbrowse/releases/download/${v}-release/JBrowse-${v}.zip \
+        -o /tmp/jbrowse.zip \
       && unzip -d /tmp /tmp/jbrowse.zip \
       && rm -rf /var/www/html \
       && mv /tmp/JBrowse-* /var/www/html \

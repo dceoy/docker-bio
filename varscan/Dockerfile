@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -13,8 +15,10 @@ RUN set -e \
 
 RUN set -e \
       && mkdir /usr/local/src/varscan \
-      && curl -sS https://github.com/dkoboldt/varscan/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/releases\/\)tag\/\([^"]\+\)".*$/\1download\/\2\/VarScan\.v\2\.jar/' \
-        | xargs -i curl -SL {} -o /usr/local/src/varscan/VarScan.jar
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest --tar dkoboldt/varscan \
+        | xargs -i curl -SL \
+          https://github.com/dkoboldt/varscan/releases/download/{}/VarScan.v{}.jar \
+          -o /usr/local/src/varscan/VarScan.jar
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/varscan/VarScan.jar"]

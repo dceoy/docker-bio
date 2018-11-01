@@ -2,17 +2,26 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz /tmp/cufflinks.tar.gz
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+        ca-certificates curl \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --latest cole-trapnell-lab/cufflinks \
+        | cut -d v -f 2 \
+        | xargs -i curl -SL \
+          http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-{}.Linux_x86_64.tar.gz \
+          -o /tmp/cufflinks.tar.gz \
       && tar xvf /tmp/cufflinks.tar.gz -C /usr/local/src --remove-files \
-      && find /usr/local/src/cufflinks* -type f -executable | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/cufflinks* -type f -executable \
+        | xargs -i ln -s {} /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/cufflinks"]

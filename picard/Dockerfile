@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -12,8 +14,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -sS https://github.com/broadinstitute/picard/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/releases\/\)tag\(\/[^"]\+\)".*$/\1download\2\/picard.jar/' \
-        | xargs -i curl -SL {} -o /usr/local/src/picard.jar
+      && mkdir /usr/local/src/picard \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest broadinstitute/picard \
+        | xargs -i curl -SL \
+          https://github.com/broadinstitute/picard/releases/download/{}/picard.jar \
+          -o /usr/local/src/picard/picard.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/picard.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/picard/picard.jar"]

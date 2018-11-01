@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -12,10 +14,9 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -sS https://github.com/s-andrews/FastQC/releases/latest \
-        | sed -e 's/^.*"https:\/\/github.com\/[^\/]\+\/[^\/]\+\/releases\/tag\/\([^"]\+\)".*$/\1/' \
-        | xargs -i curl -SL \
-          http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest s-andrews/FastQC \
+        | xargs -i curl -S http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip \
           -o /tmp/fastqc.zip \
       && unzip -d /usr/local/src /tmp/fastqc.zip \
       && chmod +x /usr/local/src/FastQC/fastqc \

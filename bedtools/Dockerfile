@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
@@ -12,8 +14,8 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -sS https://github.com/arq5x/bedtools2/releases/latest \
-        | sed -e 's/^.*"\(https:\/\/github.com\/[^\/]\+\/[^\/]\+\/\)releases\/tag\(\/[^"]\+\)".*$/\1archive\2\.tar\.gz/' \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest --tar arq5x/bedtools2 \
         | xargs -i curl -SL {} -o /tmp/bedtools2.tar.gz \
       && tar xvf /tmp/bedtools2.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bedtools2-* /usr/local/src/bedtools2 \
