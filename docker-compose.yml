@@ -10,6 +10,10 @@ services:
     build:
       context: annovar
     image: dceoy/annovar:latest
+  ascat:
+    build:
+      context: ascat
+    image: dceoy/ascat:latest
   bcl2fastq:
     build:
       context: bcl2fastq
@@ -40,6 +44,8 @@ services:
     image: dceoy/cutadapt:latest
   deepvariant:
     image: gcr.io/deepvariant-docker/deepvariant:latest
+  deepvariant_gpu:
+    image: gcr.io/deepvariant-docker/deepvariant_gpu:latest
   delly:
     build:
       context: delly
