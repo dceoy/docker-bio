@@ -94,6 +94,10 @@ services:
     build:
       context: picard
     image: dceoy/picard:latest
+  pindel:
+    build:
+      context: pindel
+    image: dceoy/pindel:latest
   prinseq:
     build:
       context: prinseq

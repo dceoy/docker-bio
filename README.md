@@ -28,6 +28,7 @@ Docker images
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [oncotator](https://hub.docker.com/r/dceoy/oncotator)
   - [picard](https://hub.docker.com/r/dceoy/picard/)
+  - ~~pindel~~
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
@@ -106,6 +107,8 @@ References
   - picard
     - [broadinstitute.github.io - Picard](https://broadinstitute.github.io/picard/)
     - [GitHub - broadinstitute/picard](https://github.com/broadinstitute/picard)
+  - pindel
+    - [GitHub - genome/pindel](https://github.com/genome/pindel)
   - prinseq
     - [prinseq.sourceforge.net - PRINSEQ](http://prinseq.sourceforge.net/)
   - rsem
