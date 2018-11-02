@@ -8,7 +8,8 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl gcc libbz2-dev liblzma-dev libncurses5-dev libz-dev make \
+        autoconf ca-certificates curl gcc libbz2-dev liblzma-dev \
+        libncurses5-dev libz-dev make \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

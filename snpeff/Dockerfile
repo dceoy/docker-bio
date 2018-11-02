@@ -12,7 +12,8 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -SL http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
+      && curl -SL \
+        http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
         -o /tmp/snpeff.zip \
       && unzip -d /usr/local/src /tmp/snpeff.zip \
       && rm -f /tmp/snpeff.zip

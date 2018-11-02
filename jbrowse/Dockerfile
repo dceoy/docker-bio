@@ -8,7 +8,8 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl build-essential libgd-dev libpng-dev nginx perl unzip zlib1g-dev \
+        ca-certificates curl build-essential libgd-dev libpng-dev nginx perl \
+        unzip zlib1g-dev \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

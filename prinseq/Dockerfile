@@ -5,7 +5,8 @@ ADD https://sourceforge.net/projects/prinseq/files/latest/download?source=files 
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
-      && apt-get -y install --no-install-recommends --no-install-suggests perl \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+        perl \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

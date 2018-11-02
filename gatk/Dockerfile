@@ -8,7 +8,8 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl g++ gcc default-jre libc6-dev make python python3 r-base \
+        ca-certificates curl g++ gcc default-jre libc6-dev make python \
+        python3 r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

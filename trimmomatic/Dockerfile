@@ -7,7 +7,8 @@ ADD https://github.com/timflutre/trimmomatic/archive/master.tar.gz /tmp/trimmoma
 RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
-      && apt-get -y install --no-install-recommends --no-install-suggests default-jdk make \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+        default-jdk make \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

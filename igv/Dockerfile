@@ -17,7 +17,8 @@ RUN set -e \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest igvteam/igv \
         | sed -e 's/^v\([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\)$/\1\.\2\/IGV_\1\.\2\.\3\.zip/' \
-        | xargs -i curl -S http://data.broadinstitute.org/igv/projects/downloads/{} \
+        | xargs -i curl -S \
+          http://data.broadinstitute.org/igv/projects/downloads/{} \
           -o /tmp/igv.zip \
       && unzip -d /usr/local/src /tmp/igv.zip \
       && mv /usr/local/src/IGV_* /usr/local/src/igv \

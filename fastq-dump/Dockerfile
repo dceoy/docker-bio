@@ -12,10 +12,12 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && curl -S https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz \
+      && curl -S \
+        https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz \
         -o /tmp/sratoolkit.tar.gz \
       && tar xvf /tmp/sratoolkit.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/sratoolkit.* /usr/local/src/sratoolkit \
-      && find /usr/local/src/sratoolkit/bin -type l -maxdepth 1 | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/sratoolkit/bin -type l -maxdepth 1 \
+        | xargs -i ln -s {} /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/fastq-dump"]
