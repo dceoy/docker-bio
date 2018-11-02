@@ -2,6 +2,10 @@
 version: '3'
 
 services:
+  abra:
+    build:
+      context: abra
+    image: dceoy/abra:latest
   annovar:
     build:
       context: annovar

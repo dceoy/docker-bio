@@ -7,6 +7,7 @@ Docker images
 -------------
 
 - Images on Docker Hub:
+  - [abra](https://hub.docker.com/r/dceoy/abra/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
@@ -42,6 +43,8 @@ Docker images
 References
 ----------
 
+  - abra
+    - [GitHub - mozack/abra](https://github.com/mozack/abra)
   - annovar
     - [annovar.openbioinformatics.org - ANNOVAR](http://annovar.openbioinformatics.org/)
   - bcftools
