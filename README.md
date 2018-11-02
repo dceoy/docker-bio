@@ -6,8 +6,7 @@ Dockerfile repository for Bioinformatics
 Docker images
 -------------
 
-Repositories in Docker Hub
-
+- Images on Docker Hub:
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
@@ -34,10 +33,11 @@ Repositories in Docker Hub
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
-
-Needed to build by users
-
+- Images requiring build by a user:
   - annovar
+- Images outside this repository:
+  - [deepvariant](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant)
+  - [deepvariant_gpu](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant_gpu)
 
 References
 ----------
@@ -64,6 +64,9 @@ References
   - cutadapt
     - [cutadapt.readthedocs.io - cutadapt](http://cutadapt.readthedocs.io/)
     - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)
+  - deepvariant
+    - [GitHub -google/deepvariant](https://github.com/google/deepvariant)
+    - [Google Cloud Platform - DeepVariant](https://cloud.google.com/genomics/deepvariant)
   - elprep
     - [GitHub - ExaScience/elprep](https://github.com/ExaScience/elprep)
   - fastq-dump

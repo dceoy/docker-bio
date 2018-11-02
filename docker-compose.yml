@@ -34,6 +34,8 @@ services:
     build:
       context: cutadapt
     image: dceoy/cutadapt:latest
+  deepvariant:
+    image: gcr.io/deepvariant-docker/deepvariant:latest
   elprep:
     build:
       context: elprep
