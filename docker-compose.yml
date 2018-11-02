@@ -40,6 +40,10 @@ services:
     image: dceoy/cutadapt:latest
   deepvariant:
     image: gcr.io/deepvariant-docker/deepvariant:latest
+  delly:
+    build:
+      context: delly
+    image: dceoy/delly:latest
   elprep:
     build:
       context: elprep

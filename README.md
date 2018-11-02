@@ -15,6 +15,7 @@ Docker images
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
+  - [delly](https://hub.docker.com/r/dceoy/delly/)
   - [elprep](https://hub.docker.com/r/dceoy/elprep/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
@@ -70,6 +71,8 @@ References
   - deepvariant
     - [GitHub -google/deepvariant](https://github.com/google/deepvariant)
     - [Google Cloud Platform - DeepVariant](https://cloud.google.com/genomics/deepvariant)
+  - delly
+    - [GitHub - dellytools/delly](https://github.com/dellytools/delly)
   - elprep
     - [GitHub - ExaScience/elprep](https://github.com/ExaScience/elprep)
   - fastq-dump
