@@ -24,4 +24,6 @@ RUN set -e \
       && mv /usr/local/src/IGV_* /usr/local/src/igv \
       && rm -f /tmp/igv.zip
 
+ENV DISPLAY :0.0
+
 ENTRYPOINT ["/usr/local/src/igv/igv.sh"]
