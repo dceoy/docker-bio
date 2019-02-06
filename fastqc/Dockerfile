@@ -8,7 +8,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl default-jre perl unzip \
+        ca-certificates curl openjdk-8-jre perl unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -22,5 +22,7 @@ RUN set -e \
       && chmod +x /usr/local/src/FastQC/fastqc \
       && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc \
       && rm -f /tmp/fastqc.zip
+
+ENV DISPLAY :0.0
 
 ENTRYPOINT ["/usr/local/bin/fastqc"]

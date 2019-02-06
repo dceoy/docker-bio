@@ -21,6 +21,7 @@ RUN set -e \
       && mv /usr/local/src/bwa-* /usr/local/src/bwa \
       && cd /usr/local/src/bwa \
       && make \
-      && ln -s /usr/local/src/bwa/bwa /usr/local/bin
+      && find /usr/local/src/bwa -type f -maxdepth 1 -executable \
+        | xargs -i ln -s {} /usr/local/bin
 
 ENTRYPOINT ["/usr/local/bin/bwa"]
