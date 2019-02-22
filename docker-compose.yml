@@ -86,6 +86,10 @@ services:
     build:
       context: macs2
     image: dceoy/macs2:latest
+  msisensor:
+    build:
+      context: msisensor
+    image: dceoy/msisensor:latest
   oncotator:
     build:
       context: oncotator
