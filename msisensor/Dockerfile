@@ -22,7 +22,7 @@ RUN set -e \
       && mv /usr/local/src/msisensor-* /usr/local/src/msisensor \
       && cd /usr/local/src/msisensor \
       && make \
-      && find /usr/local/src/msisensor -type f -maxdepth 1 -executable \
-        | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/msisensor -maxdepth 1 -type f -executable \
+        -exec ln -s {} /usr/local/bin \;
 
 ENTRYPOINT ["/usr/local/bin/msisensor"]

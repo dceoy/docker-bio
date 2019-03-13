@@ -17,7 +17,7 @@ RUN set -e \
         -o /tmp/sratoolkit.tar.gz \
       && tar xvf /tmp/sratoolkit.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/sratoolkit.* /usr/local/src/sratoolkit \
-      && find /usr/local/src/sratoolkit/bin -type l -maxdepth 1 \
-        | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/sratoolkit/bin -maxdepth 1 -type l \
+        -exec ln -s {} /usr/local/bin \;
 
 ENTRYPOINT ["/usr/local/bin/fastq-dump"]

@@ -12,7 +12,7 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && find /usr/local/src/annovar -type f -maxdepth 1 -executable \
-        | xargs -i ln -s {} /usr/local/bin
+      && find /usr/local/src/annovar -maxdepth 1 -type f -executable \
+        -exec ln -s {} /usr/local/bin \;
 
 ENTRYPOINT ["/usr/bin/perl", "/usr/local/src/annovar/annotate_variation.pl"]

@@ -22,6 +22,6 @@ RUN set -e \
           -o /tmp/cufflinks.tar.gz \
       && tar xvf /tmp/cufflinks.tar.gz -C /usr/local/src --remove-files \
       && find /usr/local/src/cufflinks* -type f -executable \
-        | xargs -i ln -s {} /usr/local/bin
+        -exec ln -s {} /usr/local/bin \;
 
 ENTRYPOINT ["/usr/local/bin/cufflinks"]
