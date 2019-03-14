@@ -11,6 +11,7 @@ Docker images
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
+  - [bedops](https://hub.docker.com/r/dceoy/bedops/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
@@ -59,6 +60,9 @@ References
     - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
   - bcl2fastq
     - [Illumina - bcl2fastq Conversion Software](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)
+  - bedops
+    - [bedops.readthedocs.io - BEDOPS](https://bedops.readthedocs.io/)
+    - [GitHub - bedops/bedops](https://github.com/bedops/bedops)
   - bedtools
     - [bedtools.readthedocs.io - bedtools2](http://bedtools.readthedocs.io/en/latest/index.html)
     - [GitHub - arq5x/bedtools2](https://github.com/arq5x/bedtools2)

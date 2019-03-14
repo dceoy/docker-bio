@@ -22,6 +22,10 @@ services:
     build:
       context: bcftools
     image: dceoy/bcftools:latest
+  bedops:
+    build:
+      context: bedops
+    image: dceoy/bedops:latest
   bedtools:
     build:
       context: bedtools
