@@ -78,10 +78,18 @@ services:
     build:
       context: igv
     image: dceoy/igv:latest
+  igv-webapp:
+    build:
+      context: igv-webapp
+    image: dceoy/igv-webapp:latest
+    ports:
+      - 8080:8080
   jbrowse:
     build:
       context: jbrowse
     image: dceoy/jbrowse:latest
+    ports:
+      - 80:80
   last:
     build:
       context: last
