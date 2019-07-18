@@ -23,7 +23,7 @@ Docker images
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
-  - [igv](https://hub.docker.com/r/dceoy/igv/)
+  - ~igv~
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
