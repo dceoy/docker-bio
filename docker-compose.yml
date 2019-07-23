@@ -78,6 +78,11 @@ services:
     build:
       context: igv
     image: dceoy/igv:latest
+    network_mode: host
+    environment:
+      DISPLAY: ${DISPLAY}
+    volumes:
+      - ${HOME}/.Xauthority:/root/.Xauthority:ro
   igv-webapp:
     build:
       context: igv-webapp
