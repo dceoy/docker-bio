@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 
 ADD https://support.illumina.com/content/dam/illumina-support/documents/downloads/software/bcl2fastq/bcl2fastq2-v2-20-0-linux-x86-64.zip /tmp/bcl2fastq.zip
 
