@@ -10,7 +10,6 @@ Docker images
   - [abra](https://hub.docker.com/r/dceoy/abra/)
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
-  - [bcl2fastq](https://hub.docker.com/r/dceoy/bcl2fastq/)
   - [bedops](https://hub.docker.com/r/dceoy/bedops/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
@@ -42,6 +41,7 @@ Docker images
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
 - Images requiring build by a user:
   - annovar
+  - bcl2fastq
 - Images outside this repository:
   - [deepvariant](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant)
   - [deepvariant_gpu](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant_gpu)
