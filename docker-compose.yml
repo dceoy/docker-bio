@@ -143,6 +143,10 @@ services:
     build:
       context: strelka
     image: dceoy/strelka:latest
+  svtools:
+    build:
+      context: svtools
+    image: dceoy/svtools:latest
   trimmomatic:
     build:
       context: trimmomatic

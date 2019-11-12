@@ -37,6 +37,7 @@ Docker images
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
+  - [svtools](https://hub.docker.com/r/dceoy/svtools/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
 - Images requiring build by a user:
@@ -134,6 +135,8 @@ References
     - [GitHub - alexdobin/STAR](https://github.com/alexdobin/STAR)
   - strelka
     - [GitHub - Illumina/strelka](https://github.com/Illumina/strelka)
+  - svtools
+    - [GitHub - hall-lab/svtools](https://github.com/hall-lab/svtools)
   - trimmomatic
     - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
     - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)
