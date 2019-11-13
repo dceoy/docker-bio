@@ -9,33 +9,21 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl gcc make python-dev \
+        ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev liblzma-dev \
+        libncurses5-dev libssl-dev libz-dev python-dev zlib1g-dev \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar root-project/root \
-        | xargs -i curl -SL {} -o /tmp/root.tar.gz \
-      && tar xvf /tmp/root.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/root-* /usr/local/src/root \
-      && cd /usr/local/src/root \
-      && ./configure \
-      && make \
-      && find /usr/local/src/root -maxdepth 1 -type f -executable \
-        -exec ln -s {} /usr/local/bin \;
+      && print-github-tags --release --latest --tar ebiggers/libdeflate \
+        | xargs -i curl -SL {} -o /tmp/libdeflate.tar.gz \
+      && tar xvf /tmp/libdeflate.tar.gz -C /usr/local/src --remove-files \
+      && mv /usr/local/src/libdeflate-* /usr/local/src/libdeflate \
+      && make
 
-RUN set -e \
-      && print-github-tags --release --latest --tar hall-lab/speedseq \
-        | xargs -i curl -SL {} -o /tmp/speedseq.tar.gz \
-      && tar xvf /tmp/speedseq.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/speedseq-* /usr/local/src/speedseq \
-      && source /usr/local/src/root/bin/thisroot.sh \
-      && cd /usr/local/src/speedseq \
-      && make cnvnator \
-      && find /usr/local/src/speedseq -maxdepth 1 -type f -executable \
-        -exec ln -s {} /usr/local/bin \;
+ENV LD_LIBRARY_PATH /usr/local/src/libdeflate
 
 RUN set -e \
       && /usr/bin/python /tmp/get-pip.py \
