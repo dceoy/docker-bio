@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD annovar.latest.tar.gz /usr/local/src/
 
 RUN set -e \

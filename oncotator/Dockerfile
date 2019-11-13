@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 
-ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
+ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
