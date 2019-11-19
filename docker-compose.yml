@@ -103,6 +103,10 @@ services:
     build:
       context: macs2
     image: dceoy/macs2:latest
+  manta:
+    build:
+      context: manta
+    image: dceoy/manta:latest
   msisensor:
     build:
       context: msisensor

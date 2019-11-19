@@ -27,6 +27,7 @@ Docker images
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
+  - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [msisensor](https://hub.docker.com/r/dceoy/msisensor/)
   - [oncotator](https://hub.docker.com/r/dceoy/oncotator)
   - [picard](https://hub.docker.com/r/dceoy/picard/)
@@ -111,6 +112,8 @@ References
   - macs2
     - [X. Shirley Liu Lab - MACS](http://liulab.dfci.harvard.edu/MACS/)
     - [GitHub - taoliu/MACS](https://github.com/taoliu/MACS)
+  - manta
+    - [GitHub - Illumina/manta](https://github.com/Illumina/manta)
   - msisensor
     - [GitHub - ding-lab/msisensor](https://github.com/ding-lab/msisensor)
   - oncotator
