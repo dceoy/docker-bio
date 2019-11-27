@@ -15,7 +15,8 @@ RUN set -e \
 
 RUN set -e \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest infphilo/hisat2 \
+      && print-github-tags --latest infphilo/hisat2 \
+        | tr -d v \
         | xargs -i curl -S \
           ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/downloads/hisat2-{}-Linux_x86_64.zip \
           -o /tmp/hisat2.zip \

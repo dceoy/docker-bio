@@ -17,7 +17,7 @@ RUN set -e \
       && mkdir /usr/local/src/abra \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest mozack/abra \
-        | cut -d v -f 2 \
+        | tr -d v \
         | xargs -i curl -SL \
           https://github.com/mozack/abra/releases/download/v{}/abra-{}-SNAPSHOT-jar-with-dependencies.jar \
           -o /usr/local/src/abra/abra.jar

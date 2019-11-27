@@ -16,7 +16,7 @@ RUN set -e \
 RUN set -e \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest cole-trapnell-lab/cufflinks \
-        | cut -d v -f 2 \
+        | tr -d v \
         | xargs -i curl -SL \
           http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-{}.Linux_x86_64.tar.gz \
           -o /tmp/cufflinks.tar.gz \

@@ -10,7 +10,7 @@ RUN set -e \
 RUN set -e \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest Illumina/manta \
-        | cut -d v -f 2 \
+        | tr -d v \
         | xargs -i curl -SL \
           https://github.com/Illumina/manta/releases/download/v{}/manta-{}.centos6_x86_64.tar.bz2 \
           -o /tmp/manta.tar.bz2 \
