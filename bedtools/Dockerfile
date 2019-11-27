@@ -8,7 +8,8 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl g++ gcc libz-dev make python \
+        ca-certificates curl g++ gcc libbz2-dev libz-dev liblzma-dev make \
+        python \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
