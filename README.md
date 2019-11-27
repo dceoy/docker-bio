@@ -29,9 +29,9 @@ Docker images
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [msisensor](https://hub.docker.com/r/dceoy/msisensor/)
-  - [oncotator](https://hub.docker.com/r/dceoy/oncotator)
+  - ~oncotator~
   - [picard](https://hub.docker.com/r/dceoy/picard/)
-  - ~~pindel~~
+  - ~pindel~
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
