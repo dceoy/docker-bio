@@ -8,7 +8,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl npm \
+        ca-certificates curl git npm \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -26,7 +26,7 @@ RUN set -e \
       && sed -ie 's/http-server -a localhost dist/http-server -a 0.0.0.0 dist/' package.json \
       && rm package.jsone \
       && npm install \
-      && $(npm bin)/grunt
+      && npm run build
 
 EXPOSE 8080
 
