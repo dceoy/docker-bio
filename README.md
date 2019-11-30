@@ -28,6 +28,7 @@ Docker images
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [manta](https://hub.docker.com/r/dceoy/manta/)
+  - [miso](https://hub.docker.com/r/dceoy/miso/)
   - [msisensor](https://hub.docker.com/r/dceoy/msisensor/)
   - ~oncotator~
   - [picard](https://hub.docker.com/r/dceoy/picard/)
@@ -114,6 +115,10 @@ References
   - [GitHub - taoliu/MACS](https://github.com/taoliu/MACS)
 - manta
   - [GitHub - Illumina/manta](https://github.com/Illumina/manta)
+- miso
+  - [miso.readthedocs.io - MISO](https://miso.readthedocs.io/en/fastmiso/)
+  - [hollywood.mit.edu - MISO](http://hollywood.mit.edu/burgelab/miso/index.html)
+  - [GitHub - yarden/MISO](https://github.com/yarden/MISO)
 - msisensor
   - [GitHub - ding-lab/msisensor](https://github.com/ding-lab/msisensor)
 - oncotator

@@ -107,6 +107,10 @@ services:
     build:
       context: manta
     image: dceoy/manta:latest
+  miso:
+    build:
+      context: miso
+    image: dceoy/miso:latest
   msisensor:
     build:
       context: msisensor
