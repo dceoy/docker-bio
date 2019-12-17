@@ -40,6 +40,7 @@ Docker images
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
   - [svtools](https://hub.docker.com/r/dceoy/svtools/)
+  - [trim_galore](https://hub.docker.com/r/dceoy/trim_galore/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
 - Images requiring a user build:
@@ -145,6 +146,9 @@ References
   - [GitHub - Illumina/strelka](https://github.com/Illumina/strelka)
 - svtools
   - [GitHub - hall-lab/svtools](https://github.com/hall-lab/svtools)
+- trim_galore
+  - [GitHub - FelixKrueger/TrimGalore](https://github.com/FelixKrueger/TrimGalore)
+  - [Babraham Bioinformatics - Trim Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)
 - trimmomatic
   - [usadellab.org - Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
   - [GitHub - timflutre/trimmomatic](https://github.com/timflutre/trimmomatic)

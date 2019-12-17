@@ -155,6 +155,10 @@ services:
     build:
       context: svtools
     image: dceoy/svtools:latest
+  trim_galore:
+    build:
+      context: trim_galore
+    image: dceoy/trim_galore:latest
   trimmomatic:
     build:
       context: trimmomatic
