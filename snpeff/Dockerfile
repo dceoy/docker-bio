@@ -3,6 +3,9 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN set -e \
+      && ln -sf /bin/bash /bin/sh
+
+RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
@@ -11,7 +14,7 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -e \
+RUN set -eo pipefail \
       && curl -SL \
         http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
         -o /tmp/snpeff.zip \

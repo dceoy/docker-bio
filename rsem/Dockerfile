@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
+      && ln -sf /bin/bash /bin/sh
+
+RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
@@ -13,7 +16,7 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -e \
+RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest --tar BenLangmead/bowtie2 \
         | xargs -i curl -SL {} -o /tmp/bowtie2.tar.gz \
@@ -23,7 +26,7 @@ RUN set -e \
       && make \
       && make install
 
-RUN set -e \
+RUN set -eo pipefail \
       && print-github-tags --release --latest --tar alexdobin/STAR \
         | xargs -i curl -SL {} -o /tmp/star.tar.gz \
       && tar xvf /tmp/star.tar.gz -C /usr/local/src --remove-files \
@@ -32,7 +35,7 @@ RUN set -e \
       && make STAR \
       && ln -s /usr/local/src/STAR/source/STAR /usr/local/bin/STAR
 
-RUN set -e \
+RUN set -eo pipefail \
       && print-github-tags --release --latest --tar deweylab/RSEM \
         | xargs -i curl -SL {} -o /tmp/rsem.tar.gz \
       && tar xvf /tmp/rsem.tar.gz -C /usr/local/src --remove-files \

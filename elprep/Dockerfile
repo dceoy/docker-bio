@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
+      && ln -sf /bin/bash /bin/sh
+
+RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
@@ -14,7 +17,7 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -e \
+RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest --tar samtools/htslib \
         | xargs -i curl -SL {} -o /tmp/htslib.tar.gz \
@@ -27,7 +30,7 @@ RUN set -e \
       && make \
       && make install
 
-RUN set -e \
+RUN set -eo pipefail \
       && print-github-tags --release --latest --tar samtools/samtools \
         | xargs -i curl -SL {} -o /tmp/samtools.tar.gz \
       && tar xvf /tmp/samtools.tar.gz -C /usr/local/src --remove-files \

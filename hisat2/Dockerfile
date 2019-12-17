@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
+      && ln -sf /bin/bash /bin/sh
+
+RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
@@ -13,11 +16,11 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -e \
+RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest infphilo/hisat2 \
         | tr -d v \
-        | xargs -i curl -S \
+        | xargs -i curl -SL \
           ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/downloads/hisat2-{}-Linux_x86_64.zip \
           -o /tmp/hisat2.zip \
       && unzip -d /usr/local/src /tmp/hisat2.zip \

@@ -7,7 +7,7 @@ RUN set -e \
       && yum clean all \
       && rm -rf /var/cache/yum /tmp/bcl2fastq.rpm
 
-RUN set -e \
+RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest Illumina/manta \
         | tr -d v \

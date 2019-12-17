@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
+      && ln -sf /bin/bash /bin/sh
+
+RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
@@ -16,7 +19,7 @@ RUN set -e \
 RUN set -e \
       && npm install -g npm
 
-RUN set -e \
+RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --latest --tar igvteam/igv-webapp \
         | xargs -i curl -SL {} -o /tmp/igv-webapp.tar.gz \
