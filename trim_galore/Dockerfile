@@ -12,7 +12,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl openjdk-8-jre perl python3.7 python3.7-distutils unzip \
+        ca-certificates curl default-jre perl python3.7 python3.7-distutils unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -24,7 +24,7 @@ RUN set -eo pipefail \
           -o /tmp/fastqc.zip \
       && unzip -d /usr/local/src /tmp/fastqc.zip \
       && chmod +x /usr/local/src/FastQC/fastqc \
-      && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc \
+      && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin \
       && rm -f /tmp/fastqc.zip
 
 RUN set -e \
@@ -37,8 +37,7 @@ RUN set -eo pipefail \
         | xargs -i curl -SL {} -o /tmp/trim_galore.tar.gz \
       && tar xvf /tmp/trim_galore.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/TrimGalore-* /usr/local/src/TrimGalore \
-      && find /usr/local/src/TrimGalore -maxdepth 1 -type f -executable \
-        -exec ln -s {} /usr/local/bin \;
+      && ln -s /usr/local/src/TrimGalore/trim_galore /usr/local/bin
 
 ENV DISPLAY :0.0
 
