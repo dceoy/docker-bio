@@ -12,7 +12,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl default-jre perl python3.7 python3.7-distutils unzip \
+        ca-certificates curl default-jre perl pigz python3.7 python3.7-distutils unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
