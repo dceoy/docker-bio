@@ -74,15 +74,6 @@ services:
     build:
       context: hisat2
     image: dceoy/hisat2:latest
-  igv:
-    build:
-      context: igv
-    image: dceoy/igv:latest
-    network_mode: host
-    environment:
-      DISPLAY: ${DISPLAY}
-    volumes:
-      - ${HOME}/.Xauthority:/root/.Xauthority:ro
   igv-webapp:
     build:
       context: igv-webapp
@@ -115,18 +106,10 @@ services:
     build:
       context: msisensor
     image: dceoy/msisensor:latest
-  oncotator:
-    build:
-      context: oncotator
-    image: dceoy/oncotator:latest
   picard:
     build:
       context: picard
     image: dceoy/picard:latest
-  pindel:
-    build:
-      context: pindel
-    image: dceoy/pindel:latest
   prinseq:
     build:
       context: prinseq
