@@ -12,13 +12,13 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         ca-certificates curl g++ gcc libbz2-dev liblzma-dev libz-dev make \
-        python3.7 \
+        python3.8 \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && ln -s /usr/bin/python3.7 /usr/bin/python \
+      && ln -s /usr/bin/python3.8 /usr/bin/python \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest --tar arq5x/bedtools2 \
         | xargs -i curl -SL {} -o /tmp/bedtools2.tar.gz \

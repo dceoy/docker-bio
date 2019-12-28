@@ -12,7 +12,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl openjdk-8-jre perl pigz python3.7 python3.7-distutils unzip \
+        ca-certificates curl openjdk-8-jre perl pigz python3.8 python3.8-distutils unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -28,7 +28,7 @@ RUN set -eo pipefail \
       && rm -f /tmp/fastqc.zip
 
 RUN set -e \
-      && /usr/bin/python3.7 /tmp/get-pip.py \
+      && /usr/bin/python3.8 /tmp/get-pip.py \
       && pip install -U --no-cache-dir pip cutadapt \
       && rm -f /tmp/get-pip.py
 
