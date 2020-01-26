@@ -7,7 +7,7 @@ Docker images
 -------------
 
 - Images on Docker Hub:
-  - [abra](https://hub.docker.com/r/dceoy/abra/)
+  - [abra2](https://hub.docker.com/r/dceoy/abra2/)
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bedops](https://hub.docker.com/r/dceoy/bedops/)
@@ -53,8 +53,8 @@ Docker images
 References
 ----------
 
-- abra
-  - [GitHub - mozack/abra](https://github.com/mozack/abra)
+- abra2
+  - [GitHub - mozack/abra2](https://github.com/mozack/abra2)
 - annovar
   - [annovar.openbioinformatics.org - ANNOVAR](http://annovar.openbioinformatics.org/)
 - ascat
