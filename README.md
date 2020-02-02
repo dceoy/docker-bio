@@ -15,6 +15,7 @@ Docker images
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
+  - [cnvnator](https://hub.docker.com/r/dceoy/cnvnator/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
   - [delly](https://hub.docker.com/r/dceoy/delly/)
   - [elprep](https://hub.docker.com/r/dceoy/elprep/)
@@ -77,6 +78,8 @@ References
 - bwa
   - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
   - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
+- cnvnator
+  - [GitHub - abyzovlab/cnvnator](https://github.com/abyzovlab/cnvnator)
 - cufflinks
   - [Trapnell Lab - Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)
   - [GitHub - cole-trapnell-lab/cufflinks](https://github.com/cole-trapnell-lab/cufflinks)

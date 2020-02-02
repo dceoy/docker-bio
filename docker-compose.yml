@@ -38,6 +38,10 @@ services:
     build:
       context: bwa
     image: dceoy/bwa:latest
+  cnvnator:
+    build:
+      context: cnvnator
+    image: dceoy/cnvnator:latest
   cufflinks:
     build:
       context: cufflinks
