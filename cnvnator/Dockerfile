@@ -11,30 +11,19 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl g++ gcc libbz2-dev libcurl4-gnutls-dev \
-        liblzma-dev libncurses5-dev libreadline-dev libssl-dev libz-dev make \
-        unzip \
+        autoconf ca-certificates cmake curl g++ gcc libbz2-dev \
+        libcurl4-gnutls-dev libfreetype6 liblzma-dev libncurses5-dev \
+        libreadline-dev libssl-dev libz-dev make unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar samtools/htslib \
-        | xargs -i curl -SL {} -o /tmp/htslib.tar.gz \
-      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/htslib-* /usr/local/src/htslib \
-      && cd /usr/local/src/htslib \
-      && autoheader \
-      && autoconf \
-      && ./configure \
-      && make \
-      && make install
-
-RUN set -eo pipefail \
-      && print-github-tags --release --latest --tar samtools/samtools \
-        | xargs -i curl -SL {} -o /tmp/samtools.tar.gz \
-      && tar xvf /tmp/samtools.tar.gz -C /usr/local/src --remove-files \
+      && print-github-tags --release --latest samtools/samtools \
+        | xargs -i curl -SL -o /tmp/samtools.tar.bz2 \
+          https://github.com/samtools/samtools/releases/download/{}/samtools-{}.tar.bz2 \
+      && tar xvf /tmp/samtools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-* /usr/local/src/samtools \
       && cd /usr/local/src/samtools \
       && autoheader \
@@ -53,6 +42,7 @@ RUN set -eo pipefail \
 ENV ROOTSYS /opt/root
 
 RUN set -eo pipefail \
+      && source /opt/root/bin/thisroot.sh \
       && print-github-tags --release --latest abyzovlab/CNVnator \
         | xargs -i curl -SL -o /tmp/cnvnator.zip \
           https://github.com/abyzovlab/CNVnator/releases/download/{}/CNVnator_{}.zip \
@@ -60,8 +50,6 @@ RUN set -eo pipefail \
       && mv /usr/local/src/CNVnator_* /usr/local/src/cnvnator \
       && cd /usr/local/src/cnvnator/src \
       && ln -s /usr/local/src/samtools . \
-      && find /usr/local/src/htslib/htslib -maxdepth 1 -type f -name '*.h' \
-        -exec ln -s {} . \; \
       && make \
       && find /usr/local/src/cnvnator/src -maxdepth 1 -type f -executable \
         -exec ln -s {} /usr/local/bin \; \
