@@ -50,7 +50,7 @@ RUN set -eo pipefail \
       && mv /usr/local/src/CNVnator_* /usr/local/src/cnvnator \
       && cd /usr/local/src/cnvnator/src \
       && ln -s /usr/local/src/samtools . \
-      && make \
+      && make LIBS='-lcrypto' \
       && find /usr/local/src/cnvnator/src -maxdepth 1 -type f -executable \
         -exec ln -s {} /usr/local/bin \; \
       && rm -f /tmp/cnvnator.zip
