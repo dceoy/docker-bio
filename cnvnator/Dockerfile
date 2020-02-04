@@ -3,6 +3,7 @@ FROM ubuntu:bionic
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+ADD https://bitbucket.org/MDukhan/yeppp/downloads/yeppp-1.0.0.tar.bz2 /tmp/yeppp-1.0.0.tar.bz2
 
 RUN set -e \
       && ln -sf /bin/bash /bin/sh
@@ -42,17 +43,22 @@ RUN set -eo pipefail \
 ENV ROOTSYS /opt/root
 
 RUN set -eo pipefail \
-      && source /opt/root/bin/thisroot.sh \
       && print-github-tags --release --latest abyzovlab/CNVnator \
         | xargs -i curl -SL -o /tmp/cnvnator.zip \
           https://github.com/abyzovlab/CNVnator/releases/download/{}/CNVnator_{}.zip \
       && unzip -d /usr/local/src /tmp/cnvnator.zip \
       && mv /usr/local/src/CNVnator_* /usr/local/src/cnvnator \
+      && tar xvf /tmp/yeppp-1.0.0.tar.bz2 -C /usr/local/src/cnvnator --remove-files \
       && cd /usr/local/src/cnvnator/src \
       && ln -s /usr/local/src/samtools . \
+      && source /opt/root/bin/thisroot.sh \
       && make LIBS='-lcrypto' \
+        YEPPPLIBDIR='/usr/local/src/cnvnator/yeppp-1.0.0/binaries/linux/x86_64' \
+        YEPPPINCLUDEDIR='/usr/local/src/cnvnator/yeppp-1.0.0/library/headers' \
       && find /usr/local/src/cnvnator/src -maxdepth 1 -type f -executable \
         -exec ln -s {} /usr/local/bin \; \
       && rm -f /tmp/cnvnator.zip
+
+ENV LD_LIBRARY_PATH ${ROOTSYS}/lib:/usr/local/src/cnvnator/yeppp-1.0.0/binaries/linux/x86_64:${LD_LIBRARY_PATH}
 
 ENTRYPOINT ["/usr/local/bin/cnvnator"]
