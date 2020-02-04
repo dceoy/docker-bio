@@ -3,6 +3,7 @@ FROM ubuntu:bionic
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
 ADD https://bitbucket.org/MDukhan/yeppp/downloads/yeppp-1.0.0.tar.bz2 /tmp/yeppp-1.0.0.tar.bz2
 
 RUN set -e \
@@ -14,7 +15,8 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf ca-certificates cmake curl g++ gcc libbz2-dev \
         libcurl4-gnutls-dev libfreetype6 liblzma-dev libncurses5-dev \
-        libreadline-dev libssl-dev libz-dev make unzip \
+        libpython2.7 libreadline-dev libssl-dev libz-dev make python-dev \
+        python-tk unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -33,6 +35,11 @@ RUN set -eo pipefail \
       && make \
       && make install
 
+RUN set -e \
+      && /usr/bin/python /tmp/get-pip.py \
+      && pip install -U --no-cache-dir matplotlib numpy pip \
+      && rm -f /tmp/get-pip.py
+
 RUN set -eo pipefail \
       && print-github-tags --release --latest root-project/root \
         | sed -e 's/-/\./g' \
@@ -41,6 +48,7 @@ RUN set -eo pipefail \
       && tar xvf /tmp/root.tar.gz -C /opt --remove-files
 
 ENV ROOTSYS /opt/root
+ENV PYTHONPATH ${ROOTSYS}/lib:$PYTHONPATH
 
 RUN set -eo pipefail \
       && print-github-tags --release --latest abyzovlab/CNVnator \
