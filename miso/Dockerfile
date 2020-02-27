@@ -20,21 +20,11 @@ RUN set -e \
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar samtools/htslib \
-        | xargs -i curl -SL {} -o /tmp/htslib.tar.gz \
-      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/htslib-* /usr/local/src/htslib \
-      && cd /usr/local/src/htslib \
-      && autoheader \
-      && autoconf \
-      && ./configure \
-      && make \
-      && make install
-
-RUN set -eo pipefail \
-      && print-github-tags --release --latest --tar samtools/samtools \
-        | xargs -i curl -SL {} -o /tmp/samtools.tar.gz \
-      && tar xvf /tmp/samtools.tar.gz -C /usr/local/src --remove-files \
+      && print-github-tags --release --latest samtools/samtools \
+        | xargs -i curl -SL \
+          https://github.com/samtools/samtools/releases/download/{}/samtools-{}.tar.bz2 \
+          -o /tmp/samtools.tar.bz2 \
+      && tar xvf /tmp/samtools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-* /usr/local/src/samtools \
       && cd /usr/local/src/samtools \
       && autoheader \
