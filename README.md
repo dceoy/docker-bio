@@ -30,6 +30,7 @@ Docker images
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [last](https://hub.docker.com/r/dceoy/last/)
+  - [lumpy](https://hub.docker.com/r/dceoy/lumpy/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [miso](https://hub.docker.com/r/dceoy/miso/)
@@ -124,6 +125,8 @@ References
   - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
 - last
   - [last.cbrc.jp - LAST](http://last.cbrc.jp/)
+- lumpy
+  - [GitHub - arq5x/lumpy-sv](https://github.com/arq5x/lumpy-sv)
 - macs2
   - [X. Shirley Liu Lab - MACS](http://liulab.dfci.harvard.edu/MACS/)
   - [GitHub - taoliu/MACS](https://github.com/taoliu/MACS)

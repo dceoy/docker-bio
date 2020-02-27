@@ -20,7 +20,9 @@ RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest lh3/bwa \
         | tr -d v \
-        | xargs -i curl -SL https://github.com/lh3/bwa/releases/download/v{}/bwa-{}.tar.bz2 -o /tmp/bwa.tar.gz \
+        | xargs -i curl -SL \
+          https://github.com/lh3/bwa/releases/download/v{}/bwa-{}.tar.bz2 \
+          -o /tmp/bwa.tar.gz \
       && tar xvf /tmp/bwa.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/bwa-* /usr/local/src/bwa \
       && cd /usr/local/src/bwa \

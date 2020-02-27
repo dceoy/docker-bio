@@ -106,6 +106,10 @@ services:
     build:
       context: last
     image: dceoy/last:latest
+  lumpy:
+    build:
+      context: lumpy
+    image: dceoy/lumpy:latest
   macs2:
     build:
       context: macs2
