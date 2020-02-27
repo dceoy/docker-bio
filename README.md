@@ -12,6 +12,7 @@ Docker images
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bedops](https://hub.docker.com/r/dceoy/bedops/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
+  - [bioconda](https://hub.docker.com/r/dceoy/bioconda/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
@@ -74,6 +75,8 @@ References
 - bedtools
   - [bedtools.readthedocs.io - bedtools2](http://bedtools.readthedocs.io/en/latest/index.html)
   - [GitHub - arq5x/bedtools2](https://github.com/arq5x/bedtools2)
+- bioconda
+  - [bioconda.github.io - Bioconda](https://bioconda.github.io/)
 - bowtie2
   - [bowtie-bio.sourceforge.net - Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
   - [GitHub - BenLangmead/bowtie2](https://github.com/BenLangmead/bowtie2)

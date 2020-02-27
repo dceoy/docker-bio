@@ -30,6 +30,10 @@ services:
     build:
       context: bedtools
     image: dceoy/bedtools:latest
+  bioconda:
+    build:
+      context: bioconda
+    image: dceoy/bioconda:latest
   bowtie2:
     build:
       context: bowtie2
