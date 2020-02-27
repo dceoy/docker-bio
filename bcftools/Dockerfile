@@ -19,21 +19,11 @@ RUN set -e \
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar samtools/htslib \
-        | xargs -i curl -SL {} -o /tmp/htslib.tar.gz \
-      && tar xvf /tmp/htslib.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/htslib-* /usr/local/src/htslib \
-      && cd /usr/local/src/htslib \
-      && autoheader \
-      && autoconf \
-      && ./configure \
-      && make \
-      && make install
-
-RUN set -eo pipefail \
-      && print-github-tags --release --latest --tar samtools/bcftools \
-        | xargs -i curl -SL {} -o /tmp/bcftools.tar.gz \
-      && tar xvf /tmp/bcftools.tar.gz -C /usr/local/src --remove-files \
+      && print-github-tags --release --latest samtools/bcftools \
+        | xargs -i curl -SL \
+          https://github.com/samtools/bcftools/releases/download/{}/bcftools-{}.tar.bz2 \
+          -o /tmp/bcftools.tar.bz2 \
+      && tar xvf /tmp/bcftools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/bcftools-* /usr/local/src/bcftools \
       && cd /usr/local/src/bcftools \
       && autoheader \
