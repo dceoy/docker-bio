@@ -23,6 +23,7 @@ Docker images
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
+  - [gencore](https://hub.docker.com/r/dceoy/gencore/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - ~igv~
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
@@ -104,6 +105,8 @@ References
 - gatk
   - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
   - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
+- gencore
+  - [GitHub - OpenGene/gencore](https://github.com/OpenGene/gencore)
 - hisat2
   - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
   - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)

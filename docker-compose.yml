@@ -78,6 +78,10 @@ services:
     build:
       context: gatk
     image: dceoy/gatk:latest
+  gencore:
+    build:
+      context: gencore
+    image: dceoy/gencore:latest
   hisat2:
     build:
       context: hisat2
