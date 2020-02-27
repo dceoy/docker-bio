@@ -70,6 +70,10 @@ services:
     build:
       context: fastqc
     image: dceoy/fastqc:latest
+  fgbio:
+    build:
+      context: fgbio
+    image: dceoy/fgbio:latest
   gatk:
     build:
       context: gatk

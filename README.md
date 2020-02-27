@@ -21,6 +21,7 @@ Docker images
   - [elprep](https://hub.docker.com/r/dceoy/elprep/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
+  - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - ~igv~
@@ -97,6 +98,9 @@ References
   - [NCBI - SRA Toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/)
 - fastqc
   - [Babraham Bioinformatics - FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- fgbio
+  - [GitHub - fulcrumgenomics/fgbio](https://github.com/fulcrumgenomics/fgbio)
+  - [fulcrumgenomics.github.io - fgbio](http://fulcrumgenomics.github.io/fgbio/)
 - gatk
   - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
   - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
