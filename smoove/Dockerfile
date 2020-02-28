@@ -91,7 +91,7 @@ RUN set -eo pipefail \
       && tar xvf /tmp/root.tar.gz -C /opt --remove-files
 
 ENV ROOTSYS /opt/root
-ENV PYTHONPATH ${ROOTSYS}/lib:$PYTHONPATH
+ENV PYTHONPATH ${ROOTSYS}/lib:${PYTHONPATH}
 
 RUN set -eo pipefail \
       && print-github-tags --release --latest abyzovlab/CNVnator \

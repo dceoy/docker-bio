@@ -11,21 +11,22 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl bzip2 gcc git g++ make python zlib1g-dev \
+        ca-certificates curl python \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar Illumina/strelka \
-        | xargs -i curl -SL {} -o /tmp/strelka.tar.gz \
-      && tar xvf /tmp/strelka.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/strelka-* /usr/local/src/strelka \
-      && cd /usr/local/src/strelka \
-      && mkdir /usr/local/src/strelka/build \
-      && cd /usr/local/src/strelka/build \
-      && ../configure \
-      && make install
+      && print-github-tags --release --latest Illumina/strelka \
+        | tr -d v \
+        | xargs -i curl -SL \
+          https://github.com/Illumina/strelka/releases/download/v{}/strelka-{}.centos6_x86_64.tar.bz2 \
+          -o /tmp/strelka.tar.bz2 \
+      && tar xvf /tmp/strelka.tar.bz2 -C /opt --remove-files \
+      && mv /opt/strelka-* /opt/strelka
 
-ENTRYPOINT ["/usr/local/bin/configureStrelkaGermlineWorkflow.py"]
+ENV PATH /opt/strelka/bin:${PATH}
+ENV PYTHONPATH /opt/strelka/lib/python:${PYTHONPATH}
+
+ENTRYPOINT ["/opt/strelka/bin/configureStrelkaGermlineWorkflow.py"]
