@@ -17,11 +17,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && mkdir /usr/local/src/picard \
+      && mkdir /opt/picard \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest broadinstitute/picard \
         | xargs -i curl -SL \
           https://github.com/broadinstitute/picard/releases/download/{}/picard.jar \
-          -o /usr/local/src/picard/picard.jar
+          -o /opt/picard/picard.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/picard/picard.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/picard/picard.jar"]

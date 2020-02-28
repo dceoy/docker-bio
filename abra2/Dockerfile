@@ -28,11 +28,11 @@ RUN set -eo pipefail \
         -exec ln -s {} /usr/local/bin \;
 
 RUN set -eo pipefail \
-      && mkdir /usr/local/src/abra2 \
+      && mkdir /opt/abra2 \
       && print-github-tags --latest mozack/abra2 \
         | tr -d v \
         | xargs -i curl -SL \
           https://github.com/mozack/abra2/releases/download/v{}/abra2-{}.jar \
-          -o /usr/local/src/abra2/abra2.jar
+          -o /opt/abra2/abra2.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/abra2/abra2.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/abra2/abra2.jar"]

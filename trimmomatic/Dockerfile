@@ -17,9 +17,9 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && tar xvf /tmp/trimmomatic.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/trimmomatic-* /usr/local/src/trimmomatic \
-      && cd /usr/local/src/trimmomatic \
+      && tar xvf /tmp/trimmomatic.tar.gz -C /opt --remove-files \
+      && mv /opt/trimmomatic-* /opt/trimmomatic \
+      && cd /opt/trimmomatic \
       && make
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/trimmomatic/classes/trimmomatic.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/trimmomatic/classes/trimmomatic.jar"]

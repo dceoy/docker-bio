@@ -18,7 +18,7 @@ RUN set -eo pipefail \
       && curl -SL \
         http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
         -o /tmp/snpeff.zip \
-      && unzip -d /usr/local/src /tmp/snpeff.zip \
+      && unzip -d /opt /tmp/snpeff.zip \
       && rm -f /tmp/snpeff.zip
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/snpEff/snpEff.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/snpEff/snpEff.jar"]

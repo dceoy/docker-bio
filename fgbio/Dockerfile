@@ -17,11 +17,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && mkdir /usr/local/src/fgbio \
+      && mkdir /opt/fgbio \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest fulcrumgenomics/fgbio \
         | xargs -i curl -SL \
           https://github.com/fulcrumgenomics/fgbio/releases/download/{}/fgbio-{}.jar \
-          -o /usr/local/src/fgbio/fgbio.jar
+          -o /opt/fgbio/fgbio.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/fgbio/fgbio.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/fgbio/fgbio.jar"]

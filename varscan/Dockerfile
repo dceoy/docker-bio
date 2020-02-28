@@ -17,11 +17,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && mkdir /usr/local/src/varscan \
+      && mkdir /opt/varscan \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest --tar dkoboldt/varscan \
         | xargs -i curl -SL \
           https://github.com/dkoboldt/varscan/releases/download/{}/VarScan.v{}.jar \
-          -o /usr/local/src/varscan/VarScan.jar
+          -o /opt/varscan/VarScan.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/src/varscan/VarScan.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/varscan/VarScan.jar"]
