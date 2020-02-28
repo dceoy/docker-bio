@@ -25,6 +25,7 @@ Docker images
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [gencore](https://hub.docker.com/r/dceoy/gencore/)
+  - [gridss](https://hub.docker.com/r/dceoy/gridss/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
   - ~igv~
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
@@ -114,6 +115,8 @@ References
   - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
 - gencore
   - [GitHub - OpenGene/gencore](https://github.com/OpenGene/gencore)
+- gridss
+  - [GitHub - PapenfussLab/gridss](https://github.com/PapenfussLab/gridss)
 - hisat2
   - [Johns Hopkins University - HISAT2](http://ccb.jhu.edu/software/hisat2/)
   - [GitHub - infphilo/hisat2](https://github.com/infphilo/hisat2)

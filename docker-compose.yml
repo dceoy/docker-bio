@@ -90,6 +90,10 @@ services:
     build:
       context: gencore
     image: dceoy/gencore:latest
+  gridss:
+    build:
+      context: gridss
+    image: dceoy/gridss:latest
   hisat2:
     build:
       context: hisat2
