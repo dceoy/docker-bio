@@ -46,6 +46,10 @@ services:
     build:
       context: canvas
     image: dceoy/canvas:latest
+  cn.mops:
+    build:
+      context: cn.mops
+    image: dceoy/cn.mops:latest
   cnvnator:
     build:
       context: cnvnator

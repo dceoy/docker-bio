@@ -88,6 +88,8 @@ References
   - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
 - canvas
   - [GitHub - Illumina/canvas](https://github.com/Illumina/canvas)
+- cn.mops
+  - [Bioconductor - cn.mops](https://bioconductor.org/packages/release/bioc/html/cn.mops.html)
 - cnvnator
   - [GitHub - abyzovlab/cnvnator](https://github.com/abyzovlab/cnvnator)
 - cufflinks
