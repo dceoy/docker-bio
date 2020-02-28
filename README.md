@@ -85,6 +85,8 @@ References
 - bwa
   - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
   - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
+- canvas
+  - [GitHub - Illumina/canvas](https://github.com/Illumina/canvas)
 - cnvnator
   - [GitHub - abyzovlab/cnvnator](https://github.com/abyzovlab/cnvnator)
 - cufflinks
