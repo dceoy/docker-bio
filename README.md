@@ -41,6 +41,7 @@ Docker images
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
+  - [smoove](https://hub.docker.com/r/dceoy/smoove/)
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
@@ -154,6 +155,8 @@ References
 - samtools
   - [samtools.sourceforge.net - SAMtools](http://samtools.sourceforge.net/)
   - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
+- smoove
+  - [GitHub - brentp/smoove](https://github.com/brentp/smoove)
 - snpeff
   - [snpeff.sourceforge.net - SnpEff](http://snpeff.sourceforge.net/index.html)
 - star

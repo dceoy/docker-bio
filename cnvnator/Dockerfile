@@ -43,8 +43,9 @@ RUN set -e \
 RUN set -eo pipefail \
       && print-github-tags --release --latest root-project/root \
         | sed -e 's/-/\./g' \
-        | xargs -i curl -SL -o /tmp/root.tar.gz \
+        | xargs -i curl -SL \
           https://root.cern/download/root_{}.Linux-ubuntu18-x86_64-gcc7.4.tar.gz \
+          -o /tmp/root.tar.gz \
       && tar xvf /tmp/root.tar.gz -C /opt --remove-files
 
 ENV ROOTSYS /opt/root
@@ -52,8 +53,9 @@ ENV PYTHONPATH ${ROOTSYS}/lib:$PYTHONPATH
 
 RUN set -eo pipefail \
       && print-github-tags --release --latest abyzovlab/CNVnator \
-        | xargs -i curl -SL -o /tmp/cnvnator.zip \
+        | xargs -i curl -SL \
           https://github.com/abyzovlab/CNVnator/releases/download/{}/CNVnator_{}.zip \
+          -o /tmp/cnvnator.zip \
       && unzip -d /usr/local/src /tmp/cnvnator.zip \
       && mv /usr/local/src/CNVnator_* /usr/local/src/cnvnator \
       && tar xvf /tmp/yeppp-1.0.0.tar.bz2 -C /usr/local/src/cnvnator --remove-files \

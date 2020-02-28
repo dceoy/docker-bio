@@ -142,6 +142,10 @@ services:
     build:
       context: samtools
     image: dceoy/samtools:latest
+  smoove:
+    build:
+      context: smoove
+    image: dceoy/smoove:latest
   snpeff:
     build:
       context: snpeff
