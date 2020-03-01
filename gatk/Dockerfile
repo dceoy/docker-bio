@@ -10,6 +10,13 @@ RUN set -e \
 
 RUN set -e \
       && apt-get -y update \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+        apt-transport-https apt-utils ca-certificates gnupg \
+      && echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" \
+        > /etc/apt/sources.list.d/r.list \
+      && apt-key adv --keyserver keyserver.ubuntu.com \
+        --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
+      && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         bzip2 ca-certificates curl git openjdk-8-jre g++ gcc libc6-dev make \
