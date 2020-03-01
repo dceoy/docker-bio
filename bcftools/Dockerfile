@@ -13,6 +13,7 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev \
         libgsl-dev libperl-dev liblzma-dev libssl-dev libz-dev make \
+        pkg-config \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -25,7 +26,13 @@ RUN set -eo pipefail \
           -o /tmp/bcftools.tar.bz2 \
       && tar xvf /tmp/bcftools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/bcftools-* /usr/local/src/bcftools \
-      && cd /usr/local/src/bcftools \
+      && cd /usr/local/src/bcftools/htslib-* \
+      && autoheader \
+      && autoconf \
+      && ./configure \
+      && make \
+      && make install \
+      && cd .. \
       && autoheader \
       && autoconf \
       && ./configure --enable-libgsl --enable-perl-filters \
