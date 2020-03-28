@@ -20,7 +20,7 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         bzip2 ca-certificates curl git openjdk-8-jre g++ gcc libc6-dev make \
-        python r-base unzip \
+        r-base unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
