@@ -39,4 +39,6 @@ RUN set -eo pipefail \
           -o /usr/local/bin/delly \
       && chmod +x /usr/local/bin/delly
 
+ENV BCFTOOLS_PLUGINS /usr/local/src/bcftools/plugins
+
 ENTRYPOINT ["/usr/local/bin/delly"]

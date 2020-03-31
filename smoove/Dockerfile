@@ -90,6 +90,7 @@ RUN set -eo pipefail \
           -o /tmp/root.tar.gz \
       && tar xvf /tmp/root.tar.gz -C /opt --remove-files
 
+ENV BCFTOOLS_PLUGINS /usr/local/src/bcftools/plugins
 ENV ROOTSYS /opt/root
 ENV PYTHONPATH ${ROOTSYS}/lib:${PYTHONPATH}
 

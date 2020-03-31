@@ -39,4 +39,6 @@ RUN set -eo pipefail \
       && make \
       && make install
 
+ENV BCFTOOLS_PLUGINS /usr/local/src/bcftools/plugins
+
 ENTRYPOINT ["/usr/local/bin/bcftools"]
