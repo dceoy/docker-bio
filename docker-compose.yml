@@ -114,6 +114,10 @@ services:
     image: dceoy/jbrowse:latest
     ports:
       - 80:80
+  kallisto:
+    build:
+      context: kallisto
+    image: dceoy/kallisto:latest
   last:
     build:
       context: last

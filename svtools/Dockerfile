@@ -11,7 +11,7 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && pip install -U --no-cache-dir pip numpy \
+      && pip install -U --no-cache-dir pip statsmodels \
       && pip install -U --no-cache-dir svtools
 
 ENTRYPOINT ["/usr/local/bin/svtools"]

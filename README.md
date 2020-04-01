@@ -30,6 +30,7 @@ Docker images
   - ~igv~
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
+  - [kallisto](https://hub.docker.com/r/dceoy/kallisto/)
   - [last](https://hub.docker.com/r/dceoy/last/)
   - [lumpy](https://hub.docker.com/r/dceoy/lumpy/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
@@ -131,6 +132,9 @@ References
 - jbrowse
   - [jbrowse.org - The JBrowse Genome Browser](http://jbrowse.org/)
   - [GitHub - GMOD/jbrowse](https://github.com/GMOD/jbrowse)
+- kallisto
+  - [pachterlab.github.io - kallisto](https://pachterlab.github.io/kallisto/)
+  - [GitHub - pachterlab/kallisto](https://github.com/pachterlab/kallisto)
 - last
   - [last.cbrc.jp - LAST](http://last.cbrc.jp/)
 - lumpy
