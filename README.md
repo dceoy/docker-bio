@@ -51,6 +51,7 @@ Docker images
   - [trim_galore](https://hub.docker.com/r/dceoy/trim_galore/)
   - [trimmomatic](https://hub.docker.com/r/dceoy/trimmomatic/)
   - [varscan](https://hub.docker.com/r/dceoy/varscan/)
+  - [vep](https://hub.docker.com/r/dceoy/vep/)
 - Images requiring a user build:
   - annovar
   - bcl2fastq
@@ -186,6 +187,9 @@ References
   - [massgenomics.org - VarScan](http://massgenomics.org/varscan)
   - [dkoboldt.github.io - VarScan](http://dkoboldt.github.io/varscan/)
   - [GitHub - dkoboldt/varscan](https://github.com/dkoboldt/varscan)
+- vep
+  - [www.ensembl.org - Ensembl Variant Effect Predictor (VEP)](https://www.ensembl.org/vep)
+  - [GitHub - Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep)
 
 Dependencies
 ------------

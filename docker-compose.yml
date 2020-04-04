@@ -190,3 +190,7 @@ services:
     build:
       context: varscan
     image: dceoy/varscan:latest
+  vep:
+    build:
+      context: vep
+    image: dceoy/vep:latest
