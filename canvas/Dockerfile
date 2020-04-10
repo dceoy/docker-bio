@@ -11,14 +11,11 @@ RUN set -e \
 RUN set -e \
       && apt-get -y update \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        apt-transport-https ca-certificates curl software-properties-common
-
-RUN set -e \
+        apt-transport-https ca-certificates curl software-properties-common \
       && sed -ne 's/^DISTRIB_RELEASE=\(.*\)$/\1/p' /etc/lsb-release \
         | xargs -i curl -SLO \
           https://packages.microsoft.com/config/ubuntu/{}/packages-microsoft-prod.deb \
-      && dpkg -i packages-microsoft-prod.deb \
-      && dpkg -i /tmp/libpng12-0.deb \
+      && apt-get -y install ./packages-microsoft-prod.deb /tmp/libpng12-0.deb \
       && rm -f packages-microsoft-prod.deb /tmp/libpng12-0.deb
 
 RUN set -e \
