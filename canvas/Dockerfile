@@ -38,8 +38,14 @@ RUN set -eo pipefail \
           -o /tmp/canvas.tar.gz \
       && tar xvf /tmp/canvas.tar.gz -C /opt/canvas --remove-files \
       && mv /opt/canvas/Canvas-* /opt/canvas/Canvas \
-      && chmod +x /opt/canvas/Canvas/{Canvas,bedGraphToBigWig,tabix} \
-      && find /opt/canvas/Canvas -maxdepth 1 -type f -executable \
+      && sed -ie '1i#!/usr/bin/env bash' /opt/canvas/Canvas/Canvas \
+      && sed -ie '1i#!/usr/bin/env bash' /opt/canvas/Canvas/Tools/FlagUniqueKmers/FlagUniqueKmers \
+      && sed -ie '1i#!/usr/bin/env bash' /opt/canvas/Canvas/Tools/EvaluateCNV/EvaluateCNV \
+      && chmod +x \
+        /opt/canvas/Canvas/{Canvas,bedGraphToBigWig,tabix} \
+        /opt/canvas/Canvas/Tools/FlagUniqueKmers/FlagUniqueKmers \
+        /opt/canvas/Canvas/Tools/EvaluateCNV/EvaluateCNV \
+      && find /opt/canvas/Canvas -type f -executable \
         -exec ln -s {} /opt/canvas/bin \;
 
 ENV PATH /opt/canvas/bin:${PATH}
