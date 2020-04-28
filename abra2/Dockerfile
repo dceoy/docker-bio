@@ -35,4 +35,13 @@ RUN set -eo pipefail \
           https://github.com/mozack/abra2/releases/download/v{}/abra2-{}.jar \
           -o /opt/abra2/abra2.jar
 
+RUN set -e \
+      && mkdir /opt/abra2/bin \
+      && echo '#!/usr/bin/env bash' > /opt/abra2/bin/abra2 \
+      && echo 'java -jar /opt/abra2/abra2.jar ${@}' \
+        >> /opt/abra2/bin/abra2 \
+      && chmod +x /opt/abra2/bin/abra2
+
+ENV PATH /opt/abra2/bin:${PATH}
+
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/abra2/abra2.jar"]

@@ -24,4 +24,13 @@ RUN set -eo pipefail \
           https://github.com/broadinstitute/picard/releases/download/{}/picard.jar \
           -o /opt/picard/picard.jar
 
+RUN set -e \
+      && mkdir /opt/picard/bin \
+      && echo '#!/usr/bin/env bash' > /opt/picard/bin/picard \
+      && echo 'java -jar /opt/picard/picard.jar ${@}' \
+        >> /opt/picard/bin/picard \
+      && chmod +x /opt/picard/bin/picard
+
+ENV PATH /opt/picard/bin:${PATH}
+
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/picard/picard.jar"]

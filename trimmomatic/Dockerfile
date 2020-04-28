@@ -22,4 +22,13 @@ RUN set -e \
       && cd /opt/trimmomatic \
       && make
 
+RUN set -e \
+      && mkdir /opt/trimmomatic/bin \
+      && echo '#!/usr/bin/env bash' > /opt/trimmomatic/bin/trimmomatic \
+      && echo 'java -jar /opt/trimmomatic/classes/trimmomatic.jar ${@}' \
+        >> /opt/trimmomatic/bin/trimmomatic \
+      && chmod +x /opt/trimmomatic/bin/trimmomatic
+
+ENV PATH /opt/trimmomatic/bin:${PATH}
+
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/trimmomatic/classes/trimmomatic.jar"]

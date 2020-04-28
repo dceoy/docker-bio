@@ -14,11 +14,23 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -eo pipefail \
+RUN set -e \
       && curl -SL \
         http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
         -o /tmp/snpeff.zip \
       && unzip -d /opt /tmp/snpeff.zip \
       && rm -f /tmp/snpeff.zip
+
+RUN set -e \
+      && mkdir /opt/snpEff/bin \
+      && echo '#!/usr/bin/env bash' > /opt/snpEff/bin/snpEff \
+      && echo 'java -jar /opt/snpEff/snpEff.jar ${@}' \
+        >> /opt/snpEff/bin/snpEff \
+      && echo '#!/usr/bin/env bash' > /opt/snpEff/bin/SnpSift \
+      && echo 'java -jar /opt/snpEff/SnpSift.jar ${@}' \
+        >> /opt/snpEff/bin/SnpSift \
+      && chmod +x /opt/snpEff/bin/*
+
+ENV PATH /opt/snpEff/bin:${PATH}
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/snpEff/snpEff.jar"]

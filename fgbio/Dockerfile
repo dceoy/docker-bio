@@ -24,4 +24,13 @@ RUN set -eo pipefail \
           https://github.com/fulcrumgenomics/fgbio/releases/download/{}/fgbio-{}.jar \
           -o /opt/fgbio/fgbio.jar
 
+RUN set -e \
+      && mkdir /opt/fgbio/bin \
+      && echo '#!/usr/bin/env bash' > /opt/fgbio/bin/fgbio \
+      && echo 'java -jar /opt/fgbio/fgbio.jar ${@}' \
+        >> /opt/fgbio/bin/fgbio \
+      && chmod +x /opt/fgbio/bin/fgbio
+
+ENV PATH /opt/fgbio/bin:${PATH}
+
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/fgbio/fgbio.jar"]
