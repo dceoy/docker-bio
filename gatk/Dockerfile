@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -19,7 +19,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        bzip2 ca-certificates curl git openjdk-8-jre g++ gcc libc6-dev make \
+        bzip2 ca-certificates curl g++ gcc git libc6-dev make openjdk-8-jre \
         r-base unzip \
       && apt-get -y autoremove \
       && apt-get clean \
