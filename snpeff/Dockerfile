@@ -22,15 +22,18 @@ RUN set -e \
       && rm -f /tmp/snpeff.zip
 
 RUN set -e \
-      && mkdir /opt/snpEff/bin \
+      && mkdir /opt/snpEff/bin /opt/clinEff/bin \
       && echo '#!/usr/bin/env bash' > /opt/snpEff/bin/snpEff \
       && echo 'java -jar /opt/snpEff/snpEff.jar ${@}' \
         >> /opt/snpEff/bin/snpEff \
       && echo '#!/usr/bin/env bash' > /opt/snpEff/bin/SnpSift \
       && echo 'java -jar /opt/snpEff/SnpSift.jar ${@}' \
         >> /opt/snpEff/bin/SnpSift \
-      && chmod +x /opt/snpEff/bin/*
+      && echo '#!/usr/bin/env bash' > /opt/clinEff/bin/ClinEff \
+      && echo 'java -jar /opt/clinEff/ClinEff.jar ${@}' \
+        >> /opt/clinEff/bin/ClinEff \
+      && chmod +x /opt/snpEff/bin/* /opt/clinEff/bin/*
 
-ENV PATH /opt/snpEff/bin:${PATH}
+ENV PATH /opt/snpEff/bin:/opt/clinEff/bin:${PATH}
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/snpEff/snpEff.jar"]
