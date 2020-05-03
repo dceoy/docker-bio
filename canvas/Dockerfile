@@ -6,7 +6,7 @@ ADD http://mirrors.edge.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.5
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
-      && ln -sf /bin/bash /bin/sh
+      && ln -sf bash /bin/sh
 
 RUN set -e \
       && apt-get -y update \

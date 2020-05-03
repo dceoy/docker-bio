@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
 
 RUN set -e \
-      && ln -sf /bin/bash /bin/sh \
+      && ln -sf bash /bin/sh \
       && ln -s python3 /usr/bin/python
 
 RUN set -e \

@@ -6,7 +6,7 @@ ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-githu
 ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
 
 RUN set -e \
-      && ln -sf /bin/bash /bin/sh
+      && ln -sf bash /bin/sh
 
 RUN set -e \
       && apt-get -y update \
