@@ -13,8 +13,9 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        bzip2 ca-certificates curl g++ gcc git libc6-dev make openjdk-8-jre \
-        python3 python3-distutils r-base unzip \
+        bzip2 ca-certificates curl g++ gcc git libc6-dev libfreetype-dev \
+        libpng-dev make openjdk-8-jre pkg-config python3-dev \
+        python3-distutils r-base unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -32,9 +33,16 @@ RUN set -eo pipefail \
       && ln -s /opt/gatk/gatk /opt/gatk/bin/gatk \
       && rm -f /tmp/gatk.zip
 
-RUN set -e \
+RUN set -eo pipefail \
       && /usr/bin/python3 /tmp/get-pip.py \
-      && pip install -U --no-cache-dir pip /opt/gatk/gatkPythonPackageArchive.zip \
+      && grep -ne '- pip:' /opt/gatk/gatkcondaenv.yml \
+        | cut -d : -f 1 \
+        | xargs -i sed -e '1,{}d' /opt/gatk/gatkcondaenv.yml \
+        | cut -d - -f 2- \
+        | sed -e 's/\(gatk.*.zip\)/\/opt\/gatk\/\1/' \
+        | cut -d = -f 1 \
+        | tr -d '\n' \
+        | xargs pip install -U --no-cache-dir pip \
       && rm -f /tmp/get-pip.py
 
 RUN set -eo pipefail \
