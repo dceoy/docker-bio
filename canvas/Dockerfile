@@ -1,8 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD http://mirrors.edge.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb /tmp/libpng12-0.deb
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
@@ -15,15 +14,16 @@ RUN set -e \
       && sed -ne 's/^DISTRIB_RELEASE=\(.*\)$/\1/p' /etc/lsb-release \
         | xargs -i curl -SLO \
           https://packages.microsoft.com/config/ubuntu/{}/packages-microsoft-prod.deb \
-      && apt-get -y install ./packages-microsoft-prod.deb /tmp/libpng12-0.deb \
-      && rm -f packages-microsoft-prod.deb /tmp/libpng12-0.deb
+      && apt-get -y install ./packages-microsoft-prod.deb \
+      && rm -f packages-microsoft-prod.deb
 
 RUN set -e \
       && add-apt-repository universe \
+      && add-apt-repository ppa:linuxuprising/libpng12 \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        dotnet-runtime-2.1 \
+        dotnet-runtime-2.1 libpng12-0 \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
