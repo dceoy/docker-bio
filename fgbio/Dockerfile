@@ -27,10 +27,10 @@ RUN set -eo pipefail \
 RUN set -e \
       && mkdir /opt/fgbio/bin \
       && echo '#!/usr/bin/env bash' > /opt/fgbio/bin/fgbio \
-      && echo 'java -jar /opt/fgbio/fgbio.jar ${@}' \
+      && echo 'java -XX:+AggressiveOpts -XX:+AggressiveHeap -jar /opt/fgbio/fgbio.jar ${@}' \
         >> /opt/fgbio/bin/fgbio \
       && chmod +x /opt/fgbio/bin/fgbio
 
 ENV PATH /opt/fgbio/bin:${PATH}
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/opt/fgbio/fgbio.jar"]
+ENTRYPOINT ["/usr/bin/java", "-XX:+AggressiveOpts", "-XX:+AggressiveHeap", "-jar", "/opt/fgbio/fgbio.jar"]
