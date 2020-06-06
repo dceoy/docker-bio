@@ -142,6 +142,10 @@ services:
     build:
       context: msisensor
     image: dceoy/msisensor:latest
+  nirvana:
+    build:
+      context: nirvana
+    image: dceoy/nirvana:latest
   picard:
     build:
       context: picard

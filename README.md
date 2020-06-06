@@ -37,6 +37,7 @@ Docker images
   - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [miso](https://hub.docker.com/r/dceoy/miso/)
   - [msisensor](https://hub.docker.com/r/dceoy/msisensor/)
+  - [nirvana](https://hub.docker.com/r/dceoy/nirvana/)
   - ~oncotator~
   - [picard](https://hub.docker.com/r/dceoy/picard/)
   - ~pindel~
@@ -151,6 +152,8 @@ References
   - [GitHub - yarden/MISO](https://github.com/yarden/MISO)
 - msisensor
   - [GitHub - ding-lab/msisensor](https://github.com/ding-lab/msisensor)
+- nirvana
+  - [GitHub - Illumina/Nirvana](https://github.com/Illumina/Nirvana)
 - oncotator
   - [Broad Institute - Oncotator](http://portals.broadinstitute.org/oncotator/)
   - [GitHub - broadinstitute/oncotator](https://github.com/broadinstitute/oncotator)
