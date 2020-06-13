@@ -57,8 +57,8 @@ RUN set -eo pipefail \
       && print-github-tags --release --latest broadinstitute/gatk \
         | xargs -i curl -SL \
           https://raw.githubusercontent.com/broadinstitute/gatk/{}/scripts/docker/gatkbase/install_R_packages.R \
-          -o /opt/gatk/install_R_packages.R \
-      && Rscript /opt/gatk/install_R_packages.R
+        | sed -e 's/^\(repos <- \).*$/\1"https:\/\/cloud\.r-project\.org\/"/' \
+        | R --vanilla
 
 ENV PATH /opt/gatk/bin:/opt/conda/envs/gatk/bin:/opt/conda/bin:${PATH}
 
