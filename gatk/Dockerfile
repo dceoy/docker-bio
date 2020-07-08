@@ -53,12 +53,13 @@ RUN set -e \
       && find /opt/conda -follow -type f -name '*.pyc' -delete \
       && rm -rf /root/.cache/pip
 
-RUN set -eo pipefail \
-      && print-github-tags --release --latest broadinstitute/gatk \
-        | xargs -i curl -SL \
-          https://raw.githubusercontent.com/broadinstitute/gatk/{}/scripts/docker/gatkbase/install_R_packages.R \
-        | sed -e 's/^\(repos <- \).*$/\1"https:\/\/cloud\.r-project\.org\/"/' \
-        | R --vanilla
+RUN set -e \
+      && R -e "\
+pkgs <- c('getopt', 'optparse', 'data.table', 'gsalib', 'ggplot2', 'dplyr', 'HMM'); \
+options(repos = 'https://cran.rstudio.com/'); \
+update.packages(ask = FALSE, dependencies = TRUE); \
+install.packages(pkgs = pkgs, dependencies = TRUE, clean = TRUE); \
+sapply(pkgs, library, character.only = TRUE);"
 
 ENV PATH /opt/gatk/bin:/opt/conda/envs/gatk/bin:/opt/conda/bin:${PATH}
 
