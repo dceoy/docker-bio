@@ -42,6 +42,10 @@ services:
     build:
       context: bwa
     image: dceoy/bwa:latest
+  bwa-mem2:
+    build:
+      context: bwa-mem2
+    image: dceoy/bwa-mem2:latest
   canvas:
     build:
       context: canvas

@@ -15,6 +15,7 @@ Docker images
   - [bioconda](https://hub.docker.com/r/dceoy/bioconda/)
   - [bowtie2](https://hub.docker.com/r/dceoy/bowtie2/)
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
+  - [bwa-mem2](https://hub.docker.com/r/dceoy/bwa-mem2/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
   - [cnvnator](https://hub.docker.com/r/dceoy/cnvnator/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
@@ -89,6 +90,8 @@ References
 - bwa
   - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
   - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
+- bwa
+  - [GitHub - bwa-mem2/bwa-mem2](https://github.com/bwa-mem2/bwa-mem2)
 - canvas
   - [GitHub - Illumina/canvas](https://github.com/Illumina/canvas)
 - cn.mops
