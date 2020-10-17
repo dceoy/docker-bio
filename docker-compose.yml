@@ -102,6 +102,10 @@ services:
     build:
       context: gridss
     image: dceoy/gridss:latest
+  goleft:
+    build:
+      context: goleft
+    image: dceoy/goleft:latest
   hisat2:
     build:
       context: hisat2

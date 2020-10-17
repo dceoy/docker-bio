@@ -37,6 +37,6 @@ ENV GOPATH /go
 
 RUN set -e \
       && mkdir /go \
-      && go get github.com/exascience/elprep
+      && go get -u github.com/exascience/elprep
 
 ENTRYPOINT ["/go/bin/elprep"]
