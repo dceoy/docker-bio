@@ -39,6 +39,7 @@ Docker images
   - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [miso](https://hub.docker.com/r/dceoy/miso/)
   - [msisensor](https://hub.docker.com/r/dceoy/msisensor/)
+  - [multiqc](https://hub.docker.com/r/dceoy/multiqc/)
   - [nirvana](https://hub.docker.com/r/dceoy/nirvana/)
   - ~oncotator~
   - [picard](https://hub.docker.com/r/dceoy/picard/)
@@ -159,6 +160,8 @@ References
   - [GitHub - yarden/MISO](https://github.com/yarden/MISO)
 - msisensor
   - [GitHub - ding-lab/msisensor](https://github.com/ding-lab/msisensor)
+- multiqc
+  - [GitHub - ewels/MultiQC](https://github.com/ewels/MultiQC)
 - nirvana
   - [GitHub - Illumina/Nirvana](https://github.com/Illumina/Nirvana)
 - oncotator

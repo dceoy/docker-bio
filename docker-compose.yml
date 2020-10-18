@@ -150,6 +150,10 @@ services:
     build:
       context: msisensor
     image: dceoy/msisensor:latest
+  multiqc:
+    build:
+      context: multiqc
+    image: dceoy/multiqc:latest
   nirvana:
     build:
       context: nirvana
