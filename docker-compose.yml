@@ -166,6 +166,10 @@ services:
     build:
       context: rsem
     image: dceoy/rsem:latest
+  samplot:
+    build:
+      context: samplot
+    image: dceoy/samplot:latest
   samtools:
     build:
       context: samtools
