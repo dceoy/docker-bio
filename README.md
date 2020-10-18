@@ -8,6 +8,7 @@ Docker images
 
 - Images on Docker Hub:
   - [abra2](https://hub.docker.com/r/dceoy/abra2/)
+  - [alfred](https://hub.docker.com/r/dceoy/alfred/)
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bedops](https://hub.docker.com/r/dceoy/bedops/)
@@ -69,6 +70,9 @@ References
 
 - abra2
   - [GitHub - mozack/abra2](https://github.com/mozack/abra2)
+- alfred
+  - [GitHub - tobiasrausch/alfred](https://github.com/tobiasrausch/alfred)
+  - [www.gear-genomics.com - Alfred](https://www.gear-genomics.com/docs/alfred/)
 - annovar
   - [annovar.openbioinformatics.org - ANNOVAR](http://annovar.openbioinformatics.org/)
 - ascat

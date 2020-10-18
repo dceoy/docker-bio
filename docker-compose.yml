@@ -6,6 +6,10 @@ services:
     build:
       context: abra2
     image: dceoy/abra2:latest
+  alfred:
+    build:
+      context: alfred
+    image: dceoy/alfred:latest
   annovar:
     build:
       context: annovar
