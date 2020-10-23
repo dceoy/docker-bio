@@ -27,6 +27,7 @@ Docker images
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [gencore](https://hub.docker.com/r/dceoy/gencore/)
+  - [gffread](https://hub.docker.com/r/dceoy/gffread/)
   - [gridss](https://hub.docker.com/r/dceoy/gridss/)
   - [goleft](https://hub.docker.com/r/dceoy/goleft/)
   - [hisat2](https://hub.docker.com/r/dceoy/hisat2/)
@@ -130,6 +131,8 @@ References
   - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
 - gencore
   - [GitHub - OpenGene/gencore](https://github.com/OpenGene/gencore)
+- gffread
+  - [GitHub - gpertea/gffread](https://github.com/gpertea/gffread)
 - gridss
   - [GitHub - PapenfussLab/gridss](https://github.com/PapenfussLab/gridss)
 - goleft
