@@ -186,6 +186,10 @@ services:
     build:
       context: samtools
     image: dceoy/samtools:latest
+  sigprofiler:
+    build:
+      context: sigprofiler
+    image: dceoy/sigprofiler:latest
   smoove:
     build:
       context: smoove

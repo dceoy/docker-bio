@@ -50,6 +50,7 @@ Docker images
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
   - [samplot](https://hub.docker.com/r/dceoy/samplot/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
+  - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
   - [smoove](https://hub.docker.com/r/dceoy/smoove/)
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
   - [star](https://hub.docker.com/r/dceoy/star/)
@@ -189,6 +190,12 @@ References
 - samtools
   - [samtools.sourceforge.net - SAMtools](http://samtools.sourceforge.net/)
   - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
+- sigprofiler
+  - [COSMIC Mutational Signatures - SigProfiler Tools](https://cancer.sanger.ac.uk/cosmic/signatures/sigprofiler.tt)
+  - [GitHub - AlexandrovLab/SigProfilerMatrixGenerator](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator)
+  - [GitHub - AlexandrovLab/SigProfilerPlotting](https://github.com/AlexandrovLab/SigProfilerPlotting)
+  - [GitHub - AlexandrovLab/SigProfilerExtractor](https://github.com/AlexandrovLab/SigProfilerExtractor)
+  - [GitHub - AlexandrovLab/SigProfilerSimulator](https://github.com/AlexandrovLab/SigProfilerSimulator)
 - smoove
   - [GitHub - brentp/smoove](https://github.com/brentp/smoove)
 - snpeff
