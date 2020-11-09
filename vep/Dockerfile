@@ -70,4 +70,4 @@ RUN set -eo pipefail \
       && find /usr/local/src/ensembl-vep -maxdepth 1 -type f -executable \
         -exec ln -s {} /usr/local/bin \;
 
-ENTRYPOINT ["/usr/bin/vep"]
+ENTRYPOINT ["/usr/local/bin/vep"]
