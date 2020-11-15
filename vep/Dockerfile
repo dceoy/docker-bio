@@ -66,7 +66,7 @@ RUN set -eo pipefail \
       && mv /usr/local/src/ensembl-vep-* /usr/local/src/ensembl-vep \
       && cd /usr/local/src/ensembl-vep \
       && cpanm --installdeps --with-recommends . \
-      && perl INSTALL.pl \
+      && perl INSTALL.pl --AUTO a \
       && find /usr/local/src/ensembl-vep -maxdepth 1 -type f -executable \
         -exec ln -s {} /usr/local/bin \;
 
