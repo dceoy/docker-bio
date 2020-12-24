@@ -158,6 +158,10 @@ services:
     build:
       context: msisensor
     image: dceoy/msisensor:latest
+  msisensor-pro:
+    build:
+      context: msisensor-pro
+    image: dceoy/msisensor-pro:latest
   multiqc:
     build:
       context: multiqc
