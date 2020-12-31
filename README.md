@@ -50,6 +50,7 @@ Docker images
   - ~pindel~
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
+  - [sambamba](https://hub.docker.com/r/dceoy/sambamba/)
   - [samplot](https://hub.docker.com/r/dceoy/samplot/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
@@ -192,6 +193,9 @@ References
 - rsem
   - [deweylab.github.io - RSEM (RNA-Seq by Expectation-Maximization)](https://deweylab.github.io/RSEM/)
   - [GitHub - deweylab/RSEM](https://github.com/deweylab/RSEM)
+- sambamba
+  - [GitHub - biod/sambamba](https://github.com/biod/sambamba)
+  - [lomereiter.github.io - Sambamba](https://lomereiter.github.io/sambamba/)
 - samplot
   - [GitHub - ryanlayer/samplot](https://github.com/ryanlayer/samplot)
 - samtools

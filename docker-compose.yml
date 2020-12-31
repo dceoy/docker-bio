@@ -186,6 +186,10 @@ services:
     build:
       context: rsem
     image: dceoy/rsem:latest
+  sambamba:
+    build:
+      context: sambamba
+    image: dceoy/sambamba:latest
   samplot:
     build:
       context: samplot
