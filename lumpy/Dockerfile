@@ -61,7 +61,7 @@ RUN set -eo pipefail \
       && print-github-tags --release --latest biod/sambamba \
         | tr -d v \
         | xargs -i curl -SL \
-          https://github.com/biod/sambamba/releases/download/v{}/sambamba-{}-linux-static.gz \
+          https://github.com/biod/sambamba/releases/download/v{}/sambamba-{}-linux-amd64-static.gz \
         | gzip -dc - > /usr/local/bin/sambamba \
       && chmod +x /usr/local/bin/sambamba
 

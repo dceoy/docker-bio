@@ -25,6 +25,7 @@ Docker images
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
+  - [freec](https://hub.docker.com/r/dceoy/freec/)
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [gencore](https://hub.docker.com/r/dceoy/gencore/)
   - [gffread](https://hub.docker.com/r/dceoy/gffread/)
@@ -128,6 +129,9 @@ References
 - fgbio
   - [GitHub - fulcrumgenomics/fgbio](https://github.com/fulcrumgenomics/fgbio)
   - [fulcrumgenomics.github.io - fgbio](http://fulcrumgenomics.github.io/fgbio/)
+- freec
+  - [boevalab.inf.ethz.ch - Control-FREEC](http://boevalab.inf.ethz.ch/FREEC/index.html)
+  - [GitHub - BoevaLab/FREEC](https://github.com/BoevaLab/FREEC)
 - gatk
   - [Broad Institute - Genome Analysis Toolkit](https://software.broadinstitute.org/gatk/)
   - [GitHub - broadinstitute/gatk](https://github.com/broadinstitute/gatk)
