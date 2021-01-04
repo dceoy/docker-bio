@@ -12,8 +12,16 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        bzip2 ca-certificates curl g++ gcc git libc6-dev libfreetype-dev \
-        libpng-dev make openjdk-8-jre pkg-config r-base unzip \
+        ca-certificates curl gnupg openjdk-8-jre unzip
+
+RUN set -e \
+      && echo "deb http://packages.cloud.google.com/apt cloud-sdk-bionic main" \
+        | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+      && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+        | apt-key add - \
+      && apt-get -y update \
+      && apt-get -y install --no-install-recommends --no-install-suggests \
+        google-cloud-sdk \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -41,11 +49,8 @@ RUN set -eo pipefail \
       && rm -f /tmp/gatk.zip
 
 RUN set -e \
-      && sed \
-        -e 's/\(openssl\|pip\|python\|setuptools\|certifi\|wheel\|tk\|xz\|readline\|zlib\|sqlite\)=.*/\1/' \
-        -e 's/\(gatk.*.zip\)/\/opt\/gatk\/\1/' \
-        /opt/gatk/gatkcondaenv.yml > /tmp/gatkcondaenv.yml \
-      && /opt/conda/bin/conda env create -n gatk -f /tmp/gatkcondaenv.yml \
+      && cd /opt/gatk \
+      && /opt/conda/bin/conda env create -n gatk -f /opt/gatk/gatkcondaenv.yml \
       && echo "source activate gatk" >> /opt/gatk/gatkenv.rc \
       && echo "source /opt/gatk/gatk-completion.sh" >> /opt/gatk/gatkenv.rc \
       && /opt/conda/bin/conda clean -yaf \
@@ -53,14 +58,9 @@ RUN set -e \
       && find /opt/conda -follow -type f -name '*.pyc' -delete \
       && rm -rf /root/.cache/pip
 
-RUN set -e \
-      && R -e "\
-pkgs <- c('getopt', 'optparse', 'data.table', 'gsalib', 'ggplot2', 'dplyr', 'HMM'); \
-options(repos = 'https://cran.rstudio.com/'); \
-update.packages(ask = FALSE, dependencies = TRUE); \
-install.packages(pkgs = pkgs, dependencies = TRUE, clean = TRUE); \
-sapply(pkgs, library, character.only = TRUE);"
-
+ENV JAVA_LIBRARY_PATH /usr/lib/jni
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+ENV CLASSPATH /opt/gatk/gatk.jar:${CLASSPATH}
 ENV PATH /opt/gatk/bin:/opt/conda/envs/gatk/bin:/opt/conda/bin:${PATH}
 
 ENTRYPOINT ["/opt/gatk/bin/gatk"]
