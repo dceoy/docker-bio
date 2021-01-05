@@ -12,7 +12,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl gnupg openjdk-8-jre unzip
+        ca-certificates curl gnupg libgkl-jni openjdk-8-jre unzip
 
 RUN set -e \
       && echo "deb http://packages.cloud.google.com/apt cloud-sdk-bionic main" \
