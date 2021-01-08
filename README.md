@@ -53,6 +53,7 @@ Docker images
   - [sambamba](https://hub.docker.com/r/dceoy/sambamba/)
   - [samplot](https://hub.docker.com/r/dceoy/samplot/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
+  - [seqkit](https://hub.docker.com/r/dceoy/seqkit/)
   - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
   - [smoove](https://hub.docker.com/r/dceoy/smoove/)
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
@@ -201,6 +202,9 @@ References
 - samtools
   - [samtools.sourceforge.net - SAMtools](http://samtools.sourceforge.net/)
   - [GitHub - samtools/samtools](https://github.com/samtools/samtools)
+- seqkit
+  - [bioinf.shenwei.me - SeqKit](https://bioinf.shenwei.me/seqkit/)
+  - [GitHub - shenwei356/seqkit](https://github.com/shenwei356/seqkit/)
 - sigprofiler
   - [COSMIC Mutational Signatures - SigProfiler Tools](https://cancer.sanger.ac.uk/cosmic/signatures/sigprofiler.tt)
   - [GitHub - AlexandrovLab/SigProfilerMatrixGenerator](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator)

@@ -198,6 +198,10 @@ services:
     build:
       context: samtools
     image: dceoy/samtools:latest
+  seqkit:
+    build:
+      context: seqkit
+    image: dceoy/seqkit:latest
   sigprofiler:
     build:
       context: sigprofiler
