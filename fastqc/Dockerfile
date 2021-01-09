@@ -26,6 +26,4 @@ RUN set -eo pipefail \
       && ln -s /usr/local/src/FastQC/fastqc /usr/local/bin \
       && rm -f /tmp/fastqc.zip
 
-ENV DISPLAY :0.0
-
 ENTRYPOINT ["/usr/local/bin/fastqc"]

@@ -40,6 +40,4 @@ RUN set -eo pipefail \
       && mv /usr/local/src/TrimGalore-* /usr/local/src/TrimGalore \
       && ln -s /usr/local/src/TrimGalore/trim_galore /usr/local/bin
 
-ENV DISPLAY :0.0
-
 ENTRYPOINT ["/usr/local/bin/trim_galore"]
