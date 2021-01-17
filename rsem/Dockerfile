@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM dceoy/clir:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -12,11 +12,14 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl g++ gcc libtbb-dev libz-dev make perl perl-doc \
-        python3 \
+        ca-certificates curl g++ gcc libjpeg-turbo8-dev libpng-dev libtbb-dev \
+        libz-dev make perl perl-doc python3 \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
+
+RUN set -e \
+      && clir update
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
@@ -45,6 +48,8 @@ RUN set -eo pipefail \
       && mv /usr/local/src/RSEM-* /usr/local/src/RSEM \
       && cd /usr/local/src/RSEM \
       && make \
+      && make ebseq \
+      && make pRSEM \
       && make install
 
 ENTRYPOINT ["/usr/local/bin/rsem-calculate-expression"]
