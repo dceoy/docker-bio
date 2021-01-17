@@ -25,7 +25,7 @@ RUN set -eo pipefail \
       && mv /usr/local/src/kent-* /usr/local/src/kent \
       && export KENT_SRC=/usr/local/src/kent/src \
       && export MACHTYPE=$(uname -m) \
-      && export CFLAGS="-fPIC" \
+      && export CFLAGS='-fPIC' \
       && export MYSQLINC=`mysql_config --include | sed -e 's/^-I//g'` \
       && export MYSQLLIBS=`mysql_config --libs` \
       && cd /usr/local/src/kent/src/lib \

@@ -26,8 +26,7 @@ RUN set -e \
       && /opt/conda/bin/conda update -n base -c defaults conda \
       && /opt/conda/bin/conda clean -ya \
       && ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
-      && echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc \
-      && echo 'conda activate base' >> ~/.bashrc \
+      && echo '. /opt/conda/etc/profile.d/conda.sh' >> /etc/profile \
       && rm -f /tmp/miniconda.sh
 
 ENV PATH /opt/conda/envs/smoove-env/bin:/opt/conda/bin:${PATH}
@@ -39,7 +38,7 @@ RUN set -e \
       && conda create -n smoove-env \
         python=2.7 awscli numpy scipy cython pysam toolshed pyvcf pyfaidx \
         cyvcf2 svtyper svtools \
-      && echo 'source activate smoove-env' >> ~/.bashrc \
+      && echo 'source activate smoove-env' >> /etc/profile \
       && conda clean -ya \
       && rm -rf /root/.cache/pip
 

@@ -21,8 +21,8 @@ RUN set -e \
       && /opt/conda/bin/conda update -n base -c defaults conda \
       && /opt/conda/bin/conda clean -ya \
       && ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
-      && echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc \
-      && echo 'conda activate base' >> ~/.bashrc \
+      && echo '. /opt/conda/etc/profile.d/conda.sh' >> /etc/profile \
+      && echo 'conda activate base' >> /etc/profile \
       && rm -f /tmp/miniconda.sh
 
 ENV PATH /opt/conda/bin:${PATH}

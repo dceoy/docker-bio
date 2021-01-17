@@ -15,7 +15,7 @@ RUN set -e \
         ca-certificates curl gnupg libgkl-jni openjdk-8-jre unzip
 
 RUN set -e \
-      && echo "deb http://packages.cloud.google.com/apt cloud-sdk-bionic main" \
+      && echo 'deb http://packages.cloud.google.com/apt cloud-sdk-bionic main' \
         | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
       && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
         | apt-key add - \
@@ -31,8 +31,7 @@ RUN set -e \
       && /opt/conda/bin/conda update -n base -c defaults conda \
       && /opt/conda/bin/conda clean -ya \
       && ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
-      && echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc \
-      && echo 'conda activate base' >> ~/.bashrc \
+      && echo '. /opt/conda/etc/profile.d/conda.sh' >> /etc/profile \
       && rm -f /tmp/miniconda.sh
 
 RUN set -eo pipefail \
@@ -51,8 +50,9 @@ RUN set -eo pipefail \
 RUN set -e \
       && cd /opt/gatk \
       && /opt/conda/bin/conda env create -n gatk -f /opt/gatk/gatkcondaenv.yml \
-      && echo "source activate gatk" >> /opt/gatk/gatkenv.rc \
-      && echo "source /opt/gatk/gatk-completion.sh" >> /opt/gatk/gatkenv.rc \
+      && echo 'source activate gatk' >> /opt/gatk/gatkenv.rc \
+      && echo 'source /opt/gatk/gatk-completion.sh' >> /opt/gatk/gatkenv.rc \
+      && echo 'source /opt/gatk/gatkenv.rc' >> /etc/profile
       && /opt/conda/bin/conda clean -yaf \
       && find /opt/conda -follow -type f -name '*.a' -delete \
       && find /opt/conda -follow -type f -name '*.pyc' -delete \
