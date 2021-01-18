@@ -38,7 +38,7 @@ RUN set -eo pipefail \
       && mv /usr/local/src/STAR-* /usr/local/src/STAR \
       && cd /usr/local/src/STAR/source \
       && make STAR \
-      && find /usr/local/src/STAR/bin/Linux_x86_64_static -type f -executable \
+      && find /usr/local/src/STAR/bin/Linux_x86_64 -type f -executable \
         -exec ln -s {} /usr/local/bin \;
 
 RUN set -eo pipefail \
