@@ -11,7 +11,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev \
+        autoconf ca-certificates curl gcc gnuplot libbz2-dev libcurl4-gnutls-dev \
         liblzma-dev libncurses5-dev libssl-dev libz-dev make pkg-config \
       && apt-get -y autoremove \
       && apt-get clean \
