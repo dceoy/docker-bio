@@ -18,6 +18,10 @@ services:
     build:
       context: ascat
     image: dceoy/ascat:latest
+  bamsnap:
+    build:
+      context: bamsnap
+    image: dceoy/bamsnap:latest
   bcl2fastq:
     build:
       context: bcl2fastq

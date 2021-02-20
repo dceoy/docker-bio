@@ -10,6 +10,7 @@ Docker images
   - [abra2](https://hub.docker.com/r/dceoy/abra2/)
   - [alfred](https://hub.docker.com/r/dceoy/alfred/)
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
+  - [bamsnap](https://hub.docker.com/r/dceoy/bamsnap/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
   - [bedops](https://hub.docker.com/r/dceoy/bedops/)
   - [bedtools](https://hub.docker.com/r/dceoy/bedtools/)
@@ -84,6 +85,9 @@ References
 - ascat
   - [GitHub - Crick-CancerGenomics/ascat](https://github.com/Crick-CancerGenomics/ascat)
   - [The Francis Crick Institute - Allele-Specific Copy number Analysis of Tumours (ASCAT)](https://www.crick.ac.uk/research/labs/peter-van-loo/software)
+- bamsnap
+  - [GitHub - parklab/bamsnap](https://github.com/parklab/bamsnap)
+  - [bamsnap.readthedocs.io - BamSnap](https://bamsnap.readthedocs.io/en/latest/)
 - bcftools
   - [samtools.github.io - Bcftools](https://samtools.github.io/bcftools/)
   - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
@@ -103,7 +107,7 @@ References
 - bwa
   - [bio-bwa.sourceforge.net - Burrows-Wheeler Aligner](http://bio-bwa.sourceforge.net/)
   - [GitHub - lh3/bwa](https://github.com/lh3/bwa)
-- bwa
+- bwa-mem2
   - [GitHub - bwa-mem2/bwa-mem2](https://github.com/bwa-mem2/bwa-mem2)
 - canvas
   - [GitHub - Illumina/canvas](https://github.com/Illumina/canvas)
@@ -115,7 +119,7 @@ References
   - [Trapnell Lab - Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)
   - [GitHub - cole-trapnell-lab/cufflinks](https://github.com/cole-trapnell-lab/cufflinks)
 - cutadapt
-  - [cutadapt.readthedocs.io - cutadapt](http://cutadapt.readthedocs.io/)
+  - [cutadapt.readthedocs.io - Cutadapt](http://cutadapt.readthedocs.io/)
   - [GitHub - marcelm/cutadapt](https://github.com/marcelm/cutadapt)
 - deepvariant
   - [GitHub -google/deepvariant](https://github.com/google/deepvariant)
