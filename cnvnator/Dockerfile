@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
-ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
+ADD https://bootstrap.pypa.io/2.7/get-pip.py /tmp/get-pip.py
 ADD https://bitbucket.org/MDukhan/yeppp/downloads/yeppp-1.0.0.tar.bz2 /tmp/yeppp-1.0.0.tar.bz2
 
 RUN set -e \

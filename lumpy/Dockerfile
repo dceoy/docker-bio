@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
-ADD https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
+ADD https://bootstrap.pypa.io/2.7/get-pip.py /tmp/get-pip.py
 
 RUN set -e \
       && ln -sf bash /bin/sh
