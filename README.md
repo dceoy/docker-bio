@@ -72,6 +72,34 @@ Docker images
   - [deepvariant](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant)
   - [deepvariant_gpu](https://console.cloud.google.com/gcr/images/deepvariant-docker/GLOBAL/deepvariant_gpu)
 
+Docker Compose
+--------------
+
+- Pull an image
+
+  ```sh
+  $ docker-compose pull <name>
+  ```
+
+- Build an image
+
+  ```sh
+  $ docker-compose build <name>
+  ```
+
+Dependencies
+------------
+
+Some images use the following tools:
+
+- print-github-tags
+  - Tiny command to fetch repository tags or releases from GitHub
+  - [GitHub - dceoy/print-github-tags](https://github.com/dceoy/print-github-tags)
+- clir
+  - R package manager for command line interface
+  - [GitHub - dceoy/clir](https://github.com/dceoy/clir)
+  - [DockerHub - dceoy/clir](https://hub.docker.com/r/dceoy/clir)
+
 References
 ----------
 
@@ -238,16 +266,3 @@ References
 - vep
   - [www.ensembl.org - Ensembl Variant Effect Predictor (VEP)](https://www.ensembl.org/vep)
   - [GitHub - Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep)
-
-Dependencies
-------------
-
-Some images use the following tools:
-
-- print-github-tags
-  - Tiny command to fetch repository tags or releases from GitHub
-  - [GitHub - dceoy/print-github-tags](https://github.com/dceoy/print-github-tags)
-- clir
-  - R package manager for command line interface
-  - [GitHub - dceoy/clir](https://github.com/dceoy/clir)
-  - [DockerHub - dceoy/clir](https://hub.docker.com/r/dceoy/clir)
