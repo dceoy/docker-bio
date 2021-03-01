@@ -52,7 +52,7 @@ RUN set -e \
       && /opt/conda/bin/conda env create -n gatk -f /opt/gatk/gatkcondaenv.yml \
       && echo 'source activate gatk' >> /opt/gatk/gatkenv.rc \
       && echo 'source /opt/gatk/gatk-completion.sh' >> /opt/gatk/gatkenv.rc \
-      && echo 'source /opt/gatk/gatkenv.rc' >> /etc/profile
+      && echo 'source /opt/gatk/gatkenv.rc' >> /etc/profile \
       && /opt/conda/bin/conda clean -yaf \
       && find /opt/conda -follow -type f -name '*.a' -delete \
       && find /opt/conda -follow -type f -name '*.pyc' -delete \
