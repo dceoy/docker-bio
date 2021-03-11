@@ -82,6 +82,10 @@ services:
     build:
       context: delly
     image: dceoy/delly:latest
+  dicey:
+    build:
+      context: dicey
+    image: dceoy/dicey:latest
   elprep:
     build:
       context: elprep

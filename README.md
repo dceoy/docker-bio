@@ -22,6 +22,7 @@ Docker images
   - [cnvnator](https://hub.docker.com/r/dceoy/cnvnator/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
   - [delly](https://hub.docker.com/r/dceoy/delly/)
+  - [dicey](https://hub.docker.com/r/dceoy/dicey/)
   - [elprep](https://hub.docker.com/r/dceoy/elprep/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
@@ -154,6 +155,8 @@ References
   - [Google Cloud Platform - DeepVariant](https://cloud.google.com/genomics/deepvariant)
 - delly
   - [GitHub - dellytools/delly](https://github.com/dellytools/delly)
+- dicey
+  - [GitHub - gear-genomics/dicey](https://github.com/gear-genomics/dicey)
 - elprep
   - [GitHub - ExaScience/elprep](https://github.com/ExaScience/elprep)
 - fastq-dump
