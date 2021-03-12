@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM dceoy/clir:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -11,11 +11,17 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev \
-        libgsl-dev libperl-dev liblzma-dev libssl-dev libz-dev make \
+        libbz2-dev libcairo2-dev libfontconfig1-dev libgdal-dev libgeos-dev \
+        libgsl-dev libjpeg-turbo8-dev liblzma-dev libperl-dev libpng-dev \
+        libudunits2-dev libz-dev \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
+
+RUN set -e \
+      && clir update \
+      && clir install --devt=cran ggplot2 reshape2 \
+      && clir validate ggplot2 reshape2
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
