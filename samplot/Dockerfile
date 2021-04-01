@@ -32,7 +32,7 @@ RUN set -e \
       && conda config --add channels bioconda \
       && conda config --add channels conda-forge \
       && conda install -c bioconda \
-        bedtools samplot samtools ucsc-bigwigtobedgraph \
+        bedtools samplot samtools ucsc-bigwigtobedgraph ucsc-bigbedtobed \
       && conda clean -ya \
       && rm -rf /root/.cache/pip
 
