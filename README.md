@@ -24,6 +24,7 @@ Docker images
   - [delly](https://hub.docker.com/r/dceoy/delly/)
   - [dicey](https://hub.docker.com/r/dceoy/dicey/)
   - [elprep](https://hub.docker.com/r/dceoy/elprep/)
+  - [fastp](https://hub.docker.com/r/dceoy/fastp/)
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
@@ -159,6 +160,8 @@ References
   - [GitHub - gear-genomics/dicey](https://github.com/gear-genomics/dicey)
 - elprep
   - [GitHub - ExaScience/elprep](https://github.com/ExaScience/elprep)
+- fastp
+  - [GitHub - OpenGene/fastp](https://github.com/OpenGene/fastp#per-read-cutting-by-quality-score)
 - fastq-dump
   - [NCBI - SRA Toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/)
 - fastqc

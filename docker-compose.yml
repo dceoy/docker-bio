@@ -90,6 +90,10 @@ services:
     build:
       context: elprep
     image: dceoy/elprep:latest
+  fastp:
+    build:
+      context: fastp
+    image: dceoy/fastp:latest
   fastq-dump:
     build:
       context: fastq-dump

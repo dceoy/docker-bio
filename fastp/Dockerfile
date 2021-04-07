@@ -31,8 +31,8 @@ RUN set -e \
       && conda config --add channels defaults \
       && conda config --add channels bioconda \
       && conda config --add channels conda-forge \
-      && conda install -c bioconda gencore \
+      && conda install -c bioconda fastp \
       && conda clean -ya \
       && rm -rf /root/.cache/pip
 
-ENTRYPOINT ["/opt/conda/bin/gencore"]
+ENTRYPOINT ["/opt/conda/bin/fastp"]
