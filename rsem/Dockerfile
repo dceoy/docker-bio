@@ -12,8 +12,10 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl g++ gcc libjpeg-turbo8-dev libpng-dev libtbb-dev \
-        libz-dev make perl perl-doc python3 \
+        autoconf ca-certificates curl g++ gcc gnuplot libbz2-dev \
+        libcurl4-gnutls-dev libjpeg-turbo8-dev liblzma-dev libncurses5-dev \
+        libpng-dev libssl-dev libtbb-dev libz-dev make perl perl-doc \
+        pkg-config python3 \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -46,7 +48,19 @@ RUN set -eo pipefail \
         | xargs -i curl -SL {} -o /tmp/rsem.tar.gz \
       && tar xvf /tmp/rsem.tar.gz -C /usr/local/src --remove-files \
       && mv /usr/local/src/RSEM-* /usr/local/src/RSEM \
-      && cd /usr/local/src/RSEM \
+      && cd /usr/local/src/RSEM/samtools-*/htslib-* \
+      && autoheader \
+      && autoconf \
+      && ./configure \
+      && make \
+      && make install \
+      && cd .. \
+      && autoheader \
+      && autoconf \
+      && ./configure \
+      && make \
+      && make install \
+      && cd .. \
       && make \
       && make ebseq \
       && make pRSEM \
