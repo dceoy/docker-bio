@@ -3,6 +3,8 @@ docker-bio
 
 Dockerfile repository for Bioinformatics
 
+[![Docker](https://github.com/dceoy/docker-bio/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/dceoy/docker-bio/actions/workflows/docker-publish.yml)
+
 Docker images
 -------------
 

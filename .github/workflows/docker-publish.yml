@@ -1,0 +1,27 @@
+---
+name: Docker
+
+on:
+# push:
+#   branches:
+#     - master
+  workflow_dispatch:
+
+jobs:
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log into registry
+        run: |
+          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ github.actor }} --password-stdin
+
+      - name: Build and push images
+        run: |
+          for n in $(grep -e '\[[^ ]\+\].*hub.docker.com' README.md | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/'); do
+            bash -c "docker-compose build ${n} && docker-compose push ${n}" &
+          done
+          wait
