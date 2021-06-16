@@ -1,23 +1,26 @@
 ---
-name: Docker
+name: CI to Docker Hub
 
 on:
-# push:
-#   branches:
-#     - master
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
-  # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Log into registry
-        run: |
-          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ github.actor }} --password-stdin
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: List images
         run: |
@@ -25,32 +28,21 @@ jobs:
             | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/' \
             | tee images.txt
 
-      - name: Build images
+      - name: Build and push images
         run: |
-          for n in $(cat images.txt); do
-            bash -c "docker-compose build ${n} && echo '${n}' >> b.s.txt || echo '${n}' >> b.f.txt" &
-          done
-          wait
-
-      - name: Push images
-        run: |
-          test -f 'b.s.txt'
-          for n in $(cat b.s.txt); do
-            bash -c "docker-compose push ${n} && echo '${n}' >> p.s.txt || echo '${n}' >> p.f.txt" &
-          done
-          wait
+          touch s.txt f.txt
+          {
+            for n in $(cat images.txt); do
+              echo -ne "docker-compose build ${n} && docker-compose push ${n}"
+              echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
+              echo -ne " && echo '${n}' >> s.txt"
+              echo -e " || echo '${n}' >> f.txt"
+            done
+          } | xargs -P $(grep -ce '^processor\s\+:' /proc/cpuinfo) -t -i bash -c '{}'
 
       - name: Print results
         run: |
-          if [[ -f 'p.s.txt' ]]; then
-            echo ">> build and push succeeded: $(wc -l p.s.txt)"
-            cat p.s.txt
-          fi
-          if [[ -f 'b.f.txt' ]]; then
-            echo ">> build failed: $(wc -l b.f.txt)"
-            cat b.f.txt
-          fi
-          if [[ -f 'p.f.txt' ]]; then
-            echo ">> push failed: $(wc -l p.f.txt)"
-            cat p.f.txt
-          fi
+          echo ">> succeeded: $(cat s.txt | wc -l)"
+          cat s.txt
+          echo ">> failed: $(cat f.txt | wc -l)"
+          cat f.txt
