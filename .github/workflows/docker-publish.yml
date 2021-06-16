@@ -19,9 +19,38 @@ jobs:
         run: |
           echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ github.actor }} --password-stdin
 
-      - name: Build and push images
+      - name: List images
         run: |
-          for n in $(grep -e '\[[^ ]\+\].*hub.docker.com' README.md | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/'); do
-            bash -c "docker-compose build ${n} && docker-compose push ${n}" &
+          grep -e '\[[^ ]\+\].*hub.docker.com' README.md \
+            | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/' \
+            | tee images.txt
+
+      - name: Build images
+        run: |
+          for n in $(cat images.txt); do
+            bash -c "docker-compose build ${n} && echo '${n}' >> b.s.txt || echo '${n}' >> b.f.txt" &
           done
           wait
+
+      - name: Push images
+        run: |
+          test -f 'b.s.txt'
+          for n in $(cat b.s.txt); do
+            bash -c "docker-compose push ${n} && echo '${n}' >> p.s.txt || echo '${n}' >> p.f.txt" &
+          done
+          wait
+
+      - name: Print results
+        run: |
+          if [[ -f 'p.s.txt' ]]; then
+            echo ">> build and push succeeded: $(wc -l p.s.txt)"
+            cat p.s.txt
+          fi
+          if [[ -f 'b.f.txt' ]]; then
+            echo ">> build failed: $(wc -l b.f.txt)"
+            cat b.f.txt
+          fi
+          if [[ -f 'p.f.txt' ]]; then
+            echo ">> push failed: $(wc -l p.f.txt)"
+            cat p.f.txt
+          fi
