@@ -40,6 +40,23 @@ jobs:
             done
           } | xargs -P $(grep -ce '^processor\s\+:' /proc/cpuinfo) -t -i bash -c '{}'
 
+      - name: Clean up images
+        run: |
+          docker image ls -q | xargs docker image rm -f
+
+      - name: Retry build and push
+        run: |
+          if [[ $(cat f.txt | wc -l) -gt 0 ]]; then
+            {
+              for n in $(cat f.txt); do
+                echo -ne "docker-compose build ${n} && docker-compose push ${n}"
+                echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
+                echo -ne " && echo '${n}' >> s.txt"
+                echo -e " && sed -ie '/^${n}$/d' f.txt"
+              done
+            } | xargs -P $(grep -ce '^processor\s\+:' /proc/cpuinfo) -t -i bash -c '{}'
+          fi
+
       - name: Print results
         run: |
           echo ">> succeeded: $(cat s.txt | wc -l)"
