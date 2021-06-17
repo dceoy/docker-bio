@@ -14,15 +14,16 @@ RUN set -e \
       && sed -ne 's/^DISTRIB_RELEASE=\(.*\)$/\1/p' /etc/lsb-release \
         | xargs -i curl -SLO \
           https://packages.microsoft.com/config/ubuntu/{}/packages-microsoft-prod.deb \
+      && apt-get -y update \
       && apt-get -y install ./packages-microsoft-prod.deb \
-      && rm -f packages-microsoft-prod.deb
+      && rm -f ./packages-microsoft-prod.deb
 
 RUN set -e \
       && add-apt-repository universe \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        dotnet-sdk-2.1 \
+        aspnetcore-runtime-3.1 unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -30,18 +31,15 @@ RUN set -e \
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && mkdir -p /opt/nirvana/bin \
-      && print-github-tags --release --latest --tar Illumina/Nirvana \
-        | xargs -i curl -SL {} -o /tmp/nirvana.tar.gz \
-      && tar xvf /tmp/nirvana.tar.gz -C /opt/nirvana --remove-files \
-      && mv /opt/nirvana/Nirvana-* /opt/nirvana/Nirvana \
-      && cd /opt/nirvana/Nirvana \
-      && dotnet build -c Release
-
-RUN set -e \
-      && echo '#!/usr/bin/env bash' > /opt/nirvana/bin/Nirvana \
-      && echo 'dotnet /opt/nirvana/Nirvana/bin/Release/netcoreapp2.1/Nirvana.dll ${@}' \
-        >> /opt/nirvana/bin/Nirvana \
-      && chmod +x /opt/nirvana/bin/Nirvana
+      && print-github-tags --release --latest Illumina/Nirvana \
+        | tr -d v \
+        | xargs -i curl -SL \
+          https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-dotnet-3.1.0.zip \
+          -o /tmp/nirvana.zip \
+      && unzip -d /opt/nirvana /tmp/nirvana.zip \
+      && find /opt/nirvana -type f -executable \
+        -exec ln -s {} /opt/nirvana/bin \; \
+      && rm -f /tmp/nirvana.zip
 
 ENV PATH /opt/nirvana/bin:${PATH}
 
