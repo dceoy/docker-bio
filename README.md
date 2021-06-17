@@ -60,7 +60,7 @@ Docker images
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [seqkit](https://hub.docker.com/r/dceoy/seqkit/)
   - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
-  - [smoove](https://hub.docker.com/r/dceoy/smoove/)
+  - ~smoove~
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
   - [star](https://hub.docker.com/r/dceoy/star/)
   - [strelka](https://hub.docker.com/r/dceoy/strelka/)
