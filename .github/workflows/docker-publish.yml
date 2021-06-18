@@ -29,9 +29,11 @@ jobs:
           echo -ne '>> images: '
           cat images.txt | wc -l
           cat images.txt
-          grep -ce '^processor\s\+:' /proc/cpuinfo > cpus.txt
-          echo -ne '>> cpus: '
-          cat cpus.txt
+          echo -e '>> spec:'
+          set -x
+          grep -ce '^processor\s\+:' /proc/cpuinfo | tee cpus.txt
+          free -g
+          df -Th
 
       - name: Build and push images
         run: |
