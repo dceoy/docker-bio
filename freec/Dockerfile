@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
+
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \

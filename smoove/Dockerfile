@@ -3,8 +3,8 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh /tmp/miniconda.sh
-ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 ADD https://bitbucket.org/MDukhan/yeppp/downloads/yeppp-1.0.0.tar.bz2 /tmp/yeppp-1.0.0.tar.bz2
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
       && ln -sf bash /bin/sh
