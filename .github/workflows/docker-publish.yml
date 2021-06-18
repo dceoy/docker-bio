@@ -25,8 +25,13 @@ jobs:
       - name: List images
         run: |
           grep -e '\[[^ ]\+\].*hub.docker.com' README.md \
-            | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/' \
-            | tee images.txt
+            | sed -e 's/^.*\[\([^ ]\+\)\].*$/\1/' > images.txt
+          echo -ne '>> images: '
+          cat images.txt | wc -l
+          cat images.txt
+          grep -ce '^processor\s\+:' /proc/cpuinfo > cpus.txt
+          echo -ne '>> cpus: '
+          cat cpus.txt
 
       - name: Build and push images
         run: |
@@ -38,13 +43,15 @@ jobs:
               echo -ne " && echo '${n}' >> s.txt"
               echo -e " || echo '${n}' >> f.txt"
             done
-          } | xargs -P $(grep -ce '^processor\s\+:' /proc/cpuinfo) -t -i bash -c '{}'
+          } | xargs -P $(cat cpus.txt) -t -i bash -c '{}'
 
       - name: Print the intermediate results
         run: |
-          echo ">> succeeded: $(cat s.txt | wc -l)"
+          echo -ne '>> succeeded: '
+          cat s.txt | wc -l
           cat s.txt
-          echo ">> failed: $(cat f.txt | wc -l)"
+          echo -ne '>> failed: '
+          cat f.txt | wc -l
           cat f.txt
 
       - name: Clean up images
@@ -62,13 +69,15 @@ jobs:
                 echo -ne " && sed -ie '/^${n}$/d' f.txt"
                 echo -e ' || :'
               done
-            } | xargs -P $(grep -ce '^processor\s\+:' /proc/cpuinfo) -t -i bash -c '{}'
+            } | xargs -P $(cat cpus.txt) -t -i bash -c '{}'
           fi
 
       - name: Print the final results
         run: |
-          echo ">> succeeded: $(cat s.txt | wc -l)"
+          echo -ne '>> succeeded: '
+          cat s.txt | wc -l
           cat s.txt
-          echo ">> failed: $(cat f.txt | wc -l)"
+          echo -ne '>> failed: '
+          cat f.txt | wc -l
           cat f.txt
-          return $(cat f.txt | wc -l)
+          exit $(cat f.txt | wc -l)
