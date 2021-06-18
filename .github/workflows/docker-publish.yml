@@ -71,3 +71,4 @@ jobs:
           cat s.txt
           echo ">> failed: $(cat f.txt | wc -l)"
           cat f.txt
+          return $(cat f.txt | wc -l)

@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+
 RUN set -e \
       && ln -sf bash /bin/sh
 
@@ -18,12 +20,11 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && git clone --recursive --depth 1 \
-        https://github.com/tobiasrausch/alfred.git /opt/alfred \
+      && chmod +x /usr/local/bin/print-github-tags \
+      && print-github-tags --release --latest tobiasrausch/alfred \
+        | xargs -i git clone --recursive --depth 1 \
+          https://github.com/tobiasrausch/alfred.git -b {} /opt/alfred \
       && cd /opt/alfred \
-      && git tag \
-        | tail -1 \
-        | xargs git checkout \
       && make all \
       && make install
 

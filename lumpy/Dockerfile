@@ -65,18 +65,12 @@ RUN set -eo pipefail \
         | gzip -dc - > /usr/local/bin/sambamba \
       && chmod +x /usr/local/bin/sambamba
 
+ENV ZLIB_PATH /usr/lib/x86_64-linux-gnu/
+
 RUN set -eo pipefail \
       && print-github-tags --release --latest arq5x/lumpy-sv \
-        | tr -d v \
-        | xargs -i curl -SL \
-          https://github.com/arq5x/lumpy-sv/releases/download/{}/lumpy-sv.tar.gz \
-          -o /tmp/lumpy-sv.tar.gz \
-      && tar xvf /tmp/lumpy-sv.tar.gz -C /opt --remove-files \
-      && cd /opt/lumpy-sv/lib/htslib \
-      && autoheader \
-      && autoconf \
-      && make \
-      && make install \
+        | xargs -i git clone --recursive --depth 1 \
+          https://github.com/arq5x/lumpy-sv.git -b {} /opt/lumpy-sv \
       && cd /opt/lumpy-sv \
       && make \
       && sed -ie 's/\/\//\//; s/\/$//;' bin/lumpyexpress.config
