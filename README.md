@@ -21,6 +21,7 @@ Docker images
   - [bwa](https://hub.docker.com/r/dceoy/bwa/)
   - [bwa-mem2](https://hub.docker.com/r/dceoy/bwa-mem2/)
   - [cufflinks](https://hub.docker.com/r/dceoy/cufflinks/)
+  - [cnvkit](https://hub.docker.com/r/dceoy/cnvkit/)
   - [cnvnator](https://hub.docker.com/r/dceoy/cnvnator/)
   - [cutadapt](https://hub.docker.com/r/dceoy/cutadapt/)
   - [delly](https://hub.docker.com/r/dceoy/delly/)
@@ -118,8 +119,8 @@ References
   - [GitHub - Crick-CancerGenomics/ascat](https://github.com/Crick-CancerGenomics/ascat)
   - [The Francis Crick Institute - Allele-Specific Copy number Analysis of Tumours (ASCAT)](https://www.crick.ac.uk/research/labs/peter-van-loo/software)
 - bamsnap
-  - [GitHub - parklab/bamsnap](https://github.com/parklab/bamsnap)
   - [bamsnap.readthedocs.io - BamSnap](https://bamsnap.readthedocs.io/en/latest/)
+  - [GitHub - parklab/bamsnap](https://github.com/parklab/bamsnap)
 - bcftools
   - [samtools.github.io - Bcftools](https://samtools.github.io/bcftools/)
   - [GitHub - samtools/bcftools](https://github.com/samtools/bcftools)
@@ -145,8 +146,9 @@ References
   - [GitHub - Illumina/canvas](https://github.com/Illumina/canvas)
 - cn.mops
   - [Bioconductor - cn.mops](https://bioconductor.org/packages/release/bioc/html/cn.mops.html)
-- cnvnator
-  - [GitHub - abyzovlab/cnvnator](https://github.com/abyzovlab/cnvnator)
+- cnvkit
+  - [cnvkit.readthedocs.io - CNVkit](https://cnvkit.readthedocs.io/)
+  - [GitHub - etal/cnvkit](https://github.com/etal/cnvkit)
 - cufflinks
   - [Trapnell Lab - Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)
   - [GitHub - cole-trapnell-lab/cufflinks](https://github.com/cole-trapnell-lab/cufflinks)

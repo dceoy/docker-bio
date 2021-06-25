@@ -62,6 +62,10 @@ services:
     build:
       context: cn.mops
     image: dceoy/cn.mops:latest
+  cnvkit:
+    build:
+      context: cnvkit
+    image: dceoy/cnvkit:latest
   cnvnator:
     build:
       context: cnvnator
