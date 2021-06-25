@@ -1,7 +1,8 @@
-FROM dceoy/clir:latest
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/clir/master/install_clir.sh /tmp/install_clir.sh
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
@@ -11,17 +12,22 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        libbz2-dev libcairo2-dev libfontconfig1-dev libgdal-dev libgeos-dev \
-        libgsl-dev libjpeg-turbo8-dev liblzma-dev libperl-dev libpng-dev \
-        libudunits2-dev libz-dev \
+        apt-transport-https apt-utils ca-certificates curl g++ gcc gfortran \
+        git libblas-dev libbz2-dev libcairo2-dev libcurl4-gnutls-dev \
+        libfontconfig1-dev libgdal-dev libgeos-dev libgit2-dev libgsl-dev \
+        libjpeg-turbo8-dev liblapack-dev liblzma-dev libperl-dev libpng-dev \
+        libssh-dev libssl-dev libudunits2-dev libxml2-dev libz-dev make \
+        r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
+      && bash /tmp/install_clir.sh --root \
       && clir update \
       && clir install --devt=cran ggplot2 reshape2 \
-      && clir validate ggplot2 reshape2
+      && clir validate ggplot2 reshape2 \
+      && rm -f /tmp/install_clir.sh
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \

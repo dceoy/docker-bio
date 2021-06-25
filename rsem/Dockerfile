@@ -1,7 +1,8 @@
-FROM dceoy/clir:latest
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/clir/master/install_clir.sh /tmp/install_clir.sh
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
@@ -12,16 +13,19 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl g++ gcc gnuplot libbz2-dev \
-        libcurl4-gnutls-dev libjpeg-turbo8-dev liblzma-dev libncurses5-dev \
-        libpng-dev libssl-dev libtbb-dev libz-dev make perl perl-doc \
-        pkg-config python3 \
+        autoconf apt-transport-https apt-utils ca-certificates curl g++ gcc \
+        gfortran git gnuplot libblas-dev libbz2-dev libcurl4-gnutls-dev \
+        libgit2-dev libjpeg-turbo8-dev liblapack-dev liblzma-dev \
+        libncurses5-dev libpng-dev libssh-dev libssl-dev libtbb-dev \
+        libxml2-dev libz-dev make perl perl-doc pkg-config python3 r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && clir update
+      && bash /tmp/install_clir.sh --root \
+      && clir update \
+      && rm -f /tmp/install_clir.sh
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
