@@ -32,4 +32,6 @@ RUN set -e \
       && clir validate DNAcopy \
       && rm -f /tmp/install_clir.sh
 
+ENV MPLCONFIGDIR /tmp/cnvkit
+
 ENTRYPOINT ["/usr/local/bin/cnvkit.py"]

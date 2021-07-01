@@ -36,4 +36,6 @@ RUN set -e \
       && conda clean -ya \
       && rm -rf /root/.cache/pip
 
+ENV MPLCONFIGDIR /tmp/samplot
+
 ENTRYPOINT ["/opt/conda/bin/samplot"]
