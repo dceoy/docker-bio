@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://raw.githubusercontent.com/dceoy/clir/master/install_clir.sh /tmp/install_clir.sh
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 
 RUN set -e \
@@ -11,12 +12,28 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        autoconf ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev \
-        liblzma-dev libncurses5-dev libssl-dev libz-dev make openjdk-8-jre \
-        r-base unzip util-linux \
+        apt-transport-https apt-utils autoconf ca-certificates curl g++ gcc \
+        gfortran git libblas-dev libbz2-dev libcurl4-gnutls-dev libgit2-dev \
+        liblapack-dev liblzma-dev libncurses5-dev libssh-dev libssl-dev \
+        libxml2-dev libz-dev make openjdk-8-jre r-base unzip util-linux \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
+
+RUN set -e \
+      && bash /tmp/install_clir.sh --root \
+      && clir update \
+      && clir install --devt=cran \
+        argparser assertthat BiocManager blob R.cache randomForest Rcpp \
+        RSQLite stringdist stringr testthat tidyverse \
+      && clir install --bioc \
+        copynumber biomaRt BSgenome org.Hs.eg.db Rsamtools rtracklayer \
+        StructuralVariantAnnotation TxDb.Hsapiens.UCSC.hg19.knownGene \
+        TxDb.Hsapiens.UCSC.hg38.knownGene VariantAnnotation \
+      && clir validate \
+        argparser BSgenome rtracklayer stringdist stringr \
+        StructuralVariantAnnotation testthat tidyverse \
+      && rm -f /tmp/install_clir.sh
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
