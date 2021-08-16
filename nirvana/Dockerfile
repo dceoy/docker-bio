@@ -31,7 +31,9 @@ RUN set -e \
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && mkdir -p /opt/nirvana/bin \
-      && print-github-tags --release --latest Illumina/Nirvana \
+      && print-github-tags --release Illumina/Nirvana \
+        | sort -V \
+        | tail -1 \
         | tr -d v \
         | xargs -i curl -SL \
           https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-dotnet-3.1.0.zip \
