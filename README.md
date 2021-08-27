@@ -60,6 +60,7 @@ Docker images
   - [samplot](https://hub.docker.com/r/dceoy/samplot/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [seqkit](https://hub.docker.com/r/dceoy/seqkit/)
+  - [sequenza](https://hub.docker.com/r/dceoy/sequenza/)
   - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
   - ~smoove~
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
@@ -247,6 +248,12 @@ References
 - seqkit
   - [bioinf.shenwei.me - SeqKit](https://bioinf.shenwei.me/seqkit/)
   - [GitHub - shenwei356/seqkit](https://github.com/shenwei356/seqkit/)
+- sequenza
+  - [CRAN - sequenza](https://cran.r-project.org/web/packages/sequenza/)
+  - [sequenzatools.bitbucket.io - Sequenza](https://sequenzatools.bitbucket.io/)
+  - [Bitbucket - Sequenza](https://bitbucket.org/sequenzatools/sequenza/)
+  - [Bitbucket - Sequenza-utils](https://bitbucket.org/sequenzatools/sequenza-utils/)
+  - [sequenza-utils.readthedocs.io - Sequenza-utils](https://sequenza-utils.readthedocs.io/)
 - sigprofiler
   - [COSMIC Mutational Signatures - SigProfiler Tools](https://cancer.sanger.ac.uk/cosmic/signatures/sigprofiler.tt)
   - [GitHub - AlexandrovLab/SigProfilerMatrixGenerator](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator)

@@ -218,6 +218,10 @@ services:
     build:
       context: seqkit
     image: dceoy/seqkit:latest
+  sequenza:
+    build:
+      context: sequenza
+    image: dceoy/sequenza:latest
   sigprofiler:
     build:
       context: sigprofiler
