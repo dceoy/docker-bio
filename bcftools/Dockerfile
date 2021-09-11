@@ -13,7 +13,7 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf ca-certificates curl gcc libbz2-dev libcurl4-gnutls-dev \
-        libgsl-dev libperl-dev liblzma-dev libssl-dev libz-dev make perl \
+        libgsl-dev liblzma-dev libperl-dev libssl-dev libz-dev make perl \
         pkg-config python3-dev python3-distutils texlive-fonts-extra \
         texlive-fonts-recommended texlive-latex-base texlive-latex-extra \
       && apt-get -y autoremove \
