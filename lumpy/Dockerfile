@@ -14,7 +14,7 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf automake bsdmainutils ca-certificates curl g++ gawk gcc git \
         libbz2-dev libc6-dev libcurl4-gnutls-dev liblzma-dev libncurses5-dev \
-        libssl-dev libz-dev make pkg-config python \
+        libssl-dev libz-dev make pkg-config python-dev \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
