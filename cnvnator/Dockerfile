@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ADD https://bootstrap.pypa.io/pip/2.7/get-pip.py /tmp/get-pip.py
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
+ADD https://github.com/samtools/samtools/releases/download/1.13/samtools-1.13.tar.bz2 /tmp/samtools.tar.bz2
 
 RUN set -e \
       && ln -sf bash /bin/sh
@@ -21,10 +22,6 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
-      && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest samtools/samtools \
-        | xargs -i curl -SL -o /tmp/samtools.tar.bz2 \
-          https://github.com/samtools/samtools/releases/download/{}/samtools-{}.tar.bz2 \
       && tar xvf /tmp/samtools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-* /usr/local/src/samtools \
       && cd /usr/local/src/samtools \
@@ -40,6 +37,7 @@ RUN set -e \
       && rm -f /tmp/get-pip.py
 
 RUN set -eo pipefail \
+      && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest root-project/root \
         | sed -e 's/-/\./g' \
         | xargs -i curl -SL \
