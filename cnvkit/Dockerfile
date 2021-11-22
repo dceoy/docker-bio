@@ -15,7 +15,7 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         apt-transport-https apt-utils ca-certificates curl g++ gcc gfortran \
         git libblas-dev libcurl4-gnutls-dev libgit2-dev liblapack-dev libssh-dev \
-        libssl-dev libxml2-dev make python3 python3-distutils r-base \
+        libssl-dev libxml2-dev make python3-dev python3-distutils r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

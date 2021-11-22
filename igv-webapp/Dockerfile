@@ -17,7 +17,7 @@ RUN set -e \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -e \
-      && npm install -g npm
+      && npm install -g yarn
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
@@ -26,8 +26,8 @@ RUN set -eo pipefail \
       && tar xvf /tmp/igv-webapp.tar.gz -C /opt --remove-files \
       && mv /opt/igv-webapp-* /opt/igv-webapp \
       && cd /opt/igv-webapp \
-      && npm install \
-      && npm run build
+      && yarn install \
+      && yarn run build
 
 RUN set -e \
       && rm -rf /var/www/html \
