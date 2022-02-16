@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD https://bootstrap.pypa.io/pip/2.7/get-pip.py /tmp/get-pip.py
 ADD https://raw.githubusercontent.com/dceoy/print-github-tags/master/print-github-tags /usr/local/bin/print-github-tags
 ADD https://github.com/samtools/samtools/releases/download/1.13/samtools-1.13.tar.bz2 /tmp/samtools.tar.bz2
+ADD https://root.cern/download/root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz /tmp/root.tar.gz
 
 RUN set -e \
       && ln -sf bash /bin/sh
@@ -21,7 +22,7 @@ RUN set -e \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN set -eo pipefail \
+RUN set -e \
       && tar xvf /tmp/samtools.tar.bz2 -C /usr/local/src --remove-files \
       && mv /usr/local/src/samtools-* /usr/local/src/samtools \
       && cd /usr/local/src/samtools \
@@ -36,19 +37,14 @@ RUN set -e \
       && pip install -U --no-cache-dir matplotlib numpy pip \
       && rm -f /tmp/get-pip.py
 
-RUN set -eo pipefail \
-      && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest root-project/root \
-        | sed -e 's/-/\./g' \
-        | xargs -i curl -SL \
-          https://root.cern/download/root_{}.Linux-ubuntu18-x86_64-gcc7.4.tar.gz \
-          -o /tmp/root.tar.gz \
+RUN set -e \
       && tar xvf /tmp/root.tar.gz -C /opt --remove-files
 
 ENV ROOTSYS /opt/root
 ENV PYTHONPATH ${ROOTSYS}/lib:${PYTHONPATH}
 
 RUN set -eo pipefail \
+      && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest abyzovlab/CNVnator \
         | xargs -i curl -SL \
           https://github.com/abyzovlab/CNVnator/releases/download/{}/CNVnator_{}.zip \
