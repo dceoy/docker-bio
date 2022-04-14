@@ -19,7 +19,7 @@ RUN set -e \
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
       && print-github-tags --release --latest s-andrews/FastQC \
-        | xargs -i curl -SL http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip \
+        | xargs -i curl -SL https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_{}.zip \
           -o /tmp/fastqc.zip \
       && unzip -d /usr/local/src /tmp/fastqc.zip \
       && chmod +x /usr/local/src/FastQC/fastqc \
