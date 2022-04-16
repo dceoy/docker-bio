@@ -20,7 +20,9 @@ RUN set -e \
 RUN set -e \
       && /usr/bin/python3 /tmp/get-pip.py \
       && pip install -U --no-cache-dir pip SigProfilerMatrixGenerator \
-        SigProfilerPlotting SigProfilerExtractor SigProfilerSimulator \
+        SigProfilerAssignment SigProfilerClusters SigProfilerExtractor \
+        SigProfilerMatrixGenerator SigProfilerPlotting SigProfilerSimulator \
+        SigProfilerTopography sigproSS \
       && rm -f /tmp/get-pip.py
 
 ENTRYPOINT ["/usr/bin/python"]
