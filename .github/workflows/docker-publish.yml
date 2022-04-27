@@ -57,7 +57,7 @@ jobs:
 
       - name: Clean up images
         run: |
-          docker image ls -q | xargs docker image rm -f
+          docker image ls -q | xargs -P $(cat cpus.txt) -t docker image rm -f || :
 
       - name: Retry build and push
         run: |
