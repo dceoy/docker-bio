@@ -40,11 +40,12 @@ jobs:
           {
             for n in $(cat images.txt); do
               echo -ne "docker-compose build ${n} && docker-compose push ${n}"
-              echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
               echo -ne " && echo '${n}' >> s.txt"
+              echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
               echo -e " || echo '${n}' >> f.txt"
             done
-          } | xargs -P $(cat cpus.txt) -t -i bash -c '{}'
+          } | xargs -P $(cat cpus.txt) -t -I{} bash -c '{}'
+          cat s.txt | xargs -I{} sed -ie '/^{}$/d' f.txt
 
       - name: Print the intermediate results
         run: |
@@ -57,7 +58,7 @@ jobs:
 
       - name: Clean up images
         run: |
-          docker image ls -q | xargs -P $(cat cpus.txt) -t docker image rm -f || :
+          docker image ls -q | xargs -P $(cat cpus.txt) -L 1 -t docker image rm -f || :
 
       - name: Retry build and push
         run: |
@@ -65,12 +66,12 @@ jobs:
             {
               for n in $(cat f.txt); do
                 echo -ne "docker-compose build ${n} && docker-compose push ${n}"
-                echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
                 echo -ne " && echo '${n}' >> s.txt"
                 echo -ne " && sed -ie '/^${n}$/d' f.txt"
+                echo -ne " && docker image ls -q ${{ github.actor }}/${n} | xargs docker image rm -f"
                 echo -e ' || :'
               done
-            } | xargs -P $(cat cpus.txt) -t -i bash -c '{}'
+            } | xargs -P $(cat cpus.txt) -t -I{} bash -c '{}'
           fi
 
       - name: Print the final results
