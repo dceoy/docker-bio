@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:8
 
 ADD bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm /tmp/bcl2fastq.rpm
 
