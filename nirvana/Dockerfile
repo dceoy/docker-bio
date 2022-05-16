@@ -23,7 +23,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        aspnetcore-runtime-3.1 unzip \
+        aspnetcore-runtime-6.0 unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
@@ -36,7 +36,7 @@ RUN set -eo pipefail \
         | tail -1 \
         | tr -d v \
         | xargs -i curl -SL \
-          https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-dotnet-3.1.0.zip \
+          https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-dotnet-6.0.zip \
           -o /tmp/nirvana.zip \
       && unzip -d /opt/nirvana /tmp/nirvana.zip \
       && find /opt/nirvana -type f -executable \
@@ -45,4 +45,4 @@ RUN set -eo pipefail \
 
 ENV PATH /opt/nirvana/bin:${PATH}
 
-ENTRYPOINT ["/opt/nirvana/bin/Nirvana"]
+ENTRYPOINT ["/usr/bin/dotnet", "/opt/nirvana/Nirvana.dll"]
