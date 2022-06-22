@@ -36,7 +36,7 @@ RUN set -eo pipefail \
         | tail -1 \
         | tr -d v \
         | xargs -i curl -SL \
-          https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-dotnet-6.0.zip \
+          https://github.com/Illumina/Nirvana/releases/download/v{}/Nirvana-{}-net6.0.zip \
           -o /tmp/nirvana.zip \
       && unzip -d /opt/nirvana /tmp/nirvana.zip \
       && find /opt/nirvana -type f -executable \
