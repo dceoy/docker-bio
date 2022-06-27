@@ -42,7 +42,7 @@ Docker images
   - [igv-webapp](https://hub.docker.com/r/dceoy/igv-webapp/)
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [kallisto](https://hub.docker.com/r/dceoy/kallisto/)
-  - [last](https://hub.docker.com/r/dceoy/last/)
+  - ~last~
   - [lumpy](https://hub.docker.com/r/dceoy/lumpy/)
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [manta](https://hub.docker.com/r/dceoy/manta/)
