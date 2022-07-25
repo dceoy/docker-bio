@@ -14,10 +14,11 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         apt-transport-https apt-utils ca-certificates curl g++ gcc gfortran \
         git libblas-dev libbz2-dev libcairo2-dev libcurl4-gnutls-dev \
-        libfontconfig1-dev libgdal-dev libgeos-dev libgit2-dev libgsl-dev \
+        libfontconfig1-dev libfreetype6-dev libfribidi-dev libgdal-dev \
+        libgeos-dev libgit2-dev libgsl-dev libharfbuzz-dev libjpeg-dev \
         libjpeg-turbo8-dev liblapack-dev liblzma-dev libperl-dev libpng-dev \
-        libssh-dev libssl-dev libudunits2-dev libxml2-dev libz-dev make \
-        r-base \
+        libssh-dev libssl-dev libtiff5-dev libudunits2-dev libxml2-dev \
+        libz-dev make r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

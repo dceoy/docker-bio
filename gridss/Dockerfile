@@ -13,9 +13,11 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         apt-transport-https apt-utils autoconf ca-certificates curl g++ gcc \
-        gfortran git libblas-dev libbz2-dev libcurl4-gnutls-dev libgit2-dev \
-        liblapack-dev liblzma-dev libncurses5-dev libssh-dev libssl-dev \
-        libxml2-dev libz-dev make openjdk-8-jre r-base unzip util-linux \
+        gfortran git libblas-dev libbz2-dev libcurl4-gnutls-dev \
+        libfontconfig1-dev libfreetype6-dev libfribidi-dev libgit2-dev \
+        libharfbuzz-dev libjpeg-dev liblapack-dev liblzma-dev libncurses5-dev \
+        libpng-dev libssh-dev libssl-dev libtiff5-dev libxml2-dev libz-dev \
+        make openjdk-8-jre r-base unzip util-linux \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

@@ -15,9 +15,11 @@ RUN set -e \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf apt-transport-https apt-utils ca-certificates curl g++ gcc \
         gfortran git gnuplot libblas-dev libbz2-dev libcurl4-gnutls-dev \
-        libgit2-dev libjpeg-turbo8-dev liblapack-dev liblzma-dev \
-        libncurses5-dev libpng-dev libssh-dev libssl-dev libtbb-dev \
-        libxml2-dev libz-dev make perl perl-doc pkg-config python3 r-base \
+        libfontconfig1-dev libfreetype6-dev libfribidi-dev libgit2-dev \
+        libharfbuzz-dev libjpeg-dev libjpeg-turbo8-dev liblapack-dev \
+        liblzma-dev libncurses5-dev libpng-dev libssh-dev libssl-dev \
+        libtbb-dev libtiff5-dev libxml2-dev libz-dev make perl perl-doc \
+        pkg-config python3 r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*

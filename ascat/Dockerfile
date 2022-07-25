@@ -17,8 +17,10 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         apt-transport-https apt-utils ca-certificates curl g++ gcc gfortran \
-        git libblas-dev libcurl4-gnutls-dev libgit2-dev liblapack-dev libssh-dev \
-        libssl-dev libxml2-dev make r-base \
+        git libblas-dev libcurl4-gnutls-dev libfontconfig1-dev \
+        libfreetype6-dev libfribidi-dev libgit2-dev libharfbuzz-dev \
+        libjpeg-dev liblapack-dev libpng-dev libssh-dev libssl-dev \
+        libtiff5-dev libxml2-dev make r-base \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /tmp/marutter_pubkey.asc /var/lib/apt/lists/*
