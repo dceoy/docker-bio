@@ -13,9 +13,9 @@ RUN set -e \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
         autoconf ca-certificates cpanminus curl g++ gcc git libbz2-dev \
-        libcurl4-gnutls-dev liblzma-dev libmysqlclient-dev libncurses5-dev \
-        libpng-dev libssl-dev libxml-dom-xpath-perl libxml-parser-perl \
-        libz-dev make perl pkg-config unzip \
+        libbio-perl-perl libcurl4-gnutls-dev liblzma-dev libmysqlclient-dev \
+        libncurses5-dev libpng-dev libssl-dev libxml-dom-xpath-perl \
+        libxml-parser-perl libz-dev make perl pkg-config unzip \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
