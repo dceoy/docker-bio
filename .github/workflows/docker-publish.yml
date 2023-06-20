@@ -1,26 +1,22 @@
 ---
 name: CI to Docker Hub
-
 on:
   push:
     branches:
       - master
-  schedule:
-    - cron: '0 14 * * 0'
   workflow_dispatch:
-
+  # schedule:
+  #   - cron: '0 14 * * 0'
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.DOCKER_TOKEN }}
-
       - name: List images
         run: |
           grep -e '\[[^ ]\+\].*hub.docker.com' README.md \
@@ -33,7 +29,6 @@ jobs:
           grep -ce '^processor\s\+:' /proc/cpuinfo | tee cpus.txt
           free -g
           df -Th
-
       - name: Build and push images
         run: |
           touch s.txt f.txt
@@ -46,7 +41,6 @@ jobs:
             done
           } | xargs -P $(cat cpus.txt) -t -I{} bash -c '{}'
           cat s.txt | xargs -I{} sed -ie '/^{}$/d' f.txt
-
       - name: Print the intermediate results
         run: |
           echo -ne '>> succeeded: '
@@ -55,11 +49,9 @@ jobs:
           echo -ne '>> failed: '
           cat f.txt | wc -l
           cat f.txt
-
       - name: Clean up images
         run: |
           docker image ls -q | xargs -P $(cat cpus.txt) -L 1 -t docker image rm -f || :
-
       - name: Retry build and push
         run: |
           if [[ $(cat f.txt | wc -l) -gt 0 ]]; then
@@ -73,7 +65,6 @@ jobs:
               done
             } | xargs -P $(cat cpus.txt) -t -I{} bash -c '{}'
           fi
-
       - name: Print the final results
         run: |
           echo -ne '>> succeeded: '
