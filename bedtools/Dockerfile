@@ -12,20 +12,16 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl g++ gcc libbz2-dev liblzma-dev libz-dev make \
-        python3 \
+        ca-certificates curl python3 \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -eo pipefail \
       && chmod +x /usr/local/bin/print-github-tags \
-      && print-github-tags --release --latest --tar arq5x/bedtools2 \
-        | xargs -i curl -SL {} -o /tmp/bedtools2.tar.gz \
-      && tar xvf /tmp/bedtools2.tar.gz -C /usr/local/src --remove-files \
-      && mv /usr/local/src/bedtools2-* /usr/local/src/bedtools2 \
-      && cd /usr/local/src/bedtools2 \
-      && make \
-      && make install
+      && print-github-tags --release --latest arq5x/bedtools2 \
+        | xargs -i curl -SL -o /usr/local/bin/bedtools \
+          https://github.com/arq5x/bedtools2/releases/download/{}/bedtools.static \
+      && chmod +x /usr/local/bin/bedtools
 
 ENTRYPOINT ["/usr/local/bin/bedtools"]
