@@ -10,7 +10,7 @@ Docker images
 
 - Images on Docker Hub:
   - [abra2](https://hub.docker.com/r/dceoy/abra2/)
-  - [alfred](https://hub.docker.com/r/dceoy/alfred/)
+  - ~alfred~
   - [ascat](https://hub.docker.com/r/dceoy/ascat/)
   - [bamsnap](https://hub.docker.com/r/dceoy/bamsnap/)
   - [bcftools](https://hub.docker.com/r/dceoy/bcftools/)
@@ -31,7 +31,7 @@ Docker images
   - [fastq-dump](https://hub.docker.com/r/dceoy/fastq-dump/)
   - [fastqc](https://hub.docker.com/r/dceoy/fastqc/)
   - [fgbio](https://hub.docker.com/r/dceoy/fgbio/)
-  - [freec](https://hub.docker.com/r/dceoy/freec/)
+  - ~freec~
   - [gatk](https://hub.docker.com/r/dceoy/gatk/)
   - [gencore](https://hub.docker.com/r/dceoy/gencore/)
   - [gffread](https://hub.docker.com/r/dceoy/gffread/)
@@ -43,7 +43,7 @@ Docker images
   - [jbrowse](https://hub.docker.com/r/dceoy/jbrowse/)
   - [kallisto](https://hub.docker.com/r/dceoy/kallisto/)
   - ~last~
-  - [lumpy](https://hub.docker.com/r/dceoy/lumpy/)
+  - ~lumpy~
   - [macs2](https://hub.docker.com/r/dceoy/macs2/)
   - [manta](https://hub.docker.com/r/dceoy/manta/)
   - [miso](https://hub.docker.com/r/dceoy/miso/)
@@ -56,11 +56,11 @@ Docker images
   - ~pindel~
   - [prinseq](https://hub.docker.com/r/dceoy/prinseq/)
   - [rsem](https://hub.docker.com/r/dceoy/rsem/)
-  - [sambamba](https://hub.docker.com/r/dceoy/sambamba/)
+  - ~sambamba~
   - [samplot](https://hub.docker.com/r/dceoy/samplot/)
   - [samtools](https://hub.docker.com/r/dceoy/samtools/)
   - [seqkit](https://hub.docker.com/r/dceoy/seqkit/)
-  - [sequenza](https://hub.docker.com/r/dceoy/sequenza/)
+  - ~sequenza~
   - [sigprofiler](https://hub.docker.com/r/dceoy/sigprofiler/)
   - ~smoove~
   - [snpeff](https://hub.docker.com/r/dceoy/snpeff/)
