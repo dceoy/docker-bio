@@ -12,7 +12,7 @@ RUN set -e \
       && apt-get -y update \
       && apt-get -y dist-upgrade \
       && apt-get -y install --no-install-recommends --no-install-suggests \
-        ca-certificates curl gnupg libgkl-jni openjdk-8-jre unzip
+        ca-certificates curl gnupg libgkl-jni openjdk-17-jre unzip
 
 RUN set -e \
       && echo 'deb http://packages.cloud.google.com/apt cloud-sdk-bionic main' \
@@ -59,7 +59,7 @@ RUN set -e \
       && rm -rf /root/.cache/pip
 
 ENV JAVA_LIBRARY_PATH /usr/lib/jni
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64/
 ENV CLASSPATH /opt/gatk/gatk.jar:${CLASSPATH}
 ENV PATH /opt/gatk/bin:/opt/conda/envs/gatk/bin:/opt/conda/bin:${PATH}
 
