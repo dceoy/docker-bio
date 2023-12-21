@@ -19,7 +19,7 @@ RUN set -e \
         libharfbuzz-dev libjpeg-dev libjpeg-turbo8-dev liblapack-dev \
         liblzma-dev libncurses5-dev libpng-dev libssh-dev libssl-dev \
         libtbb-dev libtiff5-dev libxml2-dev libz-dev make perl perl-doc \
-        pkg-config python3 r-base \
+        pkg-config python3 r-base xxd \
       && apt-get -y autoremove \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
